@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import <Masonry.h>
 
 @interface ViewController ()
+
+@property (nonatomic,strong) UILabel *label;
 
 @end
 
@@ -16,8 +19,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.view addSubview:self.label];
+    
+    
+    [self layoutPageViews];
 }
 
+- (void)layoutPageViews {
+    [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+    }];
+}
 
+- (UILabel *)label {
+    if (!_label) {
+        _label = [UILabel new];
+        _label.text = @"test page";
+        _label.font = [UIFont systemFontOfSize:18 weight:UIFontWeightBold];
+    }
+    return _label;
+}
 @end

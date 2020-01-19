@@ -1,0 +1,30 @@
+PODS:
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - Masonry (1.1.0)
+  - YTKNetwork (2.1.4):
+    - AFNetworking/NSURLSession (~> 3.0)
+
+DEPENDENCIES:
+  - Masonry
+  - YTKNetwork
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - Masonry
+    - YTKNetwork
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  YTKNetwork: 19be749c30f0512ada07180f4637b4b67bc8ddc2
+
+PODFILE CHECKSUM: d98690ca1b41b9d6109a7d8b3a6cfc5f9ba17723
+
+COCOAPODS: 1.8.4
