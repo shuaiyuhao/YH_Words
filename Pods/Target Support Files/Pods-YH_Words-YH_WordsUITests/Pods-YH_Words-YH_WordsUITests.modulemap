@@ -1,0 +1,6 @@
+module Pods_YH_Words_YH_WordsUITests {
+  umbrella header "Pods-YH_Words-YH_WordsUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -6,25 +6,64 @@ PODS:
   - AFNetworking/Reachability (3.2.1)
   - AFNetworking/Security (3.2.1)
   - AFNetworking/Serialization (3.2.1)
+  - CTMediator (28)
+  - DateTools (2.0.0)
+  - JXCategoryView (1.5.3)
   - Masonry (1.1.0)
+  - MBProgressHUD (1.2.0)
+  - MMPopupView (1.7.2):
+    - Masonry
+  - RSKImageCropper (2.2.3)
+  - SDWebImage (5.6.0):
+    - SDWebImage/Core (= 5.6.0)
+  - SDWebImage/Core (5.6.0)
+  - TZImagePickerController (3.3.1)
   - YTKNetwork (2.1.4):
     - AFNetworking/NSURLSession (~> 3.0)
+  - YYModel (1.0.4)
 
 DEPENDENCIES:
+  - CTMediator
+  - DateTools
+  - JXCategoryView
   - Masonry
+  - MBProgressHUD (~> 1.2.0)
+  - MMPopupView
+  - RSKImageCropper
+  - SDWebImage (~> 5.0)
+  - TZImagePickerController
   - YTKNetwork
+  - YYModel
 
 SPEC REPOS:
   trunk:
     - AFNetworking
+    - CTMediator
+    - DateTools
+    - JXCategoryView
     - Masonry
+    - MBProgressHUD
+    - MMPopupView
+    - RSKImageCropper
+    - SDWebImage
+    - TZImagePickerController
     - YTKNetwork
+    - YYModel
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  CTMediator: 6a05e9f1098b2d2fbc9d19cc7f28e94c3a08b5d2
+  DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
+  JXCategoryView: 64fbdf3d1bbc8087ebd0443dd3b49855000aca6e
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MMPopupView: fe1dd010824029dfb632fdf1a531db5dd5386020
+  RSKImageCropper: a446db0e8444a036b34f3c43db01b2373baa4b2a
+  SDWebImage: 21b19f56b4226cdfe3aefe4e6848dc43ed129a86
+  TZImagePickerController: 99f03b64145a8c92c55b9b1b931410967d9be4cb
   YTKNetwork: 19be749c30f0512ada07180f4637b4b67bc8ddc2
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: d98690ca1b41b9d6109a7d8b3a6cfc5f9ba17723
+PODFILE CHECKSUM: 7658f7b4f68b2ab9ac64f7b6af295e19ff5bf793
 
 COCOAPODS: 1.8.4
