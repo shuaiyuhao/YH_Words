@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		106F10BA64C390796328F4FC /* libPods-YH_WordsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 295A55EC31F27A849D3F43F9 /* libPods-YH_WordsTests.a */; };
 		365F470223CB1F4B0073FB73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 365F470123CB1F4B0073FB73 /* AppDelegate.m */; };
-		365F470523CB1F4B0073FB73 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 365F470423CB1F4B0073FB73 /* SceneDelegate.m */; };
 		365F470823CB1F4B0073FB73 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 365F470723CB1F4B0073FB73 /* ViewController.m */; };
 		365F470B23CB1F4B0073FB73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 365F470923CB1F4B0073FB73 /* Main.storyboard */; };
 		365F470D23CB1F4C0073FB73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 365F470C23CB1F4C0073FB73 /* Assets.xcassets */; };
@@ -17,6 +16,7 @@
 		365F471323CB1F4C0073FB73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 365F471223CB1F4C0073FB73 /* main.m */; };
 		365F471D23CB1F4C0073FB73 /* YH_WordsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 365F471C23CB1F4C0073FB73 /* YH_WordsTests.m */; };
 		365F472823CB1F4C0073FB73 /* YH_WordsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 365F472723CB1F4C0073FB73 /* YH_WordsUITests.m */; };
+		3675B7AE242E461700B77919 /* YHTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3675B7AD242E461700B77919 /* YHTabBar.m */; };
 		36862E64241917A500A65AA0 /* YHBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36862E63241917A500A65AA0 /* YHBaseController.m */; };
 		368630DB2419354000A65AA0 /* SFTextFieldBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 368630CB2419354000A65AA0 /* SFTextFieldBuilder.m */; };
 		368630DC2419354000A65AA0 /* SFLabelBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 368630CC2419354000A65AA0 /* SFLabelBuilder.m */; };
@@ -75,6 +75,11 @@
 		36863180241977A800A65AA0 /* NSObject+SFHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686317F241977A800A65AA0 /* NSObject+SFHelper.m */; };
 		3686318624197BC300A65AA0 /* Target_home.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686318524197BC300A65AA0 /* Target_home.m */; };
 		3686318924197C0C00A65AA0 /* CTMediator+home.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686318824197C0C00A65AA0 /* CTMediator+home.m */; };
+		36DE736624331FEE0072D31E /* YHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DE736524331FEE0072D31E /* YHTabBarController.m */; };
+		36DE7369243371660072D31E /* YHMeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DE7368243371660072D31E /* YHMeController.m */; };
+		36DE7374243372CC0072D31E /* YHMemoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DE7373243372CC0072D31E /* YHMemoryController.m */; };
+		36DE7377243372DD0072D31E /* YHReviseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DE7376243372DD0072D31E /* YHReviseController.m */; };
+		36DE737A243373010072D31E /* YHWordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DE7379243373010072D31E /* YHWordController.m */; };
 		D73027A5DD19E09E0BD302A3 /* libPods-YH_Words-YH_WordsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E95F91FA90EDC0F2B8BBFB /* libPods-YH_Words-YH_WordsUITests.a */; };
 		F627D10C826256C73F374A95 /* libPods-YH_Words.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3E337E758199A8C9EBFAF5 /* libPods-YH_Words.a */; };
 /* End PBXBuildFile section */
@@ -102,8 +107,6 @@
 		365F46FD23CB1F4B0073FB73 /* YH_Words.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YH_Words.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		365F470023CB1F4B0073FB73 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		365F470123CB1F4B0073FB73 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		365F470323CB1F4B0073FB73 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		365F470423CB1F4B0073FB73 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		365F470623CB1F4B0073FB73 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		365F470723CB1F4B0073FB73 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		365F470A23CB1F4B0073FB73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 		365F472323CB1F4C0073FB73 /* YH_WordsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YH_WordsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		365F472723CB1F4C0073FB73 /* YH_WordsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YH_WordsUITests.m; sourceTree = "<group>"; };
 		365F472923CB1F4C0073FB73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3675B7AC242E461700B77919 /* YHTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHTabBar.h; sourceTree = "<group>"; };
+		3675B7AD242E461700B77919 /* YHTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHTabBar.m; sourceTree = "<group>"; };
 		36862E62241917A500A65AA0 /* YHBaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBaseController.h; sourceTree = "<group>"; };
 		36862E63241917A500A65AA0 /* YHBaseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBaseController.m; sourceTree = "<group>"; };
 		368630CB2419354000A65AA0 /* SFTextFieldBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTextFieldBuilder.m; sourceTree = "<group>"; };
@@ -235,6 +240,16 @@
 		3686318524197BC300A65AA0 /* Target_home.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Target_home.m; sourceTree = "<group>"; };
 		3686318724197C0C00A65AA0 /* CTMediator+home.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CTMediator+home.h"; sourceTree = "<group>"; };
 		3686318824197C0C00A65AA0 /* CTMediator+home.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CTMediator+home.m"; sourceTree = "<group>"; };
+		36DE736424331FEE0072D31E /* YHTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHTabBarController.h; sourceTree = "<group>"; };
+		36DE736524331FEE0072D31E /* YHTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHTabBarController.m; sourceTree = "<group>"; };
+		36DE7367243371660072D31E /* YHMeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHMeController.h; sourceTree = "<group>"; };
+		36DE7368243371660072D31E /* YHMeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHMeController.m; sourceTree = "<group>"; };
+		36DE7372243372CC0072D31E /* YHMemoryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHMemoryController.h; sourceTree = "<group>"; };
+		36DE7373243372CC0072D31E /* YHMemoryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHMemoryController.m; sourceTree = "<group>"; };
+		36DE7375243372DD0072D31E /* YHReviseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHReviseController.h; sourceTree = "<group>"; };
+		36DE7376243372DD0072D31E /* YHReviseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHReviseController.m; sourceTree = "<group>"; };
+		36DE7378243373010072D31E /* YHWordController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHWordController.h; sourceTree = "<group>"; };
+		36DE7379243373010072D31E /* YHWordController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHWordController.m; sourceTree = "<group>"; };
 		47FE0666851F975E77E6C0EA /* Pods-YH_Words-YH_WordsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YH_Words-YH_WordsUITests.debug.xcconfig"; path = "Target Support Files/Pods-YH_Words-YH_WordsUITests/Pods-YH_Words-YH_WordsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A63B47ACCEFEF3E2FD46EA4 /* Pods-YH_Words-YH_WordsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YH_Words-YH_WordsUITests.release.xcconfig"; path = "Target Support Files/Pods-YH_Words-YH_WordsUITests/Pods-YH_Words-YH_WordsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		620399AD313830119DA8ACD2 /* Pods-YH_WordsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YH_WordsTests.debug.xcconfig"; path = "Target Support Files/Pods-YH_WordsTests/Pods-YH_WordsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -275,12 +290,12 @@
 		365F46F423CB1F4B0073FB73 = {
 			isa = PBXGroup;
 			children = (
+				3B10F3C437216E37402868EE /* Frameworks */,
+				671C59383F10B59B861BEE30 /* Pods */,
+				365F46FE23CB1F4B0073FB73 /* Products */,
 				365F46FF23CB1F4B0073FB73 /* YH_Words */,
 				365F471B23CB1F4C0073FB73 /* YH_WordsTests */,
 				365F472623CB1F4C0073FB73 /* YH_WordsUITests */,
-				365F46FE23CB1F4B0073FB73 /* Products */,
-				671C59383F10B59B861BEE30 /* Pods */,
-				3B10F3C437216E37402868EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -307,8 +322,6 @@
 				365F471223CB1F4C0073FB73 /* main.m */,
 				365F470923CB1F4B0073FB73 /* Main.storyboard */,
 				3686318124197B4000A65AA0 /* Route */,
-				365F470323CB1F4B0073FB73 /* SceneDelegate.h */,
-				365F470423CB1F4B0073FB73 /* SceneDelegate.m */,
 				3686317C2419777800A65AA0 /* Sections */,
 				368630C92419351900A65AA0 /* SFKit */,
 				3686317D2419778700A65AA0 /* Util */,
@@ -336,6 +349,47 @@
 			path = YH_WordsUITests;
 			sourceTree = "<group>";
 		};
+		3675B7A7242E323B00B77919 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				3675B7AB242E327700B77919 /* Api */,
+				3675B7AA242E326800B77919 /* Controllers */,
+				3675B7A9242E325F00B77919 /* Models */,
+				3675B7A8242E325700B77919 /* Views */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		3675B7A8242E325700B77919 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3675B7A9242E325F00B77919 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3675B7AA242E326800B77919 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				36DE7367243371660072D31E /* YHMeController.h */,
+				36DE7368243371660072D31E /* YHMeController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3675B7AB242E327700B77919 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
 		36862E612419178200A65AA0 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +397,10 @@
 				36862E63241917A500A65AA0 /* YHBaseController.m */,
 				3686316C24196C5500A65AA0 /* YHBaseView.h */,
 				3686316D24196C5500A65AA0 /* YHBaseView.m */,
+				3675B7AC242E461700B77919 /* YHTabBar.h */,
+				3675B7AD242E461700B77919 /* YHTabBar.m */,
+				36DE736424331FEE0072D31E /* YHTabBarController.h */,
+				36DE736524331FEE0072D31E /* YHTabBarController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -551,6 +609,10 @@
 		3686317C2419777800A65AA0 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				36DE736F2433724F0072D31E /* Revise */,
+				36DE736E243372310072D31E /* Memory */,
+				36DE736A243371870072D31E /* Word */,
+				3675B7A7242E323B00B77919 /* Me */,
 				3686316424196A9800A65AA0 /* Login */,
 			);
 			path = Sections;
@@ -590,6 +652,73 @@
 				3686318524197BC300A65AA0 /* Target_home.m */,
 			);
 			path = Target;
+			sourceTree = "<group>";
+		};
+		36DE736A243371870072D31E /* Word */ = {
+			isa = PBXGroup;
+			children = (
+				36DE736D243371A50072D31E /* Api */,
+				36DE736C2433719D0072D31E /* Model */,
+				36DE736B243371930072D31E /* Controllers */,
+			);
+			path = Word;
+			sourceTree = "<group>";
+		};
+		36DE736B243371930072D31E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				36DE7378243373010072D31E /* YHWordController.h */,
+				36DE7379243373010072D31E /* YHWordController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		36DE736C2433719D0072D31E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		36DE736D243371A50072D31E /* Api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		36DE736E243372310072D31E /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+				36DE7371243372990072D31E /* Controllers */,
+			);
+			path = Memory;
+			sourceTree = "<group>";
+		};
+		36DE736F2433724F0072D31E /* Revise */ = {
+			isa = PBXGroup;
+			children = (
+				36DE73702433728C0072D31E /* Controllers */,
+			);
+			path = Revise;
+			sourceTree = "<group>";
+		};
+		36DE73702433728C0072D31E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				36DE7375243372DD0072D31E /* YHReviseController.h */,
+				36DE7376243372DD0072D31E /* YHReviseController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		36DE7371243372990072D31E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				36DE7372243372CC0072D31E /* YHMemoryController.h */,
+				36DE7373243372CC0072D31E /* YHMemoryController.m */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		3B10F3C437216E37402868EE /* Frameworks */ = {
@@ -875,6 +1004,7 @@
 				3686316E24196C5500A65AA0 /* YHBaseView.m in Sources */,
 				36863153241935E700A65AA0 /* UIView+Masonry.m in Sources */,
 				368630E02419354000A65AA0 /* SFButtonBuilder.m in Sources */,
+				36DE737A243373010072D31E /* YHWordController.m in Sources */,
 				3686318924197C0C00A65AA0 /* CTMediator+home.m in Sources */,
 				368630E22419354000A65AA0 /* UIImageView+SFBuilder.m in Sources */,
 				3686313C241935E700A65AA0 /* UIViewController+SFLoading.m in Sources */,
@@ -885,16 +1015,18 @@
 				36863150241935E700A65AA0 /* UITextField+SFUtils.m in Sources */,
 				36863144241935E700A65AA0 /* UIButton+SFEdgeInsets.m in Sources */,
 				3686316B24196B1F00A65AA0 /* YHLoginController.m in Sources */,
+				36DE736624331FEE0072D31E /* YHTabBarController.m in Sources */,
 				36863147241935E700A65AA0 /* UIButton+SFLoading.m in Sources */,
 				365F471323CB1F4C0073FB73 /* main.m in Sources */,
 				36863142241935E700A65AA0 /* UIImage+SFAdd.m in Sources */,
 				36863152241935E700A65AA0 /* MKMapView+ZoomLevel.m in Sources */,
+				36DE7377243372DD0072D31E /* YHReviseController.m in Sources */,
 				3686314E241935E700A65AA0 /* UIView+SFShadow.m in Sources */,
 				36863146241935E700A65AA0 /* UIGestureRecognizer+SFFly.m in Sources */,
 				3686313F241935E700A65AA0 /* UIViewController+SFAdd.m in Sources */,
+				36DE7369243371660072D31E /* YHMeController.m in Sources */,
 				36863159241935E700A65AA0 /* NSString+SFAdd.m in Sources */,
 				368630DE2419354000A65AA0 /* UITextField+SFBuilder.m in Sources */,
-				365F470523CB1F4B0073FB73 /* SceneDelegate.m in Sources */,
 				36863149241935E700A65AA0 /* UIBarButtonItem+SFFly.m in Sources */,
 				3686315B241935E700A65AA0 /* NSDictionary+SFAdd.m in Sources */,
 				36863141241935E700A65AA0 /* UIButton+SFFly.m in Sources */,
@@ -903,6 +1035,7 @@
 				36863155241935E700A65AA0 /* UITextView+SFPlaceholder.m in Sources */,
 				3686318624197BC300A65AA0 /* Target_home.m in Sources */,
 				36863145241935E700A65AA0 /* UIImageView+SFFly.m in Sources */,
+				3675B7AE242E461700B77919 /* YHTabBar.m in Sources */,
 				36863180241977A800A65AA0 /* NSObject+SFHelper.m in Sources */,
 				36863161241935E700A65AA0 /* NSString+SFDiskSpace.m in Sources */,
 				36863154241935E700A65AA0 /* UIControl+SFActionBlock.m in Sources */,
@@ -911,6 +1044,7 @@
 				368630DD2419354000A65AA0 /* UILabel+SFBuilder.m in Sources */,
 				3686314D241935E700A65AA0 /* UIDevice+SFAdd.m in Sources */,
 				3686315C241935E700A65AA0 /* NSSet+SFLog.m in Sources */,
+				36DE7374243372CC0072D31E /* YHMemoryController.m in Sources */,
 				36863143241935E700A65AA0 /* UIViewController+BackButtonHandler.m in Sources */,
 				368630DF2419354000A65AA0 /* SFImageViewBuilder.m in Sources */,
 				3686313B241935E700A65AA0 /* UITextField+SFInputLimit.m in Sources */,
