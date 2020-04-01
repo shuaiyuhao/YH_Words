@@ -23,7 +23,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
-        [self sf_addLineTop:NO bottom:YES lineColor:[UIColor colorWithHexString:@"E8E8E8"] leftSpace:0 rightSpace:0];
+        [self sf_addLineTop:NO bottom:YES lineColor:[UIColor grayColor] leftSpace:0 rightSpace:0];
         [self addSubview:self.titleLabel];
         [self addSubview:self.valueTextField];
         [self addSubview:self.showButton];
@@ -105,7 +105,7 @@
     if (!_titleLabel) {
         _titleLabel = UILabel.builder()
         .text(@"")
-        .textColor([UIColor colorWithHexString:@"0x333333"])
+        .textColor([UIColor grayColor])
         .font([UIFont systemFontOfSize:14])
         .backgroundColor([UIColor clearColor])
         .textAlignment(NSTextAlignmentLeft)

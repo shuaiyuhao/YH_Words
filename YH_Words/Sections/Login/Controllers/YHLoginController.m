@@ -43,33 +43,33 @@
 
 - (void)layoutPageViews {
     [self.avatarImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-         make.size.mas_equalTo(CGSizeMake(80, 80));
+         make.size.mas_equalTo(CGSizeMake(100, 100));
          make.centerX.equalTo(self.view);
-         make.top.equalTo(self.view).offset(60);
+         make.top.equalTo(self.view).offset(20);
      }];
      
      [self.accountView mas_makeConstraints:^(MASConstraintMaker *make) {
          make.size.mas_equalTo(CGSizeMake(kScreenWidth - 40 , 44));
          make.centerX.equalTo(self.view);
-         make.top.equalTo(self.avatarImageView.mas_bottom).offset(39);
+         make.top.equalTo(self.avatarImageView.mas_bottom).offset(89);
      }];
-     
+
      [self.passwordView mas_makeConstraints:^(MASConstraintMaker *make) {
          make.size.mas_equalTo(CGSizeMake(kScreenWidth - 40 , 44));
          make.centerX.equalTo(self.view);
          make.top.equalTo(self.accountView.mas_bottom).offset(8);
      }];
-     
+
      [self.forgetButton mas_makeConstraints:^(MASConstraintMaker *make) {
          make.left.equalTo(self.view).offset(20);
          make.top.equalTo(self.passwordView.mas_bottom).offset(20);
      }];
-     
+
      [self.registerButton mas_makeConstraints:^(MASConstraintMaker *make) {
          make.centerY.equalTo(self.forgetButton);
          make.right.equalTo(self.view).offset(-20);
      }];
-     
+
      [self.loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
          make.size.mas_equalTo(CGSizeMake(kScreenWidth - 40, 44));
          make.centerX.equalTo(self.view);
@@ -81,7 +81,7 @@
 #pragma mark -
 - (UIImageView *)avatarImageView {
     if (!_avatarImageView) {
-        _avatarImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
+        _avatarImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Logo"]];
         _avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
         
          [self toCornradius:40 with:_avatarImageView];
@@ -90,17 +90,31 @@
     return _avatarImageView;
 }
 
+- (YHTitleFieldView *)accountView {
+    if (!_accountView) {
+        _accountView = [[YHTitleFieldView alloc] init];
+        [_accountView configWithTitle:@"账号" palceHolder:@"请输入手机号/用户名" showImage:nil keyBoardType:UIKeyboardTypeDefault secureTextEntry:NO];
+        
+        _accountView.backgroundColor = [UIColor clearColor];
+        WeakSelf;
+        [_accountView setTextChangeBlock:^(NSString *index) {
+            weakSelf.account = index;
+        }];
+    }
+    return _accountView;
+}
+
 - (YHTitleFieldView *)passwordView {
     if (!_passwordView) {
         _passwordView = [[YHTitleFieldView alloc] init];
-        [_passwordView configWithTitle:@"密码" palceHolder:@"请输入密码" showImage:[UIImage imageNamed:@"ic_password_hide"] keyBoardType:UIKeyboardTypeDefault secureTextEntry:YES];
-        
+        [_passwordView configWithTitle:@"密码" palceHolder:@"请输入密码" showImage:[UIImage imageNamed:@"eye_close"] keyBoardType:UIKeyboardTypeDefault secureTextEntry:YES];
+        _passwordView.backgroundColor = [UIColor clearColor];
         WeakSelf;
         [_passwordView setButtonActionBlock:^(NSInteger index) {
             if (!index) {
-                [weakSelf.passwordView setShowImage:[UIImage imageNamed:@"ic_password_show"] secureTextEntry:NO];
+                [weakSelf.passwordView setShowImage:[UIImage imageNamed:@"eye_open"] secureTextEntry:NO];
             } else {
-                [weakSelf.passwordView setShowImage:[UIImage imageNamed:@"ic_password_hide"] secureTextEntry:YES];
+                [weakSelf.passwordView setShowImage:[UIImage imageNamed:@"eye_close"] secureTextEntry:YES];
             }
         }];
         
@@ -120,7 +134,7 @@
         .font([UIFont systemFontOfSize:14])
         .build();
         
-        WeakSelf;
+//        WeakSelf;
 //        [_forgetButton sf_addHandler:^(id weakSender) {
 ////            UIViewController *vc = [[CTMediator sharedInstance] login_forgetpassword:@{}];
 ////            SFEnterpriseQualificationController *vc = [SFEnterpriseQualificationController new];
@@ -139,7 +153,7 @@
         .font([UIFont systemFontOfSize:14])
         .build();
         
-        WeakSelf;
+//        WeakSelf;
 //        [_registerButton sf_addHandler:^(id weakSender) {
 ////            UIViewController *vc = [[CTMediator sharedInstance] login_register:@{}];
 //            [weakSelf.navigationController pushViewController:vc animated:YES];
@@ -149,4 +163,33 @@
     return _registerButton;
 }
 
+- (UIButton *)loginButton {
+    if (!_loginButton) {
+        _loginButton = [self buttonWithSize:CGSizeMake(kScreenWidth - 40, 44)];
+        [_loginButton setTitle:@"立即登陆" forState:UIControlStateNormal];
+        [_loginButton.titleLabel setFont:[UIFont systemFontOfSize:16]];
+        [_loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self toCornradius:22 with:_loginButton];
+        
+        WeakSelf;
+        [_loginButton sf_addHandler:^(id weakSender) {
+//            if (![self.account isValidPhone]) {
+//                [SFHUD showInfoToast:@"请输入正确的手机号"];
+//                return ;
+//            }
+//            if (!self.password.length) {
+//                [SFHUD showInfoToast:@"请输入密码"];
+//                return ;
+//            }
+//            SFLoginApi *api = [[SFLoginApi alloc] initWithAccount:weakSelf.account password:weakSelf.password];
+//            api.delegate = weakSelf;
+//            api.hudType = SFHUDTypeProgressAlert;
+//            [api start];
+//            SFTabBarController *vc = [SFTabBarController new];
+//            [weakSelf.navigationController pushViewController:vc animated:YES];
+//            [ApplicationDelegate setRootViewController:vc animated:YES];
+        } forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _loginButton;
+}
 @end

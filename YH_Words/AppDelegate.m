@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "UIColor+SFAdd.h"
 #import "YHTabBarController.h"
 
 @interface AppDelegate ()
@@ -20,7 +21,9 @@
     
     [self.window makeKeyAndVisible];
     self.window.rootViewController = [YHTabBarController new];
- 
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHexString:@"0x171C24"]];
+    [[UINavigationBar appearance] setTranslucent:NO];
     
     return YES;
 }
