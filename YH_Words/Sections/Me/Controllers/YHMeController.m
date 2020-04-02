@@ -9,9 +9,10 @@
 #import "YHMeController.h"
 #import "YHLoginController.h"
 
-@interface YHMeController ()
+@interface YHMeController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic,strong) UIButton *testButton;
+@property (nonatomic,strong) UICollectionView *meCollectionView;
 
 @end
 
@@ -27,17 +28,46 @@
     
     [self.view setBackgroundColor:[UIColor colorWithHexString:@"0x171C24"]];
     
-    [self.view addSubview:self.testButton];
+//    [self.view addSubview:self.testButton];
     
     [self layoutPageViews];
 }
 
 
 - (void)layoutPageViews {
-    [self.testButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.view);
-    }];
+//    [self.testButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.center.equalTo(self.view);
+//    }];
 }
+
+#pragma mark - UICollectionViewDelegate
+#pragma mark -
+
+
+#pragma mark - UICollectionViewDatasource
+#pragma mark -
+
+
+#pragma mark - getter and setter
+#pragma mark -
+- (UICollectionView *)meCollectionView {
+    if (!_meCollectionView) {
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
+        
+        _meCollectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
+        _meCollectionView.backgroundColor = [UIColor colorWithHexString:@"0x171C24"];
+        
+        
+        
+        _meCollectionView.delegate = self;
+        _meCollectionView.dataSource = self;
+    }
+    
+    return +_meCollectionView;
+   
+}
+
 
 
 
