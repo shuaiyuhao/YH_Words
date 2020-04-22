@@ -75,6 +75,10 @@
 		36863180241977A800A65AA0 /* NSObject+SFHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686317F241977A800A65AA0 /* NSObject+SFHelper.m */; };
 		3686318624197BC300A65AA0 /* Target_home.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686318524197BC300A65AA0 /* Target_home.m */; };
 		3686318924197C0C00A65AA0 /* CTMediator+home.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686318824197C0C00A65AA0 /* CTMediator+home.m */; };
+		36A58F6F244ED07C0011A8B3 /* YHBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A58F6E244ED07C0011A8B3 /* YHBaseCollectionViewCell.m */; };
+		36A58F72244ED1BA0011A8B3 /* YHTodayDataCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A58F71244ED1BA0011A8B3 /* YHTodayDataCollectionViewCell.m */; };
+		36A58F75244EDBF10011A8B3 /* YHButtonCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A58F74244EDBF10011A8B3 /* YHButtonCollectionViewCell.m */; };
+		36A58F7B244F3AE30011A8B3 /* YHTodayBrowseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A58F7A244F3AE30011A8B3 /* YHTodayBrowseCell.m */; };
 		36DE736624331FEE0072D31E /* YHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DE736524331FEE0072D31E /* YHTabBarController.m */; };
 		36DE7369243371660072D31E /* YHMeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DE7368243371660072D31E /* YHMeController.m */; };
 		36DE7374243372CC0072D31E /* YHMemoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DE7373243372CC0072D31E /* YHMemoryController.m */; };
@@ -240,6 +244,14 @@
 		3686318524197BC300A65AA0 /* Target_home.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Target_home.m; sourceTree = "<group>"; };
 		3686318724197C0C00A65AA0 /* CTMediator+home.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CTMediator+home.h"; sourceTree = "<group>"; };
 		3686318824197C0C00A65AA0 /* CTMediator+home.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CTMediator+home.m"; sourceTree = "<group>"; };
+		36A58F6D244ED07C0011A8B3 /* YHBaseCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBaseCollectionViewCell.h; sourceTree = "<group>"; };
+		36A58F6E244ED07C0011A8B3 /* YHBaseCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBaseCollectionViewCell.m; sourceTree = "<group>"; };
+		36A58F70244ED1BA0011A8B3 /* YHTodayDataCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = YHTodayDataCollectionViewCell.h; path = YH_Words/Base/YHTodayDataCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
+		36A58F71244ED1BA0011A8B3 /* YHTodayDataCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = YHTodayDataCollectionViewCell.m; path = YH_Words/Base/YHTodayDataCollectionViewCell.m; sourceTree = SOURCE_ROOT; };
+		36A58F73244EDBF10011A8B3 /* YHButtonCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = YHButtonCollectionViewCell.h; path = YH_Words/Base/YHButtonCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
+		36A58F74244EDBF10011A8B3 /* YHButtonCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = YHButtonCollectionViewCell.m; path = YH_Words/Base/YHButtonCollectionViewCell.m; sourceTree = SOURCE_ROOT; };
+		36A58F79244F3AE30011A8B3 /* YHTodayBrowseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = YHTodayBrowseCell.h; path = YH_Words/Base/YHTodayBrowseCell.h; sourceTree = SOURCE_ROOT; };
+		36A58F7A244F3AE30011A8B3 /* YHTodayBrowseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = YHTodayBrowseCell.m; path = YH_Words/Base/YHTodayBrowseCell.m; sourceTree = SOURCE_ROOT; };
 		36DE736424331FEE0072D31E /* YHTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHTabBarController.h; sourceTree = "<group>"; };
 		36DE736524331FEE0072D31E /* YHTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHTabBarController.m; sourceTree = "<group>"; };
 		36DE7367243371660072D31E /* YHMeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHMeController.h; sourceTree = "<group>"; };
@@ -363,6 +375,12 @@
 		3675B7A8242E325700B77919 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				36A58F70244ED1BA0011A8B3 /* YHTodayDataCollectionViewCell.h */,
+				36A58F71244ED1BA0011A8B3 /* YHTodayDataCollectionViewCell.m */,
+				36A58F73244EDBF10011A8B3 /* YHButtonCollectionViewCell.h */,
+				36A58F74244EDBF10011A8B3 /* YHButtonCollectionViewCell.m */,
+				36A58F79244F3AE30011A8B3 /* YHTodayBrowseCell.h */,
+				36A58F7A244F3AE30011A8B3 /* YHTodayBrowseCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -401,6 +419,8 @@
 				3675B7AD242E461700B77919 /* YHTabBar.m */,
 				36DE736424331FEE0072D31E /* YHTabBarController.h */,
 				36DE736524331FEE0072D31E /* YHTabBarController.m */,
+				36A58F6D244ED07C0011A8B3 /* YHBaseCollectionViewCell.h */,
+				36A58F6E244ED07C0011A8B3 /* YHBaseCollectionViewCell.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1002,10 +1022,12 @@
 				36863140241935E700A65AA0 /* UITextView+SFInputLimit.m in Sources */,
 				36863157241935E700A65AA0 /* NSDate+SFAdd.m in Sources */,
 				3686316E24196C5500A65AA0 /* YHBaseView.m in Sources */,
+				36A58F6F244ED07C0011A8B3 /* YHBaseCollectionViewCell.m in Sources */,
 				36863153241935E700A65AA0 /* UIView+Masonry.m in Sources */,
 				368630E02419354000A65AA0 /* SFButtonBuilder.m in Sources */,
 				36DE737A243373010072D31E /* YHWordController.m in Sources */,
 				3686318924197C0C00A65AA0 /* CTMediator+home.m in Sources */,
+				36A58F72244ED1BA0011A8B3 /* YHTodayDataCollectionViewCell.m in Sources */,
 				368630E22419354000A65AA0 /* UIImageView+SFBuilder.m in Sources */,
 				3686313C241935E700A65AA0 /* UIViewController+SFLoading.m in Sources */,
 				368630DB2419354000A65AA0 /* SFTextFieldBuilder.m in Sources */,
@@ -1027,6 +1049,7 @@
 				36DE7369243371660072D31E /* YHMeController.m in Sources */,
 				36863159241935E700A65AA0 /* NSString+SFAdd.m in Sources */,
 				368630DE2419354000A65AA0 /* UITextField+SFBuilder.m in Sources */,
+				36A58F75244EDBF10011A8B3 /* YHButtonCollectionViewCell.m in Sources */,
 				36863149241935E700A65AA0 /* UIBarButtonItem+SFFly.m in Sources */,
 				3686315B241935E700A65AA0 /* NSDictionary+SFAdd.m in Sources */,
 				36863141241935E700A65AA0 /* UIButton+SFFly.m in Sources */,
@@ -1044,6 +1067,7 @@
 				368630DD2419354000A65AA0 /* UILabel+SFBuilder.m in Sources */,
 				3686314D241935E700A65AA0 /* UIDevice+SFAdd.m in Sources */,
 				3686315C241935E700A65AA0 /* NSSet+SFLog.m in Sources */,
+				36A58F7B244F3AE30011A8B3 /* YHTodayBrowseCell.m in Sources */,
 				36DE7374243372CC0072D31E /* YHMemoryController.m in Sources */,
 				36863143241935E700A65AA0 /* UIViewController+BackButtonHandler.m in Sources */,
 				368630DF2419354000A65AA0 /* SFImageViewBuilder.m in Sources */,
