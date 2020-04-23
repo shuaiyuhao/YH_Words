@@ -29,6 +29,10 @@
     if (self) {
         
         self.backgroundColor = [UIColor colorWithHexString:@"0x292D36"];
+        self.layer.cornerRadius = 17;
+        self.layer.borderWidth = 1;
+        self.layer.borderColor = [UIColor colorWithHexString:@"0x979797"].CGColor;
+        self.layer.masksToBounds = YES;
         
         [self.contentView addSubview:self.wordLabel];
         [self.contentView addSubview:self.phoneticLabel];
@@ -44,13 +48,13 @@
 
 - (void)layoutPageViews {
     [self.wordLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(119, 67));
+        make.size.mas_equalTo(CGSizeMake(180, 67));
         make.top.equalTo(self.contentView).offset(22);
         make.centerX.equalTo(self.contentView);
     }];
     
     [self.phoneticLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(100, 30));
+        make.size.mas_equalTo(CGSizeMake(180, 30));
         make.top.equalTo(self.wordLabel.mas_bottom).offset(15);
         make.centerX.equalTo(self.contentView);
     }];
@@ -74,7 +78,7 @@
       }];
     
     [self.exampleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-          make.size.mas_equalTo(CGSizeMake(240, 25));
+          make.size.mas_equalTo(CGSizeMake(240, 60));
           make.left.equalTo(self.contentView).offset(30);
           make.top.equalTo(self.exampleTitileLabel.mas_bottom).offset(12);
       }];
@@ -165,6 +169,7 @@
         .text(@"Each_poster_is_signed_by_the_artist.")
         .textColor([UIColor whiteColor])
         .textAlignment(NSTextAlignmentLeft)
+        .numberOfLines(3)
         .font([UIFont systemFontOfSize:18])
         .backgroundColor([UIColor clearColor])
         .build();
