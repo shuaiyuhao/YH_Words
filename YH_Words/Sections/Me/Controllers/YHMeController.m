@@ -14,9 +14,9 @@
 
 @interface YHMeController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
-@property (nonatomic,strong) UIButton *testButton;
 @property (nonatomic,strong) UICollectionView *meCollectionView;
 @property (nonatomic,strong) UIView *headerView;
+@property (nonatomic,strong) UIView *footerView;
 
 @end
 
@@ -32,7 +32,6 @@
     
     [self.view setBackgroundColor:[UIColor colorWithHexString:@"0x171C24"]];
     
-//    [self.view addSubview:self.testButton];
     [self.view addSubview:self.meCollectionView];
     
     [self layoutPageViews];
@@ -40,10 +39,6 @@
 
 
 - (void)layoutPageViews {
-//    [self.testButton mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.center.equalTo(self.view);
-//    }];
-    
     [self.meCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
@@ -110,6 +105,17 @@
         return view;
     }
     
+    if (kind == UICollectionElementKindSectionFooter) {
+        UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"meCollectionViewFooter" forIndexPath:indexPath];
+        for (UIView *view1 in view.subviews) {
+            [view1 removeFromSuperview];
+        }
+        
+        [view addSubview:self.footerView];
+        return view;
+        
+    }
+    
     return nil;
 }
 
@@ -121,13 +127,15 @@
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
         layout.headerReferenceSize = CGSizeMake(kScreenWidth, 110);
+        layout.footerReferenceSize = CGSizeMake(kScreenWidth, 80);
         layout.minimumLineSpacing = 28;
         layout.minimumInteritemSpacing = 0;
-        layout.sectionInset = UIEdgeInsetsMake(10, 30, 10, 30);
+        layout.sectionInset = UIEdgeInsetsMake(10, 30, 40, 30);
         
         _meCollectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
         _meCollectionView.backgroundColor = [UIColor colorWithHexString:@"0x171C24"];
         [_meCollectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"meCollectionViewHeader"];
+        [_meCollectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"meCollectionViewFooter"];
         
         [_meCollectionView registerClass:[YHButtonCollectionViewCell class] forCellWithReuseIdentifier:[YHButtonCollectionViewCell cellIdentifier]];
         [_meCollectionView registerClass:[YHTodayDataCollectionViewCell class] forCellWithReuseIdentifier:[YHTodayDataCollectionViewCell cellIdentifier]];
@@ -161,5 +169,31 @@
     }
     
     return _headerView;
+}
+
+- (UIView *)footerView {
+    if (!_footerView) {
+        _footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 60)];
+        _footerView.backgroundColor = [UIColor colorWithHexString:@"0x171c24"];
+        
+        UIButton *logoutButton = UIButton.builder()
+        .backgroundColor([UIColor colorWithHexString:@"ff003d"])
+        .title(@"退出登录")
+        .titleColor([UIColor whiteColor])
+        .font([UIFont systemFontOfSize:24])
+        .build();
+        
+        logoutButton.layer.cornerRadius = 10;
+        
+        logoutButton.layer.masksToBounds = YES;
+        [self.footerView addSubview:logoutButton];
+        
+        [logoutButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.size.mas_equalTo(CGSizeMake(310, 48));
+            make.center.equalTo(self.footerView);
+        }];
+    }
+    return _footerView;
 }
 @end

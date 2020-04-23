@@ -20,20 +20,34 @@
 
 @implementation YHTabBarController
 
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.selectedViewController beginAppearanceTransition: YES animated: animated];
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [self.selectedViewController endAppearanceTransition];
+}
+
+- (void) viewWillDisappear:(BOOL)animated {
+    [self.selectedViewController beginAppearanceTransition: NO animated: animated];
+}
+
+- (void) viewDidDisappear:(BOOL)animated {
+    [self.selectedViewController endAppearanceTransition];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setValue:[YHTabBar new] forKey:@"tabBar"];
     
-    [self addCustomChildVC:[YHWordController new] title:@"单词" imageName:@"tabbar_words.png" useNav:false];
+    [self addCustomChildVC:[YHWordController new] title:@"单词" imageName:@"tabbar_words.png" useNav:true];
     [self addCustomChildVC:[YHReviseController new] title:@"计划"  imageName:@"tabbar_revise.png" useNav:false];
     [self addCustomChildVC:[YHMemoryController new] title:@"记忆曲线"  imageName:@"tabbar_memory.png" useNav:false];
     [self addCustomChildVC:[YHMeController new] title:@"我的" imageName:@"tabbar_me.png" useNav:true];
     
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-   
 }
 
 - (void)addCustomChildVC:(UIViewController *)vc title:(NSString *)title imageName:(NSString *)imageName useNav:(BOOL)useNav {

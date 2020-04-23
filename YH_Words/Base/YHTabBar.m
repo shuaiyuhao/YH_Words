@@ -23,8 +23,8 @@
 #define iPhoneX ((ScreenHeight == 812.0 || ScreenHeight == 896.0) ? YES : NO)
 #define kBottomSafeSpace (iPhoneX ? 34.0 : 0.0)
 
-- (instancetype)init {
-    if (self = [super init]) {
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
         [self initView];
     }
     
