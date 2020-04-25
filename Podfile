@@ -14,6 +14,7 @@ target 'YH_Words' do
   pod 'MBProgressHUD', '~> 1.2.0'
   pod 'JXCategoryView'
   pod "CTMediator"
+  pod 'PNChart'
 
   target 'YH_WordsTests' do
     inherit! :search_paths

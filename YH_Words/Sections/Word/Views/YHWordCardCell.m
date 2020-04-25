@@ -48,7 +48,7 @@
 
 - (void)layoutPageViews {
     [self.wordLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(180, 67));
+        make.size.mas_equalTo(CGSizeMake(200, 67));
         make.top.equalTo(self.contentView).offset(22);
         make.centerX.equalTo(self.contentView);
     }];

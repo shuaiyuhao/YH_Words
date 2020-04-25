@@ -8,6 +8,8 @@
 
 #import "YHTabBar.h"
 #import "UIColor+SFAdd.h"
+#import "UIControl+SFActionBlock.h"
+#import "AppMacros.h"
 
 @interface YHTabBar ()
 
@@ -103,7 +105,10 @@
 
 - (void)centerTabBarBtnEvent {
     
-    NSLog(@"click event");
+//    NSLog(@"click event");
+    if ([self.centerBtnDelegate respondsToSelector:@selector(centerButtonTapped)]) {
+        [self.centerBtnDelegate centerButtonTapped];
+    }
 }
 
 - (UIButton *)centerTabBarButton {
@@ -114,6 +119,12 @@
         [_centerTabBarButton setImage:[UIImage imageNamed:@"icon5.png"] forState:UIControlStateNormal];
         _centerTabBarButton.adjustsImageWhenHighlighted = false;
         [_centerTabBarButton addTarget:self action:@selector(centerTabBarBtnEvent) forControlEvents:UIControlEventTouchUpInside];
+//        WeakSelf;
+//        [self.centerTabBarButton sf_addHandler:^(id weakSender) {
+//            if ([weakSelf.centerBtnDelegate respondsToSelector:@selector(centerButtonTapped)]) {
+//                [weakSelf.centerBtnDelegate centerButtonTapped];
+//            }
+//        } forControlEvents:UIControlEventTouchUpInside];
     }
     
     return _centerTabBarButton;

@@ -8,7 +8,9 @@
 
 #import "YHReviseController.h"
 
-@interface YHReviseController ()
+@interface YHReviseController ()<UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic,strong) UITableView *reviseTableView;
 
 @end
 
@@ -16,17 +18,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self.view setBackgroundColor:[UIColor colorWithHexString:@"0x171C24"]];
+    self.navigationItem.title = @"复习计划";
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - UITableViewDelegate
+#pragma mark -
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - UITableViewDataSource
+#pragma mark -
+
+
+#pragma mark - getter and setter
+#pragma mark -
+- (UITableView *)reviseTableView {
+    if (!_reviseTableView) {
+        _reviseTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStyleGrouped];
+    }
+    
+    return _reviseTableView;
 }
-*/
-
 @end

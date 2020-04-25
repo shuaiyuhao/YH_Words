@@ -13,11 +13,14 @@ PODS:
   - MBProgressHUD (1.2.0)
   - MMPopupView (1.7.2):
     - Masonry
+  - PNChart (0.8.9):
+    - UICountingLabel (~> 1.2.0)
   - RSKImageCropper (2.2.3)
   - SDWebImage (5.6.0):
     - SDWebImage/Core (= 5.6.0)
   - SDWebImage/Core (5.6.0)
   - TZImagePickerController (3.3.1)
+  - UICountingLabel (1.2.0)
   - YTKNetwork (2.1.4):
     - AFNetworking/NSURLSession (~> 3.0)
   - YYModel (1.0.4)
@@ -29,6 +32,7 @@ DEPENDENCIES:
   - Masonry
   - MBProgressHUD (~> 1.2.0)
   - MMPopupView
+  - PNChart
   - RSKImageCropper
   - SDWebImage (~> 5.0)
   - TZImagePickerController
@@ -44,9 +48,11 @@ SPEC REPOS:
     - Masonry
     - MBProgressHUD
     - MMPopupView
+    - PNChart
     - RSKImageCropper
     - SDWebImage
     - TZImagePickerController
+    - UICountingLabel
     - YTKNetwork
     - YYModel
 
@@ -58,12 +64,14 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MMPopupView: fe1dd010824029dfb632fdf1a531db5dd5386020
+  PNChart: 84774d225c2126ded6c93d4dbe6ae98c3a73c2d2
   RSKImageCropper: a446db0e8444a036b34f3c43db01b2373baa4b2a
   SDWebImage: 21b19f56b4226cdfe3aefe4e6848dc43ed129a86
   TZImagePickerController: 99f03b64145a8c92c55b9b1b931410967d9be4cb
+  UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
   YTKNetwork: 19be749c30f0512ada07180f4637b4b67bc8ddc2
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 7658f7b4f68b2ab9ac64f7b6af295e19ff5bf793
+PODFILE CHECKSUM: 371a827e4869378e333186064754d10502833dc2
 
 COCOAPODS: 1.9.1

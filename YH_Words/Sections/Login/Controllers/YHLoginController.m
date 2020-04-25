@@ -77,6 +77,11 @@
      }];
 }
 
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+
 #pragma mark - getter and setter
 #pragma mark -
 - (UIImageView *)avatarImageView {

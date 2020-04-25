@@ -11,10 +11,12 @@
 #import "YHWordController.h"
 #import "YHMemoryController.h"
 #import "YHReviseController.h"
+#import "YHSearchWordController.h"
+#import "YHLoginController.h"
 
 #import "YHTabBar.h"
 
-@interface YHTabBarController ()
+@interface YHTabBarController () <centerButtonDelegate>
 
 @end
 
@@ -41,13 +43,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setValue:[YHTabBar new] forKey:@"tabBar"];
+    YHTabBar *tabbar = [YHTabBar new];
+    tabbar.centerBtnDelegate = self;
+    
+    [self setValue:tabbar forKey:@"tabBar"];
     
     [self addCustomChildVC:[YHWordController new] title:@"单词" imageName:@"tabbar_words.png" useNav:true];
-    [self addCustomChildVC:[YHReviseController new] title:@"计划"  imageName:@"tabbar_revise.png" useNav:false];
-    [self addCustomChildVC:[YHMemoryController new] title:@"记忆曲线"  imageName:@"tabbar_memory.png" useNav:false];
+    [self addCustomChildVC:[YHReviseController new] title:@"计划"  imageName:@"tabbar_revise.png" useNav:true];
+    [self addCustomChildVC:[YHLoginController new] title:@"记忆曲线"  imageName:@"tabbar_memory.png" useNav:true];
     [self addCustomChildVC:[YHMeController new] title:@"我的" imageName:@"tabbar_me.png" useNav:true];
     
+
 }
 
 - (void)addCustomChildVC:(UIViewController *)vc title:(NSString *)title imageName:(NSString *)imageName useNav:(BOOL)useNav {
@@ -61,11 +67,15 @@
     } else {
           [self addChildViewController:vc];
     }
-   
-    
-  
-    
 }
 
+#pragma mark - centerBtnDelegate
+- (void)centerButtonTapped {
+//    YHSearchWordController *vc = [YHSearchWordController new];
+//    NSLog(@"test");
+//    [self.navigationController pushViewController:vc animated:true];
+    NSLog(@"test");
+    [self presentViewController:[[YHSearchWordController alloc] init] animated:YES completion:nil];
+}
 
 @end
