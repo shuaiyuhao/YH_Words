@@ -7,6 +7,7 @@
 //
 
 #import "YHBaseCollectionViewCell.h"
+#import "AppConstant.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,6 +16,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (CGSize)cellSize;
 
 - (void)configWithData:(id)data;
+
+@property (nonatomic,strong) SFVoidActionBlock button1TappedBlock;
+
+@property (nonatomic,strong) SFVoidActionBlock button2TappedBlock;
+
+@property (nonatomic,strong) SFVoidActionBlock button3TappedBlock;
 
 @end
 

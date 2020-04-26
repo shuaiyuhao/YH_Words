@@ -71,7 +71,7 @@
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = UILabel.builder()
-        .text(@"今日浏览")
+        .text(@"全部浏览")
         .textColor([UIColor colorWithHexString:@"0x979797"])
         .textAlignment(NSTextAlignmentCenter)
         .numberOfLines(1)

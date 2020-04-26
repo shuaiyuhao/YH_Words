@@ -178,14 +178,14 @@
         
         WeakSelf;
         [_loginButton sf_addHandler:^(id weakSender) {
-//            if (![self.account isValidPhone]) {
-//                [SFHUD showInfoToast:@"请输入正确的手机号"];
-//                return ;
-//            }
-//            if (!self.password.length) {
-//                [SFHUD showInfoToast:@"请输入密码"];
-//                return ;
-//            }
+            if (![self.account isValidPhone]) {
+                [SFHUD showInfoToast:@"请输入正确的手机号"];
+                return ;
+            }
+            if (!self.password.length) {
+                [SFHUD showInfoToast:@"请输入密码"];
+                return ;
+            }
 //            SFLoginApi *api = [[SFLoginApi alloc] initWithAccount:weakSelf.account password:weakSelf.password];
 //            api.delegate = weakSelf;
 //            api.hudType = SFHUDTypeProgressAlert;

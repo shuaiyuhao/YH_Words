@@ -15,6 +15,7 @@ target 'YH_Words' do
   pod 'JXCategoryView'
   pod "CTMediator"
   pod 'PNChart'
+  pod 'MJRefresh'
 
   target 'YH_WordsTests' do
     inherit! :search_paths

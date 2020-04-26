@@ -114,10 +114,12 @@ static CGFloat const Qi_SpringVelocity = 0.8f;
 - (void)didPanStateEnded {
     // 右滑移除
     if (self.currentPoint.x > self.maxRemoveDistance) {
+         self.cardDirection = QiCardCellSwipeDirectionRight;
         __block UIView *snapshotView = [self snapshotViewAfterScreenUpdates:NO];
         snapshotView.transform = self.transform;
         [self.superview.superview addSubview:snapshotView];
         [self didCellRemoveFromSuperview];
+       
         
         CGFloat endCenterX = [UIScreen mainScreen].bounds.size.width/2 + self.frame.size.width * 1.5;
         [UIView animateWithDuration:Qi_DefaultDuration animations:^{
@@ -130,10 +132,12 @@ static CGFloat const Qi_SpringVelocity = 0.8f;
     }
     // 左滑移除
     else if (self.currentPoint.x < -self.maxRemoveDistance) {
+         self.cardDirection = QiCardCellSwipeDirectionLeft;
         __block UIView *snapshotView = [self snapshotViewAfterScreenUpdates:NO];
         snapshotView.transform = self.transform;
         [self.superview.superview addSubview:snapshotView];
         [self didCellRemoveFromSuperview];
+       
         
         CGFloat endCenterX = -([UIScreen mainScreen].bounds.size.width/2 + self.frame.size.width);
         [UIView animateWithDuration:Qi_DefaultDuration animations:^{
@@ -176,10 +180,12 @@ static CGFloat const Qi_SpringVelocity = 0.8f;
     
     switch (direction) {
         case QiCardCellSwipeDirectionLeft: {
+            self.cardDirection = QiCardCellSwipeDirectionLeft;
             [self removeFromSuperviewLeft];
         }
             break;
         case QiCardCellSwipeDirectionRight: {
+            self.cardDirection = QiCardCellSwipeDirectionRight;
             [self removeFromSuperviewRight];
         }
             break;

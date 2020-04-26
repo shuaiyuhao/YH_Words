@@ -34,6 +34,8 @@ typedef NS_ENUM(NSInteger,QiCardCellSwipeDirection) {
 @property (nonatomic, assign) CGFloat maxRemoveDistance;
 @property (nonatomic, weak) id<QiCardViewCellDelagate> cell_delegate;
 
+@property (nonatomic, assign) QiCardCellSwipeDirection cardDirection;
+
 /*!
  @brief 初始化方法
  @param reuseIdentifier 复用id

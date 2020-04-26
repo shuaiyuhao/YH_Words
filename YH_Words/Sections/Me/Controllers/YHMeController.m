@@ -11,6 +11,9 @@
 #import "YHButtonCollectionViewCell.h"
 #import "YHTodayDataCollectionViewCell.h"
 #import "YHTodayBrowseCell.h"
+#import "YHRememberedWordController.h"
+#import "YHFuzzyWordController.h"
+#import "YHFavoriteWordController.h"
 
 @interface YHMeController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -18,6 +21,7 @@
 @property (nonatomic,strong) UIView *headerView;
 @property (nonatomic,strong) UIView *footerView;
 
+@property (nonatomic,strong) NSArray *buttonArray;
 @end
 
 @implementation YHMeController
@@ -61,18 +65,33 @@
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         YHButtonCollectionViewCell *cell = [collectionView  dequeueReusableCellWithReuseIdentifier:[YHButtonCollectionViewCell cellIdentifier] forIndexPath:indexPath];
-//        [cell configWithData:nil];
+        [cell configWithData:self.buttonArray];
+        
+        [cell setButton1TappedBlock:^{
+            YHRememberedWordController *vc = [YHRememberedWordController new];
+            [self.navigationController pushViewController:vc animated:true];
+        }];
+        
+        [cell setButton2TappedBlock:^{
+            YHFuzzyWordController *vc = [YHFuzzyWordController new];
+            [self.navigationController pushViewController:vc animated:true];
+        }];
+        
+        [cell setButton3TappedBlock:^{
+            YHFavoriteWordController *vc = [YHFavoriteWordController new];
+            [self.navigationController pushViewController:vc animated:true];
+        }];
         
         return cell;
     } else if (indexPath.row == 1) {
         YHTodayDataCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[YHTodayDataCollectionViewCell cellIdentifier] forIndexPath:indexPath];
         
-        [cell configWithData:@""];
+        [cell configTitle:@"今日浏览"];
         return cell;
     } else if (indexPath.row == 2) {
         YHTodayDataCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[YHTodayDataCollectionViewCell cellIdentifier] forIndexPath:indexPath];
         
-        [cell configWithData:@""];
+        [cell configTitle:@"今日模糊"];
         return cell;
     } else {
         YHTodayBrowseCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[YHTodayBrowseCell cellIdentifier] forIndexPath:indexPath];
@@ -195,5 +214,27 @@
         }];
     }
     return _footerView;
+}
+
+- (NSArray *)buttonArray {
+    if (!_buttonArray) {
+        _buttonArray = @[
+            @{
+                @"title":@"记忆单词",
+                @"image":@"ic_smile"
+            },
+            @{
+                @"title":@"模糊单词",
+                @"image":@"ic_cry"
+            },
+            
+            @{
+                @"title":@"收藏单词",
+                @"image":@"ic_like"
+            },
+            
+        ];
+    }
+    return _buttonArray;
 }
 @end

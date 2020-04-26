@@ -90,14 +90,21 @@ static NSString * const wordCardCellId = @"YHWordCardCellId";
 
 - (void)cardView:(QiCardView *)cardView didRemoveCell:(QiCardViewCell *)cell forRowAtIndex:(NSInteger)index {
     NSLog(@"didRemoveCell forRowAtIndex = %ld", index);
+    
+    if ((cell.cardDirection == QiCardCellSwipeDirectionLeft)) {
+        NSLog(@"left");
+    }
+    if (((cell.cardDirection == QiCardCellSwipeDirectionRight))) {
+        NSLog(@"right");
+    }
 }
 
 - (void)cardView:(QiCardView *)cardView didDisplayCell:(QiCardViewCell *)cell forRowAtIndex:(NSInteger)index {
 
-    NSLog(@"didDisplayCell forRowAtIndex = %ld", index);
+//    NSLog(@"didDisplayCell forRowAtIndex = %ld", index);
 
-    NSLog(@"currentFirstIndex = %ld",cardView.currentFirstIndex);
-    NSLog(@"%ld",index);
+//    NSLog(@"currentFirstIndex = %ld",cardView.currentFirstIndex);
+//    NSLog(@"%ld",index);
 }
 
 - (void)cardView:(QiCardView *)cardView didMoveCell:(QiCardViewCell *)cell forMovePoint:(CGPoint)point {

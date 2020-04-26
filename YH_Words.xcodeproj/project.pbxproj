@@ -10,6 +10,7 @@
 		106F10BA64C390796328F4FC /* libPods-YH_WordsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 295A55EC31F27A849D3F43F9 /* libPods-YH_WordsTests.a */; };
 		3656AAFD2452EF1F0035ED8C /* YHSearchWordApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 3656AAFC2452EF1F0035ED8C /* YHSearchWordApi.m */; };
 		3656AB00245300C90035ED8C /* YHMD5Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3656AAFF245300C90035ED8C /* YHMD5Tool.m */; };
+		3656AB052455D84D0035ED8C /* YHWordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3656AB042455D84D0035ED8C /* YHWordTableViewCell.m */; };
 		365F470223CB1F4B0073FB73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 365F470123CB1F4B0073FB73 /* AppDelegate.m */; };
 		365F470823CB1F4B0073FB73 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 365F470723CB1F4B0073FB73 /* ViewController.m */; };
 		365F470B23CB1F4B0073FB73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 365F470923CB1F4B0073FB73 /* Main.storyboard */; };
@@ -91,6 +92,9 @@
 		36DE7374243372CC0072D31E /* YHMemoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DE7373243372CC0072D31E /* YHMemoryController.m */; };
 		36DE7377243372DD0072D31E /* YHReviseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DE7376243372DD0072D31E /* YHReviseController.m */; };
 		36DE737A243373010072D31E /* YHWordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DE7379243373010072D31E /* YHWordController.m */; };
+		36E2967D2455FDE3007A0978 /* YHRememberedWordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E2967C2455FDE3007A0978 /* YHRememberedWordController.m */; };
+		36E2968024560685007A0978 /* YHFuzzyWordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E2967F24560685007A0978 /* YHFuzzyWordController.m */; };
+		36E29683245606C7007A0978 /* YHFavoriteWordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E29682245606C7007A0978 /* YHFavoriteWordController.m */; };
 		D73027A5DD19E09E0BD302A3 /* libPods-YH_Words-YH_WordsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E95F91FA90EDC0F2B8BBFB /* libPods-YH_Words-YH_WordsUITests.a */; };
 		F627D10C826256C73F374A95 /* libPods-YH_Words.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3E337E758199A8C9EBFAF5 /* libPods-YH_Words.a */; };
 /* End PBXBuildFile section */
@@ -119,6 +123,8 @@
 		3656AAFC2452EF1F0035ED8C /* YHSearchWordApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = YHSearchWordApi.m; path = YH_Words/Sections/Word/Controllers/YHSearchWordApi.m; sourceTree = SOURCE_ROOT; };
 		3656AAFE245300C90035ED8C /* YHMD5Tool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHMD5Tool.h; sourceTree = "<group>"; };
 		3656AAFF245300C90035ED8C /* YHMD5Tool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHMD5Tool.m; sourceTree = "<group>"; };
+		3656AB032455D84D0035ED8C /* YHWordTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHWordTableViewCell.h; sourceTree = "<group>"; };
+		3656AB042455D84D0035ED8C /* YHWordTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHWordTableViewCell.m; sourceTree = "<group>"; };
 		365F46FD23CB1F4B0073FB73 /* YH_Words.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YH_Words.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		365F470023CB1F4B0073FB73 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		365F470123CB1F4B0073FB73 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -283,6 +289,12 @@
 		36DE7376243372DD0072D31E /* YHReviseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHReviseController.m; sourceTree = "<group>"; };
 		36DE7378243373010072D31E /* YHWordController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHWordController.h; sourceTree = "<group>"; };
 		36DE7379243373010072D31E /* YHWordController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHWordController.m; sourceTree = "<group>"; };
+		36E2967B2455FDE3007A0978 /* YHRememberedWordController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHRememberedWordController.h; sourceTree = "<group>"; };
+		36E2967C2455FDE3007A0978 /* YHRememberedWordController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHRememberedWordController.m; sourceTree = "<group>"; };
+		36E2967E24560685007A0978 /* YHFuzzyWordController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHFuzzyWordController.h; sourceTree = "<group>"; };
+		36E2967F24560685007A0978 /* YHFuzzyWordController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHFuzzyWordController.m; sourceTree = "<group>"; };
+		36E29681245606C7007A0978 /* YHFavoriteWordController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHFavoriteWordController.h; sourceTree = "<group>"; };
+		36E29682245606C7007A0978 /* YHFavoriteWordController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHFavoriteWordController.m; sourceTree = "<group>"; };
 		47FE0666851F975E77E6C0EA /* Pods-YH_Words-YH_WordsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YH_Words-YH_WordsUITests.debug.xcconfig"; path = "Target Support Files/Pods-YH_Words-YH_WordsUITests/Pods-YH_Words-YH_WordsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A63B47ACCEFEF3E2FD46EA4 /* Pods-YH_Words-YH_WordsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YH_Words-YH_WordsUITests.release.xcconfig"; path = "Target Support Files/Pods-YH_Words-YH_WordsUITests/Pods-YH_Words-YH_WordsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		620399AD313830119DA8ACD2 /* Pods-YH_WordsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YH_WordsTests.debug.xcconfig"; path = "Target Support Files/Pods-YH_WordsTests/Pods-YH_WordsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -320,6 +332,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3656AB01245598420035ED8C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3656AB022455D8040035ED8C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3656AB032455D84D0035ED8C /* YHWordTableViewCell.h */,
+				3656AB042455D84D0035ED8C /* YHWordTableViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		365F46F423CB1F4B0073FB73 = {
 			isa = PBXGroup;
 			children = (
@@ -386,10 +414,10 @@
 		36604712245064160028099A /* QiCardView */ = {
 			isa = PBXGroup;
 			children = (
-				36604713245064160028099A /* QiCardViewCell.h */,
-				36604714245064160028099A /* QiCardView.m */,
-				36604715245064160028099A /* QiCardViewCell.m */,
 				36604716245064160028099A /* QiCardView.h */,
+				36604714245064160028099A /* QiCardView.m */,
+				36604713245064160028099A /* QiCardViewCell.h */,
+				36604715245064160028099A /* QiCardViewCell.m */,
 			);
 			path = QiCardView;
 			sourceTree = "<group>";
@@ -430,6 +458,12 @@
 			children = (
 				36DE7367243371660072D31E /* YHMeController.h */,
 				36DE7368243371660072D31E /* YHMeController.m */,
+				36E2967B2455FDE3007A0978 /* YHRememberedWordController.h */,
+				36E2967C2455FDE3007A0978 /* YHRememberedWordController.m */,
+				36E2967E24560685007A0978 /* YHFuzzyWordController.h */,
+				36E2967F24560685007A0978 /* YHFuzzyWordController.m */,
+				36E29681245606C7007A0978 /* YHFavoriteWordController.h */,
+				36E29682245606C7007A0978 /* YHFavoriteWordController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -769,6 +803,8 @@
 		36DE736F2433724F0072D31E /* Revise */ = {
 			isa = PBXGroup;
 			children = (
+				3656AB022455D8040035ED8C /* Views */,
+				3656AB01245598420035ED8C /* Model */,
 				36DE73702433728C0072D31E /* Controllers */,
 			);
 			path = Revise;
@@ -1063,6 +1099,7 @@
 				3686315D241935E700A65AA0 /* NSMutableAttributedString+SFCalSize.m in Sources */,
 				36863163241935E700A65AA0 /* NSTimer+SFBlockSupport.m in Sources */,
 				368630E12419354000A65AA0 /* UIButton+SFBuilder.m in Sources */,
+				36E2968024560685007A0978 /* YHFuzzyWordController.m in Sources */,
 				3686314B241935E700A65AA0 /* UIView+SFAddLine.m in Sources */,
 				3686315F241935E700A65AA0 /* NSTimer+Addition.m in Sources */,
 				365F470823CB1F4B0073FB73 /* ViewController.m in Sources */,
@@ -1088,6 +1125,7 @@
 				3686313C241935E700A65AA0 /* UIViewController+SFLoading.m in Sources */,
 				368630DB2419354000A65AA0 /* SFTextFieldBuilder.m in Sources */,
 				36862E64241917A500A65AA0 /* YHBaseController.m in Sources */,
+				3656AB052455D84D0035ED8C /* YHWordTableViewCell.m in Sources */,
 				36863158241935E700A65AA0 /* NSString+SFImageProcess.m in Sources */,
 				3686314A241935E700A65AA0 /* UITextField+SFFly.m in Sources */,
 				36863150241935E700A65AA0 /* UITextField+SFUtils.m in Sources */,
@@ -1100,6 +1138,7 @@
 				36863142241935E700A65AA0 /* UIImage+SFAdd.m in Sources */,
 				36863152241935E700A65AA0 /* MKMapView+ZoomLevel.m in Sources */,
 				36DE7377243372DD0072D31E /* YHReviseController.m in Sources */,
+				36E2967D2455FDE3007A0978 /* YHRememberedWordController.m in Sources */,
 				3686314E241935E700A65AA0 /* UIView+SFShadow.m in Sources */,
 				36863146241935E700A65AA0 /* UIGestureRecognizer+SFFly.m in Sources */,
 				3686313F241935E700A65AA0 /* UIViewController+SFAdd.m in Sources */,
@@ -1122,6 +1161,7 @@
 				36863162241935E700A65AA0 /* NSArray+SFSwizzling.m in Sources */,
 				3686313D241935E700A65AA0 /* UIImageView+Letters.m in Sources */,
 				368630DD2419354000A65AA0 /* UILabel+SFBuilder.m in Sources */,
+				36E29683245606C7007A0978 /* YHFavoriteWordController.m in Sources */,
 				3686314D241935E700A65AA0 /* UIDevice+SFAdd.m in Sources */,
 				3686315C241935E700A65AA0 /* NSSet+SFLog.m in Sources */,
 				36A58F7B244F3AE30011A8B3 /* YHTodayBrowseCell.m in Sources */,

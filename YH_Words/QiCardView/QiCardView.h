@@ -27,6 +27,8 @@
 - (void)cardView:(QiCardView *)cardView didRemoveLastCell:(QiCardViewCell *)cell forRowAtIndex:(NSInteger)index;
 - (void)cardView:(QiCardView *)cardView didDisplayCell:(QiCardViewCell *)cell forRowAtIndex:(NSInteger)index;
 - (void)cardView:(QiCardView *)cardView didMoveCell:(QiCardViewCell *)cell forMovePoint:(CGPoint)point;
+- (void)cardView:(QiCardView *)cardView didRemoveCellFromLeft:(QiCardViewCell *)cell forRowAtIndex:(NSInteger)index;
+- (void)cardView:(QiCardView *)cardView didRemoveCellFromRight:(QiCardViewCell *)cell forRowAtIndex:(NSInteger)index;
 
 @end
 

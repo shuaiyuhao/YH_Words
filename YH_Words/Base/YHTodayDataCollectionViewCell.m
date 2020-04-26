@@ -69,6 +69,12 @@
     }
 }
 
+- (void)configTitle:(NSString *)title {
+    if (title && [title isKindOfClass:[NSString class]]) {
+        self.titleLabel.text = title;
+    }
+}
+
 #pragma mark - getter and setter
 #pragma mark -
 - (UILabel *)titleLabel {

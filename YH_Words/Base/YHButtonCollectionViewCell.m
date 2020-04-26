@@ -7,6 +7,8 @@
 //
 
 #import "YHButtonCollectionViewCell.h"
+#import "UIControl+SFActionBlock.h"
+#import "AppMacros.h"
 
 @interface YHButtonCollectionViewCell ()
 
@@ -60,12 +62,12 @@
     }];
     
     [self.button1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.lineView1.mas_left).offset(-23);
+        make.right.equalTo(self.lineView1.mas_left).offset(-28);
         make.centerY.equalTo(self.contentView);
     }];
     
     [self.button3 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.lineView2.mas_right).offset(23);
+        make.left.equalTo(self.lineView2.mas_right).offset(28);
         make.centerY.equalTo(self.contentView);
     }];
 }
@@ -76,11 +78,18 @@
 }
 
 - (void)configWithData:(id)data {
-    if (data && [data isKindOfClass:[NSDictionary class]]) {
-        NSDictionary *dic = data;
-        [_button1 setImage:[UIImage imageNamed:dic[@"image1"]] forState:UIControlStateNormal];
-        [_button1 setImage:[UIImage imageNamed:dic[@"image2"]] forState:UIControlStateNormal];
-        [_button1 setImage:[UIImage imageNamed:dic[@"image3"]] forState:UIControlStateNormal];
+    if (data && [data isKindOfClass:[NSArray class]]) {
+        [self.button1 setImage:[UIImage imageNamed:data[0][@"image"]] forState:UIControlStateNormal];
+        [self.button1 setTitle:data[0][@"title"] forState:UIControlStateNormal];
+        [_button1 setImagePosition:SFImagePositionTop spacing:7];
+        
+        [self.button2 setImage:[UIImage imageNamed:data[1][@"image"]] forState:UIControlStateNormal];
+        [self.button2 setTitle:data[1][@"title"] forState:UIControlStateNormal];
+        [_button2 setImagePosition:SFImagePositionTop spacing:7];
+        
+        [self.button3 setImage:[UIImage imageNamed:data[2][@"image"]] forState:UIControlStateNormal];
+        [self.button3 setTitle:data[2][@"title"] forState:UIControlStateNormal];
+        [_button3 setImagePosition:SFImagePositionTop spacing:7];
     }
 }
 
@@ -89,12 +98,16 @@
 - (UIButton *)button1 {
     if (!_button1) {
         _button1 = UIButton.builder()
-        .image([UIImage imageNamed:@"ic_smile"])
-        .title(@"记忆单词")
         .font([UIFont systemFontOfSize:12])
         .build();
         
-        [_button1 setImagePosition:SFImagePositionTop spacing:7];
+        
+        WeakSelf;
+        [self.button1 sf_addHandler:^(id weakSender) {
+            if (weakSelf.button1TappedBlock) {
+                weakSelf.button1TappedBlock();
+            }
+        } forControlEvents:UIControlEventTouchUpInside];
     }
     return _button1;
 }
@@ -102,12 +115,15 @@
 - (UIButton *)button2 {
     if (!_button2) {
         _button2 = UIButton.builder()
-        .image([UIImage imageNamed:@"ic_cry"])
-        .title(@"模糊单词")
         .font([UIFont systemFontOfSize:12])
         .build();
-        
-        [_button2 setImagePosition:SFImagePositionTop spacing:7];
+    
+        WeakSelf;
+        [self.button2 sf_addHandler:^(id weakSender) {
+            if (weakSelf.button2TappedBlock) {
+                weakSelf.button2TappedBlock();
+            }
+        } forControlEvents:UIControlEventTouchUpInside];
     }
     return _button2;
 }
@@ -115,12 +131,15 @@
 - (UIButton *)button3 {
     if (!_button3) {
         _button3 = UIButton.builder()
-        .image([UIImage imageNamed:@"ic_like"])
-        .title(@"收藏单词")
         .font([UIFont systemFontOfSize:12])
         .build();
         
-        [_button3 setImagePosition:SFImagePositionTop spacing:7];
+        WeakSelf;
+        [self.button3 sf_addHandler:^(id weakSender) {
+            if (weakSelf.button3TappedBlock) {
+                weakSelf.button3TappedBlock();
+            }
+        } forControlEvents:UIControlEventTouchUpInside];
     }
     return _button3;
 }
