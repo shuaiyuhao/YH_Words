@@ -95,6 +95,25 @@
 		36E2967D2455FDE3007A0978 /* YHRememberedWordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E2967C2455FDE3007A0978 /* YHRememberedWordController.m */; };
 		36E2968024560685007A0978 /* YHFuzzyWordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E2967F24560685007A0978 /* YHFuzzyWordController.m */; };
 		36E29683245606C7007A0978 /* YHFavoriteWordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E29682245606C7007A0978 /* YHFavoriteWordController.m */; };
+		36FC4368245A4451006569F0 /* YHAddPlanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FC4367245A4451006569F0 /* YHAddPlanController.m */; };
+		36FC436B245E460D006569F0 /* YHSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FC436A245E460D006569F0 /* YHSettingController.m */; };
+		36FC436E245E4BB9006569F0 /* YHMeSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FC436D245E4BB9006569F0 /* YHMeSettingCell.m */; };
+		36FC4386245E532F006569F0 /* SFTitleFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FC4372245E532F006569F0 /* SFTitleFieldCell.m */; };
+		36FC4387245E532F006569F0 /* SFTitleValueCopyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FC4374245E532F006569F0 /* SFTitleValueCopyCell.m */; };
+		36FC4388245E532F006569F0 /* SFTitleSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FC4375245E532F006569F0 /* SFTitleSwitchCell.m */; };
+		36FC4389245E532F006569F0 /* SFTitleTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FC4376245E532F006569F0 /* SFTitleTextViewCell.m */; };
+		36FC438A245E532F006569F0 /* SFImagesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FC4378245E532F006569F0 /* SFImagesCell.m */; };
+		36FC438D245E532F006569F0 /* SFTitleValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FC437F245E532F006569F0 /* SFTitleValueCell.m */; };
+		36FC438E245E532F006569F0 /* SFTitleValueMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FC4380245E532F006569F0 /* SFTitleValueMoreCell.m */; };
+		36FC438F245E532F006569F0 /* SFImageCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FC4382245E532F006569F0 /* SFImageCCell.m */; };
+		36FC4390245E532F006569F0 /* SFTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FC4384245E532F006569F0 /* SFTextViewCell.m */; };
+		36FC439C245E6126006569F0 /* SFTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FC4392245E6126006569F0 /* SFTableViewDataSource.m */; };
+		36FC439D245E6126006569F0 /* SFBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FC4393245E6126006569F0 /* SFBaseTableViewCell.m */; };
+		36FC439E245E6126006569F0 /* SFBaseTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FC4396245E6126006569F0 /* SFBaseTableViewModel.m */; };
+		36FC439F245E6126006569F0 /* SFTableViewSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FC4399245E6126006569F0 /* SFTableViewSectionModel.m */; };
+		36FC43A0245E6126006569F0 /* SFTableViewItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FC439A245E6126006569F0 /* SFTableViewItemModel.m */; };
+		36FC43A3245E62A1006569F0 /* UIColor+SFUIConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FC43A1245E62A1006569F0 /* UIColor+SFUIConfig.m */; };
+		36FC43A6245F6E83006569F0 /* YHRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FC43A5245F6E83006569F0 /* YHRegisterController.m */; };
 		D73027A5DD19E09E0BD302A3 /* libPods-YH_Words-YH_WordsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E95F91FA90EDC0F2B8BBFB /* libPods-YH_Words-YH_WordsUITests.a */; };
 		F627D10C826256C73F374A95 /* libPods-YH_Words.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3E337E758199A8C9EBFAF5 /* libPods-YH_Words.a */; };
 /* End PBXBuildFile section */
@@ -295,6 +314,44 @@
 		36E2967F24560685007A0978 /* YHFuzzyWordController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHFuzzyWordController.m; sourceTree = "<group>"; };
 		36E29681245606C7007A0978 /* YHFavoriteWordController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHFavoriteWordController.h; sourceTree = "<group>"; };
 		36E29682245606C7007A0978 /* YHFavoriteWordController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHFavoriteWordController.m; sourceTree = "<group>"; };
+		36FC4366245A4451006569F0 /* YHAddPlanController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHAddPlanController.h; sourceTree = "<group>"; };
+		36FC4367245A4451006569F0 /* YHAddPlanController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHAddPlanController.m; sourceTree = "<group>"; };
+		36FC4369245E460D006569F0 /* YHSettingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHSettingController.h; sourceTree = "<group>"; };
+		36FC436A245E460D006569F0 /* YHSettingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHSettingController.m; sourceTree = "<group>"; };
+		36FC436C245E4BB9006569F0 /* YHMeSettingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = YHMeSettingCell.h; path = YH_Words/Sections/Me/Controllers/YHMeSettingCell.h; sourceTree = SOURCE_ROOT; };
+		36FC436D245E4BB9006569F0 /* YHMeSettingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = YHMeSettingCell.m; path = YH_Words/Sections/Me/Controllers/YHMeSettingCell.m; sourceTree = SOURCE_ROOT; };
+		36FC4371245E532F006569F0 /* SFTitleValueMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTitleValueMoreCell.h; sourceTree = "<group>"; };
+		36FC4372245E532F006569F0 /* SFTitleFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTitleFieldCell.m; sourceTree = "<group>"; };
+		36FC4373245E532F006569F0 /* SFTitleValueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTitleValueCell.h; sourceTree = "<group>"; };
+		36FC4374245E532F006569F0 /* SFTitleValueCopyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTitleValueCopyCell.m; sourceTree = "<group>"; };
+		36FC4375245E532F006569F0 /* SFTitleSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTitleSwitchCell.m; sourceTree = "<group>"; };
+		36FC4376245E532F006569F0 /* SFTitleTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTitleTextViewCell.m; sourceTree = "<group>"; };
+		36FC4377245E532F006569F0 /* SFImageCCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFImageCCell.h; sourceTree = "<group>"; };
+		36FC4378245E532F006569F0 /* SFImagesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFImagesCell.m; sourceTree = "<group>"; };
+		36FC437A245E532F006569F0 /* SFTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTextViewCell.h; sourceTree = "<group>"; };
+		36FC437C245E532F006569F0 /* SFTitleSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTitleSwitchCell.h; sourceTree = "<group>"; };
+		36FC437D245E532F006569F0 /* SFTitleValueCopyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTitleValueCopyCell.h; sourceTree = "<group>"; };
+		36FC437E245E532F006569F0 /* SFTitleFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTitleFieldCell.h; sourceTree = "<group>"; };
+		36FC437F245E532F006569F0 /* SFTitleValueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTitleValueCell.m; sourceTree = "<group>"; };
+		36FC4380245E532F006569F0 /* SFTitleValueMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTitleValueMoreCell.m; sourceTree = "<group>"; };
+		36FC4381245E532F006569F0 /* SFImagesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFImagesCell.h; sourceTree = "<group>"; };
+		36FC4382245E532F006569F0 /* SFImageCCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFImageCCell.m; sourceTree = "<group>"; };
+		36FC4383245E532F006569F0 /* SFTitleTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTitleTextViewCell.h; sourceTree = "<group>"; };
+		36FC4384245E532F006569F0 /* SFTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTextViewCell.m; sourceTree = "<group>"; };
+		36FC4392245E6126006569F0 /* SFTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTableViewDataSource.m; sourceTree = "<group>"; };
+		36FC4393245E6126006569F0 /* SFBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFBaseTableViewCell.m; sourceTree = "<group>"; };
+		36FC4394245E6126006569F0 /* SFTableViewSectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTableViewSectionModel.h; sourceTree = "<group>"; };
+		36FC4395245E6126006569F0 /* SFTableViewItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTableViewItemModel.h; sourceTree = "<group>"; };
+		36FC4396245E6126006569F0 /* SFBaseTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFBaseTableViewModel.m; sourceTree = "<group>"; };
+		36FC4397245E6126006569F0 /* SFBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFBaseTableViewCell.h; sourceTree = "<group>"; };
+		36FC4398245E6126006569F0 /* SFTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFTableViewDataSource.h; sourceTree = "<group>"; };
+		36FC4399245E6126006569F0 /* SFTableViewSectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTableViewSectionModel.m; sourceTree = "<group>"; };
+		36FC439A245E6126006569F0 /* SFTableViewItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTableViewItemModel.m; sourceTree = "<group>"; };
+		36FC439B245E6126006569F0 /* SFBaseTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFBaseTableViewModel.h; sourceTree = "<group>"; };
+		36FC43A1245E62A1006569F0 /* UIColor+SFUIConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SFUIConfig.m"; sourceTree = "<group>"; };
+		36FC43A2245E62A1006569F0 /* UIColor+SFUIConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SFUIConfig.h"; sourceTree = "<group>"; };
+		36FC43A4245F6E83006569F0 /* YHRegisterController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHRegisterController.h; sourceTree = "<group>"; };
+		36FC43A5245F6E83006569F0 /* YHRegisterController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHRegisterController.m; sourceTree = "<group>"; };
 		47FE0666851F975E77E6C0EA /* Pods-YH_Words-YH_WordsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YH_Words-YH_WordsUITests.debug.xcconfig"; path = "Target Support Files/Pods-YH_Words-YH_WordsUITests/Pods-YH_Words-YH_WordsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A63B47ACCEFEF3E2FD46EA4 /* Pods-YH_Words-YH_WordsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YH_Words-YH_WordsUITests.release.xcconfig"; path = "Target Support Files/Pods-YH_Words-YH_WordsUITests/Pods-YH_Words-YH_WordsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		620399AD313830119DA8ACD2 /* Pods-YH_WordsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YH_WordsTests.debug.xcconfig"; path = "Target Support Files/Pods-YH_WordsTests/Pods-YH_WordsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -442,6 +499,8 @@
 				36A58F74244EDBF10011A8B3 /* YHButtonCollectionViewCell.m */,
 				36A58F79244F3AE30011A8B3 /* YHTodayBrowseCell.h */,
 				36A58F7A244F3AE30011A8B3 /* YHTodayBrowseCell.m */,
+				36FC436C245E4BB9006569F0 /* YHMeSettingCell.h */,
+				36FC436D245E4BB9006569F0 /* YHMeSettingCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -464,6 +523,8 @@
 				36E2967F24560685007A0978 /* YHFuzzyWordController.m */,
 				36E29681245606C7007A0978 /* YHFavoriteWordController.h */,
 				36E29682245606C7007A0978 /* YHFavoriteWordController.m */,
+				36FC4369245E460D006569F0 /* YHSettingController.h */,
+				36FC436A245E460D006569F0 /* YHSettingController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -507,22 +568,22 @@
 		368630CA2419354000A65AA0 /* SFBuilder */ = {
 			isa = PBXGroup;
 			children = (
-				368630CB2419354000A65AA0 /* SFTextFieldBuilder.m */,
-				368630CC2419354000A65AA0 /* SFLabelBuilder.m */,
-				368630CD2419354000A65AA0 /* UIButton+SFBuilder.h */,
-				368630CE2419354000A65AA0 /* UILabel+SFBuilder.m */,
-				368630CF2419354000A65AA0 /* UITextField+SFBuilder.m */,
-				368630D02419354000A65AA0 /* SFImageViewBuilder.m */,
-				368630D12419354000A65AA0 /* UIImageView+SFBuilder.h */,
-				368630D22419354000A65AA0 /* SFButtonBuilder.m */,
-				368630D32419354000A65AA0 /* SFTextFieldBuilder.h */,
-				368630D42419354000A65AA0 /* UIButton+SFBuilder.m */,
-				368630D52419354000A65AA0 /* SFLabelBuilder.h */,
-				368630D62419354000A65AA0 /* UITextField+SFBuilder.h */,
-				368630D72419354000A65AA0 /* UILabel+SFBuilder.h */,
 				368630D82419354000A65AA0 /* SFButtonBuilder.h */,
-				368630D92419354000A65AA0 /* UIImageView+SFBuilder.m */,
+				368630D22419354000A65AA0 /* SFButtonBuilder.m */,
 				368630DA2419354000A65AA0 /* SFImageViewBuilder.h */,
+				368630D02419354000A65AA0 /* SFImageViewBuilder.m */,
+				368630D52419354000A65AA0 /* SFLabelBuilder.h */,
+				368630CC2419354000A65AA0 /* SFLabelBuilder.m */,
+				368630D32419354000A65AA0 /* SFTextFieldBuilder.h */,
+				368630CB2419354000A65AA0 /* SFTextFieldBuilder.m */,
+				368630CD2419354000A65AA0 /* UIButton+SFBuilder.h */,
+				368630D42419354000A65AA0 /* UIButton+SFBuilder.m */,
+				368630D12419354000A65AA0 /* UIImageView+SFBuilder.h */,
+				368630D92419354000A65AA0 /* UIImageView+SFBuilder.m */,
+				368630D72419354000A65AA0 /* UILabel+SFBuilder.h */,
+				368630CE2419354000A65AA0 /* UILabel+SFBuilder.m */,
+				368630D62419354000A65AA0 /* UITextField+SFBuilder.h */,
+				368630CF2419354000A65AA0 /* UITextField+SFBuilder.m */,
 			);
 			path = SFBuilder;
 			sourceTree = "<group>";
@@ -657,6 +718,8 @@
 			children = (
 				3686316924196B1F00A65AA0 /* YHLoginController.h */,
 				3686316A24196B1F00A65AA0 /* YHLoginController.m */,
+				36FC43A4245F6E83006569F0 /* YHRegisterController.h */,
+				36FC43A5245F6E83006569F0 /* YHRegisterController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -689,6 +752,8 @@
 		368631762419700600A65AA0 /* AppConfig */ = {
 			isa = PBXGroup;
 			children = (
+				36FC43A2245E62A1006569F0 /* UIColor+SFUIConfig.h */,
+				36FC43A1245E62A1006569F0 /* UIColor+SFUIConfig.m */,
 				36863177241971C600A65AA0 /* AppMacros.h */,
 				368631782419724200A65AA0 /* AppConstant.h */,
 			);
@@ -710,6 +775,8 @@
 		3686317D2419778700A65AA0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				36FC4391245E6126006569F0 /* SFCompoentTableView */,
+				36FC436F245E532F006569F0 /* Cells */,
 				3686317E241977A800A65AA0 /* NSObject+SFHelper.h */,
 				3686317F241977A800A65AA0 /* NSObject+SFHelper.m */,
 			);
@@ -815,6 +882,8 @@
 			children = (
 				36DE7375243372DD0072D31E /* YHReviseController.h */,
 				36DE7376243372DD0072D31E /* YHReviseController.m */,
+				36FC4366245A4451006569F0 /* YHAddPlanController.h */,
+				36FC4367245A4451006569F0 /* YHAddPlanController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -826,6 +895,48 @@
 				36DE7373243372CC0072D31E /* YHMemoryController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		36FC436F245E532F006569F0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				36FC4377245E532F006569F0 /* SFImageCCell.h */,
+				36FC4382245E532F006569F0 /* SFImageCCell.m */,
+				36FC4381245E532F006569F0 /* SFImagesCell.h */,
+				36FC4378245E532F006569F0 /* SFImagesCell.m */,
+				36FC437A245E532F006569F0 /* SFTextViewCell.h */,
+				36FC4384245E532F006569F0 /* SFTextViewCell.m */,
+				36FC437E245E532F006569F0 /* SFTitleFieldCell.h */,
+				36FC4372245E532F006569F0 /* SFTitleFieldCell.m */,
+				36FC437C245E532F006569F0 /* SFTitleSwitchCell.h */,
+				36FC4375245E532F006569F0 /* SFTitleSwitchCell.m */,
+				36FC4383245E532F006569F0 /* SFTitleTextViewCell.h */,
+				36FC4376245E532F006569F0 /* SFTitleTextViewCell.m */,
+				36FC4373245E532F006569F0 /* SFTitleValueCell.h */,
+				36FC437F245E532F006569F0 /* SFTitleValueCell.m */,
+				36FC437D245E532F006569F0 /* SFTitleValueCopyCell.h */,
+				36FC4374245E532F006569F0 /* SFTitleValueCopyCell.m */,
+				36FC4371245E532F006569F0 /* SFTitleValueMoreCell.h */,
+				36FC4380245E532F006569F0 /* SFTitleValueMoreCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		36FC4391245E6126006569F0 /* SFCompoentTableView */ = {
+			isa = PBXGroup;
+			children = (
+				36FC4392245E6126006569F0 /* SFTableViewDataSource.m */,
+				36FC4393245E6126006569F0 /* SFBaseTableViewCell.m */,
+				36FC4394245E6126006569F0 /* SFTableViewSectionModel.h */,
+				36FC4395245E6126006569F0 /* SFTableViewItemModel.h */,
+				36FC4396245E6126006569F0 /* SFBaseTableViewModel.m */,
+				36FC4397245E6126006569F0 /* SFBaseTableViewCell.h */,
+				36FC4398245E6126006569F0 /* SFTableViewDataSource.h */,
+				36FC4399245E6126006569F0 /* SFTableViewSectionModel.m */,
+				36FC439A245E6126006569F0 /* SFTableViewItemModel.m */,
+				36FC439B245E6126006569F0 /* SFBaseTableViewModel.h */,
+			);
+			path = SFCompoentTableView;
 			sourceTree = "<group>";
 		};
 		3B10F3C437216E37402868EE /* Frameworks */ = {
@@ -1090,10 +1201,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3660471B245086EA0028099A /* YHWordCardCell.m in Sources */,
+				36FC439D245E6126006569F0 /* SFBaseTableViewCell.m in Sources */,
+				36FC438D245E532F006569F0 /* SFTitleValueCell.m in Sources */,
 				3686315E241935E700A65AA0 /* NSObject+SFSWizzling.m in Sources */,
+				36FC43A3245E62A1006569F0 /* UIColor+SFUIConfig.m in Sources */,
 				36A58F7F24502DE00011A8B3 /* WordDataModel.m in Sources */,
 				3686314F241935E700A65AA0 /* UIViewController+SFChildVC.m in Sources */,
 				3686317524196E6300A65AA0 /* YHTitleFieldView.m in Sources */,
+				36FC439E245E6126006569F0 /* SFBaseTableViewModel.m in Sources */,
 				36604718245064160028099A /* QiCardViewCell.m in Sources */,
 				3686314C241935E700A65AA0 /* UIImage+ImageEffects.m in Sources */,
 				3686315D241935E700A65AA0 /* NSMutableAttributedString+SFCalSize.m in Sources */,
@@ -1104,8 +1219,12 @@
 				3686315F241935E700A65AA0 /* NSTimer+Addition.m in Sources */,
 				365F470823CB1F4B0073FB73 /* ViewController.m in Sources */,
 				36863160241935E700A65AA0 /* NSDictionary+SFLog.m in Sources */,
+				36FC4387245E532F006569F0 /* SFTitleValueCopyCell.m in Sources */,
 				36604717245064160028099A /* QiCardView.m in Sources */,
 				368630DC2419354000A65AA0 /* SFLabelBuilder.m in Sources */,
+				36FC43A6245F6E83006569F0 /* YHRegisterController.m in Sources */,
+				36FC438F245E532F006569F0 /* SFImageCCell.m in Sources */,
+				36FC438A245E532F006569F0 /* SFImagesCell.m in Sources */,
 				3686313E241935E700A65AA0 /* UIView+BlurredImage.m in Sources */,
 				36863156241935E700A65AA0 /* UILabel+SFFly.m in Sources */,
 				36863148241935E700A65AA0 /* UIColor+SFAdd.m in Sources */,
@@ -1116,13 +1235,17 @@
 				36863157241935E700A65AA0 /* NSDate+SFAdd.m in Sources */,
 				3686316E24196C5500A65AA0 /* YHBaseView.m in Sources */,
 				36A58F6F244ED07C0011A8B3 /* YHBaseCollectionViewCell.m in Sources */,
+				36FC4389245E532F006569F0 /* SFTitleTextViewCell.m in Sources */,
 				36863153241935E700A65AA0 /* UIView+Masonry.m in Sources */,
 				368630E02419354000A65AA0 /* SFButtonBuilder.m in Sources */,
+				36FC438E245E532F006569F0 /* SFTitleValueMoreCell.m in Sources */,
+				36FC43A0245E6126006569F0 /* SFTableViewItemModel.m in Sources */,
 				36DE737A243373010072D31E /* YHWordController.m in Sources */,
 				3686318924197C0C00A65AA0 /* CTMediator+home.m in Sources */,
 				36A58F72244ED1BA0011A8B3 /* YHTodayDataCollectionViewCell.m in Sources */,
 				368630E22419354000A65AA0 /* UIImageView+SFBuilder.m in Sources */,
 				3686313C241935E700A65AA0 /* UIViewController+SFLoading.m in Sources */,
+				36FC4388245E532F006569F0 /* SFTitleSwitchCell.m in Sources */,
 				368630DB2419354000A65AA0 /* SFTextFieldBuilder.m in Sources */,
 				36862E64241917A500A65AA0 /* YHBaseController.m in Sources */,
 				3656AB052455D84D0035ED8C /* YHWordTableViewCell.m in Sources */,
@@ -1145,13 +1268,18 @@
 				36DE7369243371660072D31E /* YHMeController.m in Sources */,
 				36863159241935E700A65AA0 /* NSString+SFAdd.m in Sources */,
 				368630DE2419354000A65AA0 /* UITextField+SFBuilder.m in Sources */,
+				36FC4368245A4451006569F0 /* YHAddPlanController.m in Sources */,
 				36A58F75244EDBF10011A8B3 /* YHButtonCollectionViewCell.m in Sources */,
+				36FC436E245E4BB9006569F0 /* YHMeSettingCell.m in Sources */,
+				36FC439F245E6126006569F0 /* SFTableViewSectionModel.m in Sources */,
+				36FC4390245E532F006569F0 /* SFTextViewCell.m in Sources */,
 				36863149241935E700A65AA0 /* UIBarButtonItem+SFFly.m in Sources */,
 				3686315B241935E700A65AA0 /* NSDictionary+SFAdd.m in Sources */,
 				36863141241935E700A65AA0 /* UIButton+SFFly.m in Sources */,
 				3686313A241935E700A65AA0 /* UIView+SFFrame.m in Sources */,
 				3686317224196CBF00A65AA0 /* SFHUD.m in Sources */,
 				36863155241935E700A65AA0 /* UITextView+SFPlaceholder.m in Sources */,
+				36FC439C245E6126006569F0 /* SFTableViewDataSource.m in Sources */,
 				3686318624197BC300A65AA0 /* Target_home.m in Sources */,
 				36863145241935E700A65AA0 /* UIImageView+SFFly.m in Sources */,
 				3675B7AE242E461700B77919 /* YHTabBar.m in Sources */,
@@ -1161,8 +1289,10 @@
 				36863162241935E700A65AA0 /* NSArray+SFSwizzling.m in Sources */,
 				3686313D241935E700A65AA0 /* UIImageView+Letters.m in Sources */,
 				368630DD2419354000A65AA0 /* UILabel+SFBuilder.m in Sources */,
+				36FC4386245E532F006569F0 /* SFTitleFieldCell.m in Sources */,
 				36E29683245606C7007A0978 /* YHFavoriteWordController.m in Sources */,
 				3686314D241935E700A65AA0 /* UIDevice+SFAdd.m in Sources */,
+				36FC436B245E460D006569F0 /* YHSettingController.m in Sources */,
 				3686315C241935E700A65AA0 /* NSSet+SFLog.m in Sources */,
 				36A58F7B244F3AE30011A8B3 /* YHTodayBrowseCell.m in Sources */,
 				36DE7374243372CC0072D31E /* YHMemoryController.m in Sources */,

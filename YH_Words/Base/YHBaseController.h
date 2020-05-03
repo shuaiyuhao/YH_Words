@@ -20,6 +20,7 @@
 #import "NSObject+SFHelper.h"
 #import <CTMediator.h>
 #import "UIButton+SFBuilder.h"
+#import "UIControl+SFActionBlock.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

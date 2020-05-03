@@ -14,6 +14,8 @@
 #import "YHRememberedWordController.h"
 #import "YHFuzzyWordController.h"
 #import "YHFavoriteWordController.h"
+#import "UIControl+SFActionBlock.h"
+#import "YHSettingController.h"
 
 @interface YHMeController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -22,6 +24,7 @@
 @property (nonatomic,strong) UIView *footerView;
 
 @property (nonatomic,strong) NSArray *buttonArray;
+@property (nonatomic,strong) UIBarButtonItem *settingButton;
 @end
 
 @implementation YHMeController
@@ -35,6 +38,7 @@
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     
     [self.view setBackgroundColor:[UIColor colorWithHexString:@"0x171C24"]];
+    self.navigationItem.rightBarButtonItem = self.settingButton;
     
     [self.view addSubview:self.meCollectionView];
     
@@ -236,5 +240,23 @@
         ];
     }
     return _buttonArray;
+}
+
+- (UIBarButtonItem *)settingButton {
+    if (!_settingButton) {
+        _settingButton = [UIBarButtonItem new];
+        [_settingButton setImage:[UIImage imageNamed:@"ic_setting"]];
+        
+        _settingButton.action = @selector(settingBtnTapped);
+        _settingButton.target = self;
+    }
+    return _settingButton;
+}
+
+- (void)settingBtnTapped {
+    NSLog(@"test");
+    YHSettingController *vc = [YHSettingController new];
+    
+    [self.navigationController pushViewController:vc animated:true];
 }
 @end

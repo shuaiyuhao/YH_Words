@@ -56,9 +56,9 @@
     [self setBackgroundImage:[UIImage new]];
     [self setShadowImage:[UIImage new]];
     
-    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor blueColor] }
-                                                   forState:UIControlStateNormal];
-
+//    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor blueColor] }
+//                                                   forState:UIControlStateNormal];
+//
     [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor colorWithHexString:@"0xD66563"] } forState:UIControlStateSelected];
     
 }

@@ -89,6 +89,8 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.engTextView resignFirstResponder];
+    
+    [self.zhTextView resignFirstResponder];
 }
 
 #pragma mark - YTKRequestDelegate
@@ -236,6 +238,7 @@
         _zhTextView.layer.masksToBounds = YES;
         _zhTextView.layer.borderWidth = 1;
         _zhTextView.layer.borderColor = [UIColor colorWithHexString:@"0x979797"].CGColor;
+        _zhTextView.userInteractionEnabled = NO;
     }
     return _zhTextView;
 }

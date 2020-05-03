@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-YH_Words-YH_WordsUITests/Pods-YH_Words-YH_WordsUITests-resources.sh
 ${PODS_ROOT}/DateTools/DateTools/DateTools/DateTools.bundle
+${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle
 ${PODS_ROOT}/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle
 ${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle

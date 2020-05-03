@@ -16,6 +16,7 @@ target 'YH_Words' do
   pod "CTMediator"
   pod 'PNChart'
   pod 'MJRefresh'
+  pod 'JKCountDownButton'
 
   target 'YH_WordsTests' do
     inherit! :search_paths

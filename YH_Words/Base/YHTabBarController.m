@@ -13,6 +13,7 @@
 #import "YHReviseController.h"
 #import "YHSearchWordController.h"
 #import "YHLoginController.h"
+#import "YHRegisterController.h"
 
 #import "YHTabBar.h"
 
@@ -50,7 +51,7 @@
     
     [self addCustomChildVC:[YHWordController new] title:@"单词" imageName:@"tabbar_words.png" useNav:true];
     [self addCustomChildVC:[YHReviseController new] title:@"计划"  imageName:@"tabbar_revise.png" useNav:true];
-    [self addCustomChildVC:[YHLoginController new] title:@"记忆曲线"  imageName:@"tabbar_memory.png" useNav:true];
+    [self addCustomChildVC:[YHRegisterController new] title:@"记忆曲线"  imageName:@"tabbar_memory.png" useNav:true];
     [self addCustomChildVC:[YHMeController new] title:@"我的" imageName:@"tabbar_me.png" useNav:true];
     
 

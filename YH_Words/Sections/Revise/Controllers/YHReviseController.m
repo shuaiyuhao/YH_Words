@@ -56,6 +56,8 @@
     [cell configWithData:self.datas[indexPath.row]];
     
     [cell sf_addLineTop:NO bottom:YES lineColor:[UIColor grayColor] leftSpace:10 rightSpace:10];
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 

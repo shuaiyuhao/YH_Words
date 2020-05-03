@@ -28,6 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"YHWords";
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     self.view.backgroundColor = [UIColor colorWithHexString:@"0x171C25"];
     
     [self.view addSubview:self.avatarImageView];

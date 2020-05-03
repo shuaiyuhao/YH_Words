@@ -50,7 +50,7 @@
 }
 
 + (CGFloat)cellHeight {
-    return 48.f;
+    return 55.f;
 }
 
 + (NSString *)cellIdentifier {
@@ -74,7 +74,7 @@
         .text(@"")
         .textColor([UIColor colorWithHexString:@"0xACB0B5"])
         .textAlignment(NSTextAlignmentLeft)
-        .font([UIFont systemFontOfSize:14])
+        .font([UIFont systemFontOfSize:17])
         .backgroundColor([UIColor clearColor])
         .build();
     }

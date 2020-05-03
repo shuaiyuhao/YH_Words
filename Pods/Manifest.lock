@@ -8,9 +8,11 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - CTMediator (28)
   - DateTools (2.0.0)
+  - JKCountDownButton (1.3.0)
   - JXCategoryView (1.5.3)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
+  - MJRefresh (3.4.1)
   - MMPopupView (1.7.2):
     - Masonry
   - PNChart (0.8.9):
@@ -28,9 +30,11 @@ PODS:
 DEPENDENCIES:
   - CTMediator
   - DateTools
+  - JKCountDownButton
   - JXCategoryView
   - Masonry
   - MBProgressHUD (~> 1.2.0)
+  - MJRefresh
   - MMPopupView
   - PNChart
   - RSKImageCropper
@@ -44,9 +48,11 @@ SPEC REPOS:
     - AFNetworking
     - CTMediator
     - DateTools
+    - JKCountDownButton
     - JXCategoryView
     - Masonry
     - MBProgressHUD
+    - MJRefresh
     - MMPopupView
     - PNChart
     - RSKImageCropper
@@ -60,9 +66,11 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CTMediator: 6a05e9f1098b2d2fbc9d19cc7f28e94c3a08b5d2
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
+  JKCountDownButton: 3b557e75d23e7243bb63c8130e6d12d8510468dd
   JXCategoryView: 64fbdf3d1bbc8087ebd0443dd3b49855000aca6e
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJRefresh: 3153c59a363159092c08b2177ec3a7d09f90bfaf
   MMPopupView: fe1dd010824029dfb632fdf1a531db5dd5386020
   PNChart: 84774d225c2126ded6c93d4dbe6ae98c3a73c2d2
   RSKImageCropper: a446db0e8444a036b34f3c43db01b2373baa4b2a
@@ -72,6 +80,6 @@ SPEC CHECKSUMS:
   YTKNetwork: 19be749c30f0512ada07180f4637b4b67bc8ddc2
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 371a827e4869378e333186064754d10502833dc2
+PODFILE CHECKSUM: 959e722c05063fe717af60793b52bfaa15c8b301
 
 COCOAPODS: 1.9.1

@@ -40,6 +40,8 @@ static NSString * const wordCardCellId = @"YHWordCardCellId";
     [self.view addSubview:self.rememberButton];
     [self.view addSubview:self.forgetButton];
     
+    int a1[] = {1,2,3,4};
+    
     [self layoutPageViews];
 }
 
@@ -85,6 +87,8 @@ static NSString * const wordCardCellId = @"YHWordCardCellId";
 #pragma mark - QiCardDelegate
 #pragma mark -
 - (void)cardView:(QiCardView *)cardView didRemoveLastCell:(QiCardViewCell *)cell forRowAtIndex:(NSInteger)index {
+    
+    
     [cardView reloadDataAnimated:true];
 }
 
@@ -117,7 +121,7 @@ static NSString * const wordCardCellId = @"YHWordCardCellId";
     if (!_cardView) {
         _cardView = [[QiCardView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width - 50.0, 420.0)];
         _cardView.backgroundColor = [UIColor colorWithHexString:@"0x171C24"];
-        _cardView.visibleCount = 4;
+        _cardView.visibleCount = 5;
         _cardView.lineSpacing = 15.0;
         _cardView.interitemSpacing = 10.0;
         _cardView.maxAngle = 10.0;
@@ -173,12 +177,12 @@ static NSString * const wordCardCellId = @"YHWordCardCellId";
                 @"example":@"We're about (= almost) ready to leave"
             }],
 
-            [[WordDataModel alloc] initWithDic:@{
-                @"word":@"absent",
-                @"phonetic":@"/'æbsənt/",
-                @"chinese":@"a./缺席，不在",
-                @"example":@"`Nothing,' Rosie said in an absent way."
-            }]
+//            [[WordDataModel alloc] initWithDic:@{
+//                @"word":@"absent",
+//                @"phonetic":@"/'æbsənt/",
+//                @"chinese":@"a./缺席，不在",
+//                @"example":@"`Nothing,' Rosie said in an absent way."
+//            }]
 
 
         ];
