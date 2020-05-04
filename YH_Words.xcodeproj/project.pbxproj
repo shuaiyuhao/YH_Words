@@ -87,6 +87,7 @@
 		36A58F75244EDBF10011A8B3 /* YHButtonCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A58F74244EDBF10011A8B3 /* YHButtonCollectionViewCell.m */; };
 		36A58F7B244F3AE30011A8B3 /* YHTodayBrowseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A58F7A244F3AE30011A8B3 /* YHTodayBrowseCell.m */; };
 		36A58F7F24502DE00011A8B3 /* WordDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A58F7E24502DE00011A8B3 /* WordDataModel.m */; };
+		36BB996C245F91F8004B0217 /* YHPlanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BB996B245F91F8004B0217 /* YHPlanCell.m */; };
 		36DE736624331FEE0072D31E /* YHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DE736524331FEE0072D31E /* YHTabBarController.m */; };
 		36DE7369243371660072D31E /* YHMeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DE7368243371660072D31E /* YHMeController.m */; };
 		36DE7374243372CC0072D31E /* YHMemoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DE7373243372CC0072D31E /* YHMemoryController.m */; };
@@ -298,6 +299,8 @@
 		36A58F7A244F3AE30011A8B3 /* YHTodayBrowseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = YHTodayBrowseCell.m; path = YH_Words/Base/YHTodayBrowseCell.m; sourceTree = SOURCE_ROOT; };
 		36A58F7D24502DE00011A8B3 /* WordDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WordDataModel.h; path = YH_Words/Base/WordDataModel.h; sourceTree = SOURCE_ROOT; };
 		36A58F7E24502DE00011A8B3 /* WordDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = WordDataModel.m; path = YH_Words/Base/WordDataModel.m; sourceTree = SOURCE_ROOT; };
+		36BB996A245F91F8004B0217 /* YHPlanCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHPlanCell.h; sourceTree = "<group>"; };
+		36BB996B245F91F8004B0217 /* YHPlanCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHPlanCell.m; sourceTree = "<group>"; };
 		36DE736424331FEE0072D31E /* YHTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHTabBarController.h; sourceTree = "<group>"; };
 		36DE736524331FEE0072D31E /* YHTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHTabBarController.m; sourceTree = "<group>"; };
 		36DE7367243371660072D31E /* YHMeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHMeController.h; sourceTree = "<group>"; };
@@ -401,6 +404,8 @@
 			children = (
 				3656AB032455D84D0035ED8C /* YHWordTableViewCell.h */,
 				3656AB042455D84D0035ED8C /* YHWordTableViewCell.m */,
+				36BB996A245F91F8004B0217 /* YHPlanCell.h */,
+				36BB996B245F91F8004B0217 /* YHPlanCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1287,6 +1292,7 @@
 				36863161241935E700A65AA0 /* NSString+SFDiskSpace.m in Sources */,
 				36863154241935E700A65AA0 /* UIControl+SFActionBlock.m in Sources */,
 				36863162241935E700A65AA0 /* NSArray+SFSwizzling.m in Sources */,
+				36BB996C245F91F8004B0217 /* YHPlanCell.m in Sources */,
 				3686313D241935E700A65AA0 /* UIImageView+Letters.m in Sources */,
 				368630DD2419354000A65AA0 /* UILabel+SFBuilder.m in Sources */,
 				36FC4386245E532F006569F0 /* SFTitleFieldCell.m in Sources */,
