@@ -17,6 +17,8 @@ target 'YH_Words' do
   pod 'PNChart'
   pod 'MJRefresh'
   pod 'JKCountDownButton'
+  pod 'YYCache'
+  pod 'AFNetworkActivityLogger'
 
   target 'YH_WordsTests' do
     inherit! :search_paths

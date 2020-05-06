@@ -1,4 +1,6 @@
 PODS:
+  - AFNetworkActivityLogger (3.0.0):
+    - AFNetworking/NSURLSession (~> 3.0)
   - AFNetworking/NSURLSession (3.2.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
@@ -25,9 +27,11 @@ PODS:
   - UICountingLabel (1.2.0)
   - YTKNetwork (2.1.4):
     - AFNetworking/NSURLSession (~> 3.0)
+  - YYCache (1.0.4)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
+  - AFNetworkActivityLogger
   - CTMediator
   - DateTools
   - JKCountDownButton
@@ -41,10 +45,12 @@ DEPENDENCIES:
   - SDWebImage (~> 5.0)
   - TZImagePickerController
   - YTKNetwork
+  - YYCache
   - YYModel
 
 SPEC REPOS:
   trunk:
+    - AFNetworkActivityLogger
     - AFNetworking
     - CTMediator
     - DateTools
@@ -60,9 +66,11 @@ SPEC REPOS:
     - TZImagePickerController
     - UICountingLabel
     - YTKNetwork
+    - YYCache
     - YYModel
 
 SPEC CHECKSUMS:
+  AFNetworkActivityLogger: e77f68d014becb33c4306a23f56a64906ff72670
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CTMediator: 6a05e9f1098b2d2fbc9d19cc7f28e94c3a08b5d2
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
@@ -78,8 +86,9 @@ SPEC CHECKSUMS:
   TZImagePickerController: 99f03b64145a8c92c55b9b1b931410967d9be4cb
   UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
   YTKNetwork: 19be749c30f0512ada07180f4637b4b67bc8ddc2
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 959e722c05063fe717af60793b52bfaa15c8b301
+PODFILE CHECKSUM: 0efcc0dbd5d659f65dc2780a3fce9a593a2535da
 
 COCOAPODS: 1.9.1

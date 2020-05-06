@@ -11,7 +11,7 @@
 #import "UIImage+SFAdd.h"
 #import "AppConstant.h"
 //#import "UIColor+SFUIConfig.h"
-//#import "AppDelegate+SFAdd.h"
+#import "AppDelegate+SFAdd.h"
 
 //版本号
 #define kVersion_Coding [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]

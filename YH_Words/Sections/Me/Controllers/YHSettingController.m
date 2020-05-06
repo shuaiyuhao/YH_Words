@@ -77,22 +77,28 @@
     if (indexPath.section == 0) {
         YHMeSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:[YHMeSettingCell cellIdentifier] forIndexPath:indexPath];
         
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         return cell;
     } else if (indexPath.section == 1) {
         SFTitleValueCell *cell = [tableView dequeueReusableCellWithIdentifier:[SFTitleValueCell cellIdentifier] forIndexPath:indexPath];
         
         [cell setImage:nil title:@"账户与安全" value:@""];
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     } else if (indexPath.section == 2) {
         if (indexPath.row == 0) {
             SFTitleValueCell *cell = [tableView dequeueReusableCellWithIdentifier:[SFTitleValueCell cellIdentifier] forIndexPath:indexPath];
             
             [cell setImage:nil title:@"问题反馈" value:@""];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             return cell;
         } else if (indexPath.row == 1) {
             SFTitleValueCell *cell = [tableView dequeueReusableCellWithIdentifier:[SFTitleValueCell cellIdentifier] forIndexPath:indexPath];
             
             [cell setImage:nil title:@"关于我们" value:@""];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             return cell;
         }
     }

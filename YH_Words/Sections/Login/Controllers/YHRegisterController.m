@@ -10,14 +10,16 @@
 #import "YHTitleFieldView.h"
 #import <JKCountDownButton.h>
 #import "UIColor+SFUIConfig.h"
+#import "YHRegisterApi.h"
 
-@interface YHRegisterController ()
+@interface YHRegisterController ()<YTKRequestDelegate>
 
 @property (nonatomic,strong) UILabel *titleLabel;
 @property (nonatomic,strong) YHTitleFieldView *phoneView;
 @property (nonatomic,strong) YHTitleFieldView *codeView;
 @property (nonatomic,strong) YHTitleFieldView *passwordView;
 @property (nonatomic,strong) YHTitleFieldView *confirmPasswordView;
+@property (nonatomic,strong) YHTitleFieldView *userNameView;
 @property (nonatomic,strong) UIButton *registerButton;
 @property (nonatomic,strong) JKCountDownButton *codeButton;
 
@@ -25,6 +27,7 @@
 @property (nonatomic,copy) NSString *code;
 @property (nonatomic,copy) NSString *password;
 @property (nonatomic,copy) NSString *confirmPassword;
+@property (nonatomic,copy) NSString *userName;
 
 @end
 
@@ -41,10 +44,11 @@
     
     [self.view addSubview:self.titleLabel];
     [self.view addSubview:self.phoneView];
-    [self.view addSubview:self.codeView];
+//    [self.view addSubview:self.codeView];
     [self.view addSubview:self.passwordView];
     [self.view addSubview:self.confirmPasswordView];
     [self.view addSubview:self.registerButton];
+    [self.view addSubview:self.userNameView];
     
     
     [self layoutPageViews];
@@ -63,7 +67,13 @@
         make.centerX.equalTo(self.view);
     }];
     
-    [self.codeView mas_makeConstraints:^(MASConstraintMaker *make) {
+//    [self.codeView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.size.mas_equalTo(CGSizeMake(kScreenWidth - 40, 44));
+//        make.top.equalTo(self.phoneView.mas_bottom).offset(8);
+//        make.centerX.equalTo(self.view);
+//    }];
+    
+    [self.userNameView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(kScreenWidth - 40, 44));
         make.top.equalTo(self.phoneView.mas_bottom).offset(8);
         make.centerX.equalTo(self.view);
@@ -71,7 +81,7 @@
     
     [self.passwordView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(kScreenWidth - 40, 44));
-        make.top.equalTo(self.codeView.mas_bottom).offset(8);
+        make.top.equalTo(self.userNameView.mas_bottom).offset(8);
         make.centerX.equalTo(self.view);
     }];
     
@@ -94,8 +104,8 @@
         return ;
     }
     
-    if (!self.code.length) {
-        [SFHUD showInfoToast:@"请输入验证码"];
+    if (!self.userName.length) {
+        [SFHUD showInfoToast:@"请输入用户名"];
         return;
     }
     
@@ -113,7 +123,49 @@
 //    SFRegisterApi *api = [[SFRegisterApi alloc] initWithPhone:self.phone code:self.code password:self.password];
 //    api.delegate = self;
 //    [api start];
+    
+    YHRegisterApi *api = [[YHRegisterApi alloc] initWithPhone:self.phone username:self.userName passwd:self.confirmPassword];
+    NSLog(@"%@",self.confirmPassword);
+    api.delegate = self;
+    [api start];
 }
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.phoneView resignFirstResponder];
+    [self.userNameView resignFirstResponder];
+    [self.passwordView resignFirstResponder];
+    [self.confirmPasswordView resignFirstResponder];
+    
+    [[UIApplication sharedApplication].keyWindow endEditing:YES];
+    
+}
+
+#pragma mark - YTKRequestDelegate
+#pragma mark -
+- (void)requestFinished:(__kindof YTKBaseRequest *)request {
+    id obj = request.responseObject;
+    id data = [(SFBaseApiRequest *)request fetchDataWithReformer:nil];
+    if (![(SFBaseApiRequest *)request success]) {
+        
+        NSLog(@"注册错误");
+        [SFHUD showToast:obj[@"message"]];
+        return;
+    }
+    
+    if ([(SFBaseApiRequest *)request isKindOfClass:[YHRegisterApi class]]) {
+        NSLog(@"%@",data);
+    }
+}
+
+- (void)requestFailed:(__kindof YTKBaseRequest *)request {
+    [SFHUD hideAlert];
+    NSDictionary *data = [(SFBaseApiRequest *)request fetchDataWithReformer:nil];
+    if (![[(SFBaseApiRequest *)request errorMsg] length]) {
+        [SFHUD showToast:data[@"message"]];
+    }
+}
+
+
 #pragma mark - getter and setter
 #pragma mark -
 - (UILabel *)titleLabel {
@@ -189,6 +241,20 @@
         }];
     }
     return _confirmPasswordView;
+}
+
+- (YHTitleFieldView *)userNameView {
+    if (!_userNameView) {
+        _userNameView = [YHTitleFieldView new];
+        [_userNameView configWithTitle:@"用户名" palceHolder:@"请输入用户名" showImage:nil keyBoardType:UIKeyboardTypeDefault secureTextEntry:NO];
+        _userNameView.backgroundColor = [UIColor colorWithHexString:@"0x171c25"];
+        
+        WeakSelf;
+        [_userNameView setTextChangeBlock:^(NSString *index) {
+            weakSelf.userName = index;
+        }];
+    }
+    return _userNameView;
 }
 
 - (UIButton *)registerButton {

@@ -21,6 +21,7 @@
 #import <CTMediator.h>
 #import "UIButton+SFBuilder.h"
 #import "UIControl+SFActionBlock.h"
+#import "YHUserManager.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

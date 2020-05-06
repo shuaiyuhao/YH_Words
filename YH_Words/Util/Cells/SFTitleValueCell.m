@@ -260,14 +260,14 @@
 #pragma mark - 懒加载
 - (UILabel *)titleLabel{
     if (!_titleLabel) {
-        _titleLabel = [UILabel labelWithTextColor:[UIColor sf_fontLightBlackColor] fontSize:14];
+        _titleLabel = [UILabel labelWithTextColor:[UIColor grayColor] fontSize:14];
     }
     return _titleLabel;
 }
 
 - (UILabel *)valueLabel{
     if (!_valueLabel) {
-        _valueLabel = [UILabel labelWithTextColor:[UIColor sf_fontBlackColor] fontSize:14];
+        _valueLabel = [UILabel labelWithTextColor:[UIColor grayColor] fontSize:14];
         _valueLabel.textAlignment = NSTextAlignmentRight;
     }
     return _valueLabel;

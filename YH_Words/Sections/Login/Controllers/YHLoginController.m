@@ -8,8 +8,13 @@
 
 #import "YHLoginController.h"
 #import "YHTitleFieldView.h"
+#import "YHLoginApi.h"
+#import "YHUserModel.h"
+#import "YHRegisterController.h"
+#import "YHTabBarController.h"
 
-@interface YHLoginController ()
+@interface YHLoginController ()<YTKRequestDelegate>
+
 
 @property (nonatomic,strong) UIImageView *avatarImageView;
 @property (nonatomic,strong) YHTitleFieldView *accountView;
@@ -47,7 +52,7 @@
     [self.avatarImageView mas_makeConstraints:^(MASConstraintMaker *make) {
          make.size.mas_equalTo(CGSizeMake(100, 100));
          make.centerX.equalTo(self.view);
-         make.top.equalTo(self.view).offset(20);
+         make.top.equalTo(self.view).offset(100);
      }];
      
      [self.accountView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -84,6 +89,38 @@
     [self.view endEditing:YES];
 }
 
+#pragma mark - YTKRequestDelegate
+#pragma mark -
+- (void)requestFinished:(__kindof YTKBaseRequest *)request {
+    id data0 = request.responseObject;
+    NSLog(@"%@",data0);
+    id data = [(SFBaseApiRequest *)request fetchDataWithReformer:nil];
+    
+    if (![(SFBaseApiRequest *)request success]) {
+        
+        NSLog(@"登录错误");
+        [SFHUD showToast:data0[@"message"]];
+        return;
+    }
+    if ([(YTKBaseRequest *)request isKindOfClass:[YHLoginApi class]]) {
+        [SFHUD showToast:@"登录成功"];
+        YHUserModel *model = [YHUserModel yy_modelWithJSON:data];
+        
+        NSLog(@"%@",model);
+        [[YHUserManager sharedManager] updateUserInfo:model];
+        
+        
+        YHTabBarController *vc = [YHTabBarController new];
+        [ApplicationDelegate setRootViewController:vc animated:YES];
+    }
+}
+
+- (void)requestFailed:(__kindof YTKBaseRequest *)request {
+    NSDictionary *data = [(SFBaseApiRequest *)request fetchDataWithReformer:nil];
+      if (![[(SFBaseApiRequest *)request errorMsg] length]) {
+          [SFHUD showToast:data[@"message"]];
+      }
+}
 #pragma mark - getter and setter
 #pragma mark -
 - (UIImageView *)avatarImageView {
@@ -160,12 +197,13 @@
         .font([UIFont systemFontOfSize:14])
         .build();
         
-//        WeakSelf;
-//        [_registerButton sf_addHandler:^(id weakSender) {
-////            UIViewController *vc = [[CTMediator sharedInstance] login_register:@{}];
-//            [weakSelf.navigationController pushViewController:vc animated:YES];
-//            NSLog(@">>>>>>>>>>>");
-//        } forControlEvents:UIControlEventTouchUpInside];
+        WeakSelf;
+        [_registerButton sf_addHandler:^(id weakSender) {
+            
+            YHRegisterController *vc = [YHRegisterController new];
+            [weakSelf.navigationController pushViewController:vc animated:YES];
+            NSLog(@">>>>>>>>>>>");
+        } forControlEvents:UIControlEventTouchUpInside];
     }
     return _registerButton;
 }
@@ -195,6 +233,13 @@
 //            SFTabBarController *vc = [SFTabBarController new];
 //            [weakSelf.navigationController pushViewController:vc animated:YES];
 //            [ApplicationDelegate setRootViewController:vc animated:YES];
+            YHLoginApi *api = [[YHLoginApi alloc]initWithPhone:self.account passwd:self.password];
+            NSLog(@"%@,%@",self.account,self.password);
+            api.delegate = self;
+            api.hudType = SFHUDTypeProgressAlert;
+            [api start];
+            
+            
         } forControlEvents:UIControlEventTouchUpInside];
     }
     return _loginButton;

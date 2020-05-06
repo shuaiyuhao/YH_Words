@@ -119,6 +119,7 @@
         _valueTextField = UITextField.builder()
         .placeholder(@"")
         .text(@"")
+        .textColor([UIColor whiteColor])
         .font([UIFont systemFontOfSize:14])
         .backgroundColor([UIColor clearColor])
         .build();

@@ -9,6 +9,8 @@
 #import "YHReviseController.h"
 #import "WordDataModel.h"
 #import "YHWordTableViewCell.h"
+#import "YHPlanCell.h"
+#import "YHPlanModel.h"
 
 @interface YHReviseController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -17,6 +19,8 @@
 @property (nonatomic,strong) UIBarButtonItem *addButton;
 
 @property (nonatomic,strong) NSArray<WordDataModel *> *datas;
+
+@property (nonatomic,strong) NSMutableArray<YHPlanModel *> *plans;
 
 @end
 
@@ -37,9 +41,24 @@
 #pragma mark - UITableViewDelegate
 #pragma mark -
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [YHWordTableViewCell cellHeight];
+    return [YHPlanCell cellHeight];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 0.1f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.1f;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    return [UIView new];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [UIView new];
+}
 #pragma mark - UITableViewDataSource
 #pragma mark -
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -47,13 +66,19 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.datas.count;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    YHWordTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[YHWordTableViewCell cellIdentifier] forIndexPath:indexPath];
+    YHPlanCell *cell = [tableView dequeueReusableCellWithIdentifier:[YHPlanCell cellIdentifier] forIndexPath:indexPath];
     
-    [cell configWithData:self.datas[indexPath.row]];
+    NSArray *arr = self.plans;
+    
+    YHPlanModel *model = arr[indexPath.row];
+    
+    NSLog(@"%@",arr);
+    
+    [cell configWithPlan:model.plan planDone:model.isDone];
     
     [cell sf_addLineTop:NO bottom:YES lineColor:[UIColor grayColor] leftSpace:10 rightSpace:10];
     
@@ -61,7 +86,12 @@
     return cell;
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    YHPlanModel *model = self.plans[indexPath.row];
+    model.isDone = !model.isDone;
+    
+    [tableView reloadData];
+}
 #pragma mark - getter and setter
 #pragma mark -
 - (UITableView *)reviseTableView {
@@ -72,6 +102,7 @@
         [_reviseTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
         
         [_reviseTableView registerClass:[YHWordTableViewCell class] forCellReuseIdentifier:[YHWordTableViewCell cellIdentifier]];
+        [_reviseTableView registerClass:[YHPlanCell class] forCellReuseIdentifier:[YHPlanCell cellIdentifier]];
         
         _reviseTableView.delegate = self;
         _reviseTableView.dataSource = self;
@@ -137,5 +168,30 @@
         ];
     }
     return _datas;
+}
+
+- (NSMutableArray<YHPlanModel *> *)plans {
+    
+    if (!_plans) {
+        _plans = [NSMutableArray new];
+        
+        YHPlanModel *model0 = [[YHPlanModel alloc] initWithString:@"复习第一章"];
+        
+        YHPlanModel *model1 = [[YHPlanModel alloc] initWithString:@"复习第二章"];
+        
+        YHPlanModel *model2 = [[YHPlanModel alloc] initWithString:@"复习第三章"];
+        
+        YHPlanModel *model3 = [[YHPlanModel alloc] initWithString:@"复习第四章"];
+        
+        YHPlanModel *model4 = [[YHPlanModel alloc] initWithString:@"复习第五章"];
+        
+        [_plans addObject:model0];
+        [_plans addObject:model1];
+        [_plans addObject:model2];
+        [_plans addObject:model3];
+        [_plans addObject:model4];
+
+    }
+    return _plans;
 }
 @end

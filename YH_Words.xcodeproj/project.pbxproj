@@ -8,6 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		106F10BA64C390796328F4FC /* libPods-YH_WordsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 295A55EC31F27A849D3F43F9 /* libPods-YH_WordsTests.a */; };
+		3640AEC42460E5B200C28F8E /* YHPlanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3640AEC32460E5B200C28F8E /* YHPlanModel.m */; };
+		3640AECA246194F800C28F8E /* YHLoginApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 3640AEC9246194F800C28F8E /* YHLoginApi.m */; };
+		3640AECD2461950B00C28F8E /* YHRegisterApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 3640AECC2461950B00C28F8E /* YHRegisterApi.m */; };
+		3640AED12461B1C200C28F8E /* YHUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3640AED02461B1C200C28F8E /* YHUserManager.m */; };
+		3640AED42461B2F500C28F8E /* YHUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3640AED32461B2F500C28F8E /* YHUserModel.m */; };
+		36565DAD2462C48600A829A8 /* SFTokenRequestAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36565D9A2462C48600A829A8 /* SFTokenRequestAccessory.m */; };
+		36565DAE2462C48600A829A8 /* SFBaseApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36565D9B2462C48600A829A8 /* SFBaseApiRequest.m */; };
+		36565DAF2462C48600A829A8 /* SFNetworkActivityConsoleLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 36565D9E2462C48600A829A8 /* SFNetworkActivityConsoleLogger.m */; };
+		36565DB02462C48600A829A8 /* SFUploadTokenApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 36565D9F2462C48600A829A8 /* SFUploadTokenApi.m */; };
+		36565DB12462C48600A829A8 /* SFRefreshApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 36565DA42462C48600A829A8 /* SFRefreshApiRequest.m */; };
+		36565DB22462C48600A829A8 /* YTKChainRequest+SFHUDAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36565DA52462C48600A829A8 /* YTKChainRequest+SFHUDAccessory.m */; };
+		36565DB32462C48600A829A8 /* YTKBaseRequest+SFHUDAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36565DA62462C48600A829A8 /* YTKBaseRequest+SFHUDAccessory.m */; };
+		36565DB42462C48600A829A8 /* SFErrorHandleRequestAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36565DAA2462C48600A829A8 /* SFErrorHandleRequestAccessory.m */; };
+		36565DB52462C48600A829A8 /* YTKBatchRequest+SFHUDAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36565DAB2462C48600A829A8 /* YTKBatchRequest+SFHUDAccessory.m */; };
+		36565DB62462C48600A829A8 /* SFHUDRequestAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36565DAC2462C48600A829A8 /* SFHUDRequestAccessory.m */; };
+		36565DB92462D25400A829A8 /* AppDelegate+SFAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 36565DB72462D25400A829A8 /* AppDelegate+SFAdd.m */; };
 		3656AAFD2452EF1F0035ED8C /* YHSearchWordApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 3656AAFC2452EF1F0035ED8C /* YHSearchWordApi.m */; };
 		3656AB00245300C90035ED8C /* YHMD5Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3656AAFF245300C90035ED8C /* YHMD5Tool.m */; };
 		3656AB052455D84D0035ED8C /* YHWordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3656AB042455D84D0035ED8C /* YHWordTableViewCell.m */; };
@@ -139,6 +155,38 @@
 /* Begin PBXFileReference section */
 		062080A9D05031769F3AD18E /* Pods-YH_Words.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YH_Words.release.xcconfig"; path = "Target Support Files/Pods-YH_Words/Pods-YH_Words.release.xcconfig"; sourceTree = "<group>"; };
 		295A55EC31F27A849D3F43F9 /* libPods-YH_WordsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YH_WordsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3640AEC22460E5B200C28F8E /* YHPlanModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHPlanModel.h; sourceTree = "<group>"; };
+		3640AEC32460E5B200C28F8E /* YHPlanModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHPlanModel.m; sourceTree = "<group>"; };
+		3640AEC8246194F800C28F8E /* YHLoginApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = YHLoginApi.h; path = YH_Words/Sections/Revise/YHLoginApi.h; sourceTree = SOURCE_ROOT; };
+		3640AEC9246194F800C28F8E /* YHLoginApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = YHLoginApi.m; path = YH_Words/Sections/Revise/YHLoginApi.m; sourceTree = SOURCE_ROOT; };
+		3640AECB2461950B00C28F8E /* YHRegisterApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = YHRegisterApi.h; path = YH_Words/Sections/Revise/YHRegisterApi.h; sourceTree = SOURCE_ROOT; };
+		3640AECC2461950B00C28F8E /* YHRegisterApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = YHRegisterApi.m; path = YH_Words/Sections/Revise/YHRegisterApi.m; sourceTree = SOURCE_ROOT; };
+		3640AECF2461B1C200C28F8E /* YHUserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHUserManager.h; sourceTree = "<group>"; };
+		3640AED02461B1C200C28F8E /* YHUserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHUserManager.m; sourceTree = "<group>"; };
+		3640AED22461B2F500C28F8E /* YHUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHUserModel.h; sourceTree = "<group>"; };
+		3640AED32461B2F500C28F8E /* YHUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHUserModel.m; sourceTree = "<group>"; };
+		36565D992462C48600A829A8 /* SFRefreshApiRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFRefreshApiRequest.h; sourceTree = "<group>"; };
+		36565D9A2462C48600A829A8 /* SFTokenRequestAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFTokenRequestAccessory.m; sourceTree = "<group>"; };
+		36565D9B2462C48600A829A8 /* SFBaseApiRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFBaseApiRequest.m; sourceTree = "<group>"; };
+		36565D9C2462C48600A829A8 /* YTKBaseRequest+SFHUDAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YTKBaseRequest+SFHUDAccessory.h"; sourceTree = "<group>"; };
+		36565D9D2462C48600A829A8 /* YTKChainRequest+SFHUDAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YTKChainRequest+SFHUDAccessory.h"; sourceTree = "<group>"; };
+		36565D9E2462C48600A829A8 /* SFNetworkActivityConsoleLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFNetworkActivityConsoleLogger.m; sourceTree = "<group>"; };
+		36565D9F2462C48600A829A8 /* SFUploadTokenApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFUploadTokenApi.m; sourceTree = "<group>"; };
+		36565DA02462C48600A829A8 /* SFHUDRequestAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHUDRequestAccessory.h; sourceTree = "<group>"; };
+		36565DA12462C48600A829A8 /* YTKBatchRequest+SFHUDAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YTKBatchRequest+SFHUDAccessory.h"; sourceTree = "<group>"; };
+		36565DA22462C48600A829A8 /* SFErrorHandleRequestAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFErrorHandleRequestAccessory.h; sourceTree = "<group>"; };
+		36565DA32462C48600A829A8 /* SFBaseApiRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFBaseApiRequest.h; sourceTree = "<group>"; };
+		36565DA42462C48600A829A8 /* SFRefreshApiRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFRefreshApiRequest.m; sourceTree = "<group>"; };
+		36565DA52462C48600A829A8 /* YTKChainRequest+SFHUDAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YTKChainRequest+SFHUDAccessory.m"; sourceTree = "<group>"; };
+		36565DA62462C48600A829A8 /* YTKBaseRequest+SFHUDAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YTKBaseRequest+SFHUDAccessory.m"; sourceTree = "<group>"; };
+		36565DA72462C48600A829A8 /* SFUploadTokenApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFUploadTokenApi.h; sourceTree = "<group>"; };
+		36565DA82462C48600A829A8 /* SFNetworkActivityConsoleLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFNetworkActivityConsoleLogger.h; sourceTree = "<group>"; };
+		36565DA92462C48600A829A8 /* SFReformerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFReformerProtocol.h; sourceTree = "<group>"; };
+		36565DAA2462C48600A829A8 /* SFErrorHandleRequestAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFErrorHandleRequestAccessory.m; sourceTree = "<group>"; };
+		36565DAB2462C48600A829A8 /* YTKBatchRequest+SFHUDAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YTKBatchRequest+SFHUDAccessory.m"; sourceTree = "<group>"; };
+		36565DAC2462C48600A829A8 /* SFHUDRequestAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHUDRequestAccessory.m; sourceTree = "<group>"; };
+		36565DB72462D25400A829A8 /* AppDelegate+SFAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+SFAdd.m"; sourceTree = "<group>"; };
+		36565DB82462D25400A829A8 /* AppDelegate+SFAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+SFAdd.h"; sourceTree = "<group>"; };
 		3656AAFB2452EF1F0035ED8C /* YHSearchWordApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = YHSearchWordApi.h; path = YH_Words/Sections/Word/Controllers/YHSearchWordApi.h; sourceTree = SOURCE_ROOT; };
 		3656AAFC2452EF1F0035ED8C /* YHSearchWordApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = YHSearchWordApi.m; path = YH_Words/Sections/Word/Controllers/YHSearchWordApi.m; sourceTree = SOURCE_ROOT; };
 		3656AAFE245300C90035ED8C /* YHMD5Tool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHMD5Tool.h; sourceTree = "<group>"; };
@@ -392,9 +440,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3640AECE2461B1A900C28F8E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				3640AECF2461B1C200C28F8E /* YHUserManager.h */,
+				3640AED02461B1C200C28F8E /* YHUserManager.m */,
+				3640AED22461B2F500C28F8E /* YHUserModel.h */,
+				3640AED32461B2F500C28F8E /* YHUserModel.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		36565D982462C48600A829A8 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				36565DA32462C48600A829A8 /* SFBaseApiRequest.h */,
+				36565D9B2462C48600A829A8 /* SFBaseApiRequest.m */,
+				36565DA22462C48600A829A8 /* SFErrorHandleRequestAccessory.h */,
+				36565DAA2462C48600A829A8 /* SFErrorHandleRequestAccessory.m */,
+				36565DA02462C48600A829A8 /* SFHUDRequestAccessory.h */,
+				36565DAC2462C48600A829A8 /* SFHUDRequestAccessory.m */,
+				36565DA82462C48600A829A8 /* SFNetworkActivityConsoleLogger.h */,
+				36565D9E2462C48600A829A8 /* SFNetworkActivityConsoleLogger.m */,
+				36565DA92462C48600A829A8 /* SFReformerProtocol.h */,
+				36565D992462C48600A829A8 /* SFRefreshApiRequest.h */,
+				36565DA42462C48600A829A8 /* SFRefreshApiRequest.m */,
+				36565D9A2462C48600A829A8 /* SFTokenRequestAccessory.m */,
+				36565DA72462C48600A829A8 /* SFUploadTokenApi.h */,
+				36565D9F2462C48600A829A8 /* SFUploadTokenApi.m */,
+				36565D9C2462C48600A829A8 /* YTKBaseRequest+SFHUDAccessory.h */,
+				36565DA62462C48600A829A8 /* YTKBaseRequest+SFHUDAccessory.m */,
+				36565DA12462C48600A829A8 /* YTKBatchRequest+SFHUDAccessory.h */,
+				36565DAB2462C48600A829A8 /* YTKBatchRequest+SFHUDAccessory.m */,
+				36565D9D2462C48600A829A8 /* YTKChainRequest+SFHUDAccessory.h */,
+				36565DA52462C48600A829A8 /* YTKChainRequest+SFHUDAccessory.m */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
 		3656AB01245598420035ED8C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3640AEC22460E5B200C28F8E /* YHPlanModel.h */,
+				3640AEC32460E5B200C28F8E /* YHPlanModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -435,6 +523,7 @@
 		365F46FF23CB1F4B0073FB73 /* YH_Words */ = {
 			isa = PBXGroup;
 			children = (
+				3640AECE2461B1A900C28F8E /* Manager */,
 				36604712245064160028099A /* QiCardView */,
 				368631762419700600A65AA0 /* AppConfig */,
 				365F470023CB1F4B0073FB73 /* AppDelegate.h */,
@@ -714,6 +803,10 @@
 		3686316524196AAE00A65AA0 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				3640AEC8246194F800C28F8E /* YHLoginApi.h */,
+				3640AEC9246194F800C28F8E /* YHLoginApi.m */,
+				3640AECB2461950B00C28F8E /* YHRegisterApi.h */,
+				3640AECC2461950B00C28F8E /* YHRegisterApi.m */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -757,6 +850,8 @@
 		368631762419700600A65AA0 /* AppConfig */ = {
 			isa = PBXGroup;
 			children = (
+				36565DB82462D25400A829A8 /* AppDelegate+SFAdd.h */,
+				36565DB72462D25400A829A8 /* AppDelegate+SFAdd.m */,
 				36FC43A2245E62A1006569F0 /* UIColor+SFUIConfig.h */,
 				36FC43A1245E62A1006569F0 /* UIColor+SFUIConfig.m */,
 				36863177241971C600A65AA0 /* AppMacros.h */,
@@ -780,6 +875,7 @@
 		3686317D2419778700A65AA0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				36565D982462C48600A829A8 /* Api */,
 				36FC4391245E6126006569F0 /* SFCompoentTableView */,
 				36FC436F245E532F006569F0 /* Cells */,
 				3686317E241977A800A65AA0 /* NSObject+SFHelper.h */,
@@ -1224,17 +1320,20 @@
 				3686315F241935E700A65AA0 /* NSTimer+Addition.m in Sources */,
 				365F470823CB1F4B0073FB73 /* ViewController.m in Sources */,
 				36863160241935E700A65AA0 /* NSDictionary+SFLog.m in Sources */,
+				3640AECA246194F800C28F8E /* YHLoginApi.m in Sources */,
 				36FC4387245E532F006569F0 /* SFTitleValueCopyCell.m in Sources */,
 				36604717245064160028099A /* QiCardView.m in Sources */,
 				368630DC2419354000A65AA0 /* SFLabelBuilder.m in Sources */,
 				36FC43A6245F6E83006569F0 /* YHRegisterController.m in Sources */,
 				36FC438F245E532F006569F0 /* SFImageCCell.m in Sources */,
 				36FC438A245E532F006569F0 /* SFImagesCell.m in Sources */,
+				36565DB52462C48600A829A8 /* YTKBatchRequest+SFHUDAccessory.m in Sources */,
 				3686313E241935E700A65AA0 /* UIView+BlurredImage.m in Sources */,
 				36863156241935E700A65AA0 /* UILabel+SFFly.m in Sources */,
 				36863148241935E700A65AA0 /* UIColor+SFAdd.m in Sources */,
 				365F470223CB1F4B0073FB73 /* AppDelegate.m in Sources */,
 				3686315A241935E700A65AA0 /* NSObject+SFImagePicker.m in Sources */,
+				36565DAE2462C48600A829A8 /* SFBaseApiRequest.m in Sources */,
 				36863140241935E700A65AA0 /* UITextView+SFInputLimit.m in Sources */,
 				3660471E2451A0810028099A /* YHSearchWordController.m in Sources */,
 				36863157241935E700A65AA0 /* NSDate+SFAdd.m in Sources */,
@@ -1247,6 +1346,7 @@
 				36FC43A0245E6126006569F0 /* SFTableViewItemModel.m in Sources */,
 				36DE737A243373010072D31E /* YHWordController.m in Sources */,
 				3686318924197C0C00A65AA0 /* CTMediator+home.m in Sources */,
+				36565DB62462C48600A829A8 /* SFHUDRequestAccessory.m in Sources */,
 				36A58F72244ED1BA0011A8B3 /* YHTodayDataCollectionViewCell.m in Sources */,
 				368630E22419354000A65AA0 /* UIImageView+SFBuilder.m in Sources */,
 				3686313C241935E700A65AA0 /* UIViewController+SFLoading.m in Sources */,
@@ -1259,6 +1359,7 @@
 				36863150241935E700A65AA0 /* UITextField+SFUtils.m in Sources */,
 				36863144241935E700A65AA0 /* UIButton+SFEdgeInsets.m in Sources */,
 				3686316B24196B1F00A65AA0 /* YHLoginController.m in Sources */,
+				36565DB42462C48600A829A8 /* SFErrorHandleRequestAccessory.m in Sources */,
 				36DE736624331FEE0072D31E /* YHTabBarController.m in Sources */,
 				36863147241935E700A65AA0 /* UIButton+SFLoading.m in Sources */,
 				365F471323CB1F4C0073FB73 /* main.m in Sources */,
@@ -1270,14 +1371,19 @@
 				3686314E241935E700A65AA0 /* UIView+SFShadow.m in Sources */,
 				36863146241935E700A65AA0 /* UIGestureRecognizer+SFFly.m in Sources */,
 				3686313F241935E700A65AA0 /* UIViewController+SFAdd.m in Sources */,
+				36565DB32462C48600A829A8 /* YTKBaseRequest+SFHUDAccessory.m in Sources */,
 				36DE7369243371660072D31E /* YHMeController.m in Sources */,
 				36863159241935E700A65AA0 /* NSString+SFAdd.m in Sources */,
+				3640AEC42460E5B200C28F8E /* YHPlanModel.m in Sources */,
 				368630DE2419354000A65AA0 /* UITextField+SFBuilder.m in Sources */,
 				36FC4368245A4451006569F0 /* YHAddPlanController.m in Sources */,
 				36A58F75244EDBF10011A8B3 /* YHButtonCollectionViewCell.m in Sources */,
+				36565DB92462D25400A829A8 /* AppDelegate+SFAdd.m in Sources */,
 				36FC436E245E4BB9006569F0 /* YHMeSettingCell.m in Sources */,
 				36FC439F245E6126006569F0 /* SFTableViewSectionModel.m in Sources */,
 				36FC4390245E532F006569F0 /* SFTextViewCell.m in Sources */,
+				36565DB02462C48600A829A8 /* SFUploadTokenApi.m in Sources */,
+				36565DAD2462C48600A829A8 /* SFTokenRequestAccessory.m in Sources */,
 				36863149241935E700A65AA0 /* UIBarButtonItem+SFFly.m in Sources */,
 				3686315B241935E700A65AA0 /* NSDictionary+SFAdd.m in Sources */,
 				36863141241935E700A65AA0 /* UIButton+SFFly.m in Sources */,
@@ -1287,14 +1393,19 @@
 				36FC439C245E6126006569F0 /* SFTableViewDataSource.m in Sources */,
 				3686318624197BC300A65AA0 /* Target_home.m in Sources */,
 				36863145241935E700A65AA0 /* UIImageView+SFFly.m in Sources */,
+				36565DB22462C48600A829A8 /* YTKChainRequest+SFHUDAccessory.m in Sources */,
 				3675B7AE242E461700B77919 /* YHTabBar.m in Sources */,
 				36863180241977A800A65AA0 /* NSObject+SFHelper.m in Sources */,
 				36863161241935E700A65AA0 /* NSString+SFDiskSpace.m in Sources */,
 				36863154241935E700A65AA0 /* UIControl+SFActionBlock.m in Sources */,
+				36565DAF2462C48600A829A8 /* SFNetworkActivityConsoleLogger.m in Sources */,
 				36863162241935E700A65AA0 /* NSArray+SFSwizzling.m in Sources */,
 				36BB996C245F91F8004B0217 /* YHPlanCell.m in Sources */,
+				3640AED42461B2F500C28F8E /* YHUserModel.m in Sources */,
 				3686313D241935E700A65AA0 /* UIImageView+Letters.m in Sources */,
+				3640AECD2461950B00C28F8E /* YHRegisterApi.m in Sources */,
 				368630DD2419354000A65AA0 /* UILabel+SFBuilder.m in Sources */,
+				3640AED12461B1C200C28F8E /* YHUserManager.m in Sources */,
 				36FC4386245E532F006569F0 /* SFTitleFieldCell.m in Sources */,
 				36E29683245606C7007A0978 /* YHFavoriteWordController.m in Sources */,
 				3686314D241935E700A65AA0 /* UIDevice+SFAdd.m in Sources */,
@@ -1303,6 +1414,7 @@
 				36A58F7B244F3AE30011A8B3 /* YHTodayBrowseCell.m in Sources */,
 				36DE7374243372CC0072D31E /* YHMemoryController.m in Sources */,
 				36863143241935E700A65AA0 /* UIViewController+BackButtonHandler.m in Sources */,
+				36565DB12462C48600A829A8 /* SFRefreshApiRequest.m in Sources */,
 				3656AAFD2452EF1F0035ED8C /* YHSearchWordApi.m in Sources */,
 				368630DF2419354000A65AA0 /* SFImageViewBuilder.m in Sources */,
 				3686313B241935E700A65AA0 /* UITextField+SFInputLimit.m in Sources */,
