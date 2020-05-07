@@ -10,14 +10,21 @@
 #import "QiCardView.h"
 #import "YHWordCardCell.h"
 #import "WordDataModel.h"
+#import "YHStudyWordsListApi.h"
+#import <YYModel.h>
+#import "YHMarkWordsApi.h"
 
 static NSString * const wordCardCellId = @"YHWordCardCellId";
 
-@interface YHWordController ()<QiCardViewDelegate, QiCardViewDataSource>
+static NSInteger pageNumber = 0;
+
+@interface YHWordController ()<QiCardViewDelegate, QiCardViewDataSource, YTKRequestDelegate>
 
 @property (nonatomic,strong) QiCardView *cardView;
 
-@property (nonatomic,strong) NSArray<WordDataModel *> *datas;
+@property (nonatomic,strong) YHStudyWordsListApi *listApi;
+
+@property (nonatomic,strong) NSMutableArray<WordDataModel *> *datas;
 
 @property (nonatomic,strong) UIButton *rememberButton;
 @property (nonatomic,strong) UIButton *forgetButton;
@@ -28,21 +35,18 @@ static NSString * const wordCardCellId = @"YHWordCardCellId";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.navigationItem.title = @"YH Words";
     [self.view setBackgroundColor:[UIColor colorWithHexString:@"0x171C24"]];
 
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    
-//    [self initDatas];
+    [self.listApi start];
     [self.view addSubview:self.cardView];
     [self.view addSubview:self.rememberButton];
     [self.view addSubview:self.forgetButton];
     
-    int a1[] = {1,2,3,4};
-    
     [self layoutPageViews];
+    
 }
 
 
@@ -65,6 +69,31 @@ static NSString * const wordCardCellId = @"YHWordCardCellId";
           make.top.equalTo(self.cardView.mas_bottom).offset(24);
       }];
 }
+
+#pragma mark - YTKRequestDelegate
+#pragma mark -
+- (void)requestFinished:(__kindof YTKBaseRequest *)request {
+    id data = [(SFBaseApiRequest *)request fetchDataWithReformer:nil];
+    
+    if (![(SFBaseApiRequest *)request success]) {
+        NSLog(@"获取单词错误");
+        return;
+    }
+    
+    if ([(SFBaseApiRequest *)request isKindOfClass:[YHStudyWordsListApi class]]) {
+        NSLog(@"%@",data);
+        NSArray *array = [NSArray yy_modelArrayWithClass:[WordDataModel class] json:data];
+        
+        self.datas = [NSMutableArray arrayWithArray:array];
+        [self.cardView reloadData];
+    }
+    
+}
+
+- (void)requestFailed:(__kindof YTKBaseRequest *)request {
+    return;
+}
+
 #pragma mark - QiCardDataSource
 #pragma mark -
 
@@ -87,18 +116,30 @@ static NSString * const wordCardCellId = @"YHWordCardCellId";
 #pragma mark - QiCardDelegate
 #pragma mark -
 - (void)cardView:(QiCardView *)cardView didRemoveLastCell:(QiCardViewCell *)cell forRowAtIndex:(NSInteger)index {
+    pageNumber += 1;
     
+    YHStudyWordsListApi *api = [[YHStudyWordsListApi alloc] initWithPage:pageNumber row:5 userId:[YHUserManager sharedManager].userId];
+    api.delegate = self;
+    [api start];
     
     [cardView reloadDataAnimated:true];
 }
 
 - (void)cardView:(QiCardView *)cardView didRemoveCell:(QiCardViewCell *)cell forRowAtIndex:(NSInteger)index {
     NSLog(@"didRemoveCell forRowAtIndex = %ld", index);
+    WordDataModel *model = self.datas[index];
     
     if ((cell.cardDirection == QiCardCellSwipeDirectionLeft)) {
+        YHMarkWordsApi *api = [[YHMarkWordsApi alloc] initWithType:3 userId:[YHUserManager sharedManager].userId wordId:model.wordId];
+        api.delegate = self;
+        [api start];
         NSLog(@"left");
     }
     if (((cell.cardDirection == QiCardCellSwipeDirectionRight))) {
+         YHMarkWordsApi *api = [[YHMarkWordsApi alloc] initWithType:2 userId:[YHUserManager sharedManager].userId wordId:model.wordId];
+        api.delegate = self;
+        [api start];
+        
         NSLog(@"right");
     }
 }
@@ -128,7 +169,6 @@ static NSString * const wordCardCellId = @"YHWordCardCellId";
         _cardView.isAlpha = YES;
         _cardView.maxRemoveDistance = 100.0;
         _cardView.layer.cornerRadius = 10.0;
-        
         _cardView.dataSource = self;
         _cardView.delegate = self;
 
@@ -139,57 +179,13 @@ static NSString * const wordCardCellId = @"YHWordCardCellId";
 }
 
 
-- (NSArray<WordDataModel *> *)datas {
+- (NSMutableArray<WordDataModel *> *)datas {
     if (!_datas) {
-        _datas = @[
-            [[WordDataModel alloc] initWithDic:@{
-                @"word":@"abandon",
-                @"phonetic":@"/ə'bændən/",
-                @"chinese":@"v./抛弃，舍弃，放弃",
-                @"example":@"We had to abandon the car and walk the rest of the way."
-            }],
-
-            [[WordDataModel alloc] initWithDic:@{
-                @"word":@"able",
-                @"phonetic":@"/'eɪbəl/",
-                @"chinese":@"a./能够；有能力的 be able to do",
-                @"example":@"Will she be able to cope with the work?"
-            }],
-
-            [[WordDataModel alloc] initWithDic:@{
-                @"word":@"abnormal",
-                @"phonetic":@"/æb'nɔːməl US -'nɔːr-/",
-                @"chinese":@"a./反常的，变态的",
-                @"example":@"abnormal behaviour"
-            }],
-
-            [[WordDataModel alloc] initWithDic:@{
-                @"word":@"abolish",
-                @"phonetic":@"/ə'bɔlɪʃ US ə'bɑː-/",
-                @"chinese":@"v./废除，废止",
-                @"example":@"Slavery was abolished in the US in the 19th century."
-            }],
-
-            [[WordDataModel alloc] initWithDic:@{
-                @"word":@"about",
-                @"phonetic":@"/ə'baut/",
-                @"chinese":@"ad./大约；到处；四处# prep./关于；在各处；四处 ",
-                @"example":@"We're about (= almost) ready to leave"
-            }],
-
-//            [[WordDataModel alloc] initWithDic:@{
-//                @"word":@"absent",
-//                @"phonetic":@"/'æbsənt/",
-//                @"chinese":@"a./缺席，不在",
-//                @"example":@"`Nothing,' Rosie said in an absent way."
-//            }]
-
-
-        ];
+        _datas = [NSMutableArray new];
+        
     }
     return _datas;
 }
-
 
 - (UIButton *)rememberButton {
     if (!_rememberButton) {
@@ -222,51 +218,13 @@ static NSString * const wordCardCellId = @"YHWordCardCellId";
     
     return _forgetButton;
 }
-//- (void)initDatas {
-//    _datas = @[
-//               [[WordDataModel alloc] initWithDic:@{
-//                   @"word":@"abandon",
-//                   @"phonetic":@"/ə'bændən/",
-//                   @"chinese":@"v./抛弃，舍弃，放弃",
-//                   @"example":@"We had to abandon the car and walk the rest of the way."
-//               }],
-//
-//               [[WordDataModel alloc] initWithDic:@{
-//                   @"word":@"able",
-//                   @"phonetic":@"/'eɪbəl/",
-//                   @"chinese":@"a./能够；有能力的 be able to do",
-//                   @"example":@"Will she be able to cope with the work?"
-//               }],
-//
-//               [[WordDataModel alloc] initWithDic:@{
-//                   @"word":@"abnormal",
-//                   @"phonetic":@"/æb'nɔːməl US -'nɔːr-/",
-//                   @"chinese":@"a./反常的，变态的",
-//                   @"example":@"abnormal behaviour"
-//               }],
-//
-//               [[WordDataModel alloc] initWithDic:@{
-//                   @"word":@"abolish",
-//                   @"phonetic":@"/ə'bɔlɪʃ US ə'bɑː-/",
-//                   @"chinese":@"v./废除，废止",
-//                   @"example":@"Slavery was abolished in the US in the 19th century."
-//               }],
-//
-//               [[WordDataModel alloc] initWithDic:@{
-//                   @"word":@"about",
-//                   @"phonetic":@"/ə'baut/",
-//                   @"chinese":@"ad./大约；到处；四处# prep./关于；在各处；四处 ",
-//                   @"example":@"We're about (= almost) ready to leave"
-//               }],
-//
-//               [[WordDataModel alloc] initWithDic:@{
-//                   @"word":@"absent",
-//                   @"phonetic":@"/'æbsənt/",
-//                   @"chinese":@"a./缺席，不在",
-//                   @"example":@"`Nothing,' Rosie said in an absent way."
-//               }]
-//
-//
-//           ];
-//}
+
+- (YHStudyWordsListApi *)listApi {
+    if (!_listApi) {
+        pageNumber += 1;
+        _listApi = [[YHStudyWordsListApi alloc] initWithPage:pageNumber row:5 userId:[YHUserManager sharedManager].userId];
+        _listApi.delegate = self;
+    }
+    return _listApi;
+}
 @end

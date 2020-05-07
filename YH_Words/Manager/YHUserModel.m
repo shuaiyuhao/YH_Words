@@ -10,4 +10,11 @@
 
 @implementation YHUserModel
 
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{
+        @"userId":@[@"id",@"usrId",@"userID"],
+        @"avatar":@"headSculpture"
+    };
+}
+
 @end

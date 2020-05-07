@@ -63,9 +63,17 @@
     return NSStringFromClass([self class]);
 }
 
-//- (void)configWithData:(id)data{
+- (void)configWithData:(id)data{
 //    [self.userImageView sd_setImageWithURL:[NSURL URLWithString:[SFUserManager sharedManager].avatar.length?[SFUserManager sharedManager].avatar:@""]];
-//}
+//    self.userNameLabel.text =
+}
+
+- (void)configWithName:(NSString *)name userId:(NSInteger)userId {
+    self.userIDLabel.text = [NSString stringWithFormat:@"用户ID:%ld",userId];
+    self.userNameLabel.text = name;
+}
+
+
 
 #pragma mark - getter and setter
 #pragma mark -

@@ -21,4 +21,13 @@
     return self;
 }
 
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{
+        @"wordId":@"id",
+        @"word":@"word",
+        @"phonetic":@"phoneticSymbol",
+        @"chinese":@"explanation",
+        @"example":@"illustrativeSentence1"
+    };
+}
 @end

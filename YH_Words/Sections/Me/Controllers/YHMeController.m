@@ -16,12 +16,15 @@
 #import "YHFavoriteWordController.h"
 #import "UIControl+SFActionBlock.h"
 #import "YHSettingController.h"
+#import "SFHUD.h"
+#import "NSObject+SFImagePicker.h"
 
 @interface YHMeController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic,strong) UICollectionView *meCollectionView;
 @property (nonatomic,strong) UIView *headerView;
 @property (nonatomic,strong) UIView *footerView;
+@property (nonatomic,strong) UIImageView *avatarView;
 
 @property (nonatomic,strong) NSArray *buttonArray;
 @property (nonatomic,strong) UIBarButtonItem *settingButton;
@@ -173,25 +176,53 @@
     
 }
 
+- (void)avatarTapped {
+    NSLog(@"headtest");
+    WeakSelf;
+    [SFHUD showSheetViewWithTitle:@"选择您的头像" otherButtonTitles:@[@"相册",@"拍照"] block:^(NSInteger index) {
+        if (!index) {
+            [weakSelf getPhotoWithCrop:NO photoDidSelectBlock:^(NSArray *assets) {
+                UIImage *image = assets[0];
+                
+            }];
+        } else {
+            [weakSelf takePhotoWithCrop:NO photoDidSelectBlock:^(NSArray *assets) {
+                UIImage *image = assets[0];
+            }];
+        }
+    }];
+}
+
 - (UIView *)headerView {
     if (!_headerView) {
         _headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 110)];
         _headerView.backgroundColor = [UIColor colorWithHexString:@"0x171c24"];
+    
+        [_headerView addSubview:self.avatarView];
         
-        UIImageView *avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 95, 95)];
-        avatarView.image = [UIImage imageNamed:@"ic_user"];
-        avatarView.contentMode = UIViewContentModeScaleAspectFill;
-        avatarView.layer.cornerRadius = 40;
-        
-        [_headerView addSubview:avatarView];
-        
-        [avatarView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [_avatarView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self.headerView);
             make.bottom.equalTo(self.headerView);
         }];
+
     }
     
     return _headerView;
+}
+
+- (UIImageView *)avatarView {
+    if (!_avatarView) {
+        _avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 95, 95)];
+        _avatarView.image = [UIImage imageNamed:@"ic_user"];
+        _avatarView.contentMode = UIViewContentModeScaleAspectFill;
+        _avatarView.layer.cornerRadius = 40;
+        _avatarView.userInteractionEnabled = YES;
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(avatarTapped)];
+        
+        [_avatarView addGestureRecognizer:tap];
+    }
+    return _avatarView;
 }
 
 - (UIView *)footerView {

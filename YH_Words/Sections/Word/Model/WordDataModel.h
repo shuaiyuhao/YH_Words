@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WordDataModel : NSObject
 
+@property (nonatomic,assign) NSInteger wordId;
 @property (nonatomic,strong) NSString *word;
 @property (nonatomic,strong) NSString *chinese;
 @property (nonatomic,strong) NSString *phonetic;

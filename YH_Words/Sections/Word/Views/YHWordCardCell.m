@@ -48,13 +48,13 @@
 
 - (void)layoutPageViews {
     [self.wordLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(200, 67));
+        make.size.mas_equalTo(CGSizeMake(280, 67));
         make.top.equalTo(self.contentView).offset(22);
         make.centerX.equalTo(self.contentView);
     }];
     
     [self.phoneticLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(180, 30));
+        make.size.mas_equalTo(CGSizeMake(240, 30));
         make.top.equalTo(self.wordLabel.mas_bottom).offset(15);
         make.centerX.equalTo(self.contentView);
     }];
