@@ -32,7 +32,7 @@
 //online server:http://129.211.95.89
 
 - (NSString *)requestUrl {
-    return @"http://129.211.95.89/words/wordsUser/register";
+    return @"/words/wordsUser/register";
 }
 
 - (YTKResponseSerializerType)responseSerializerType {

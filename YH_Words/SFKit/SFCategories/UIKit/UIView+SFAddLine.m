@@ -26,7 +26,7 @@ static NSInteger const kTagLineView = 11011;
 - (void)sf_addLineTop:(BOOL)hasTop bottom:(BOOL)hasBottom lineColor:(UIColor *)lineColor leftSpace:(CGFloat)leftSpace rightSpace:(CGFloat)rightSpace{
     [self sf_removeViewWithTag:kTagLineView];
     if (hasTop) {
-        UIView *line = [self sf_lineWithColor:lineColor];
+        UIView *line = [self sf_lineWithColor:[UIColor grayColor]];
         line.tag = kTagLineView;
         [self addSubview:line];
         [self bringSubviewToFront:line];

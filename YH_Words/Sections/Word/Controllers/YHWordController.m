@@ -73,6 +73,7 @@ static NSInteger pageNumber = 0;
 #pragma mark - YTKRequestDelegate
 #pragma mark -
 - (void)requestFinished:(__kindof YTKBaseRequest *)request {
+    id obj = request.responseObject;
     id data = [(SFBaseApiRequest *)request fetchDataWithReformer:nil];
     
     if (![(SFBaseApiRequest *)request success]) {
@@ -118,7 +119,7 @@ static NSInteger pageNumber = 0;
 - (void)cardView:(QiCardView *)cardView didRemoveLastCell:(QiCardViewCell *)cell forRowAtIndex:(NSInteger)index {
     pageNumber += 1;
     
-    YHStudyWordsListApi *api = [[YHStudyWordsListApi alloc] initWithPage:pageNumber row:5 userId:[YHUserManager sharedManager].userId];
+    YHStudyWordsListApi *api = [[YHStudyWordsListApi alloc] initWithPage:pageNumber row:5 token:[YHUserManager sharedManager].token userId:[YHUserManager sharedManager].userId];
     api.delegate = self;
     [api start];
     
@@ -130,13 +131,13 @@ static NSInteger pageNumber = 0;
     WordDataModel *model = self.datas[index];
     
     if ((cell.cardDirection == QiCardCellSwipeDirectionLeft)) {
-        YHMarkWordsApi *api = [[YHMarkWordsApi alloc] initWithType:3 userId:[YHUserManager sharedManager].userId wordId:model.wordId];
+        YHMarkWordsApi *api = [[YHMarkWordsApi alloc] initWithType:3 token:[YHUserManager sharedManager].token userId:[YHUserManager sharedManager].userId wordId:model.wordId];
         api.delegate = self;
         [api start];
         NSLog(@"left");
     }
     if (((cell.cardDirection == QiCardCellSwipeDirectionRight))) {
-         YHMarkWordsApi *api = [[YHMarkWordsApi alloc] initWithType:2 userId:[YHUserManager sharedManager].userId wordId:model.wordId];
+        YHMarkWordsApi *api = [[YHMarkWordsApi alloc] initWithType:2 token:[YHUserManager sharedManager].token userId:[YHUserManager sharedManager].userId wordId:model.wordId];
         api.delegate = self;
         [api start];
         
@@ -222,7 +223,7 @@ static NSInteger pageNumber = 0;
 - (YHStudyWordsListApi *)listApi {
     if (!_listApi) {
         pageNumber += 1;
-        _listApi = [[YHStudyWordsListApi alloc] initWithPage:pageNumber row:5 userId:[YHUserManager sharedManager].userId];
+        _listApi = [[YHStudyWordsListApi alloc] initWithPage:pageNumber row:5 token:[YHUserManager sharedManager].token userId:[YHUserManager sharedManager].userId];
         _listApi.delegate = self;
     }
     return _listApi;

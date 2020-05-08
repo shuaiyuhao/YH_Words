@@ -18,8 +18,9 @@
 #import "YHSettingController.h"
 #import "SFHUD.h"
 #import "NSObject+SFImagePicker.h"
+#import "YHUploadImageApi.h"
 
-@interface YHMeController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface YHMeController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,YTKRequestDelegate>
 
 @property (nonatomic,strong) UICollectionView *meCollectionView;
 @property (nonatomic,strong) UIView *headerView;
@@ -53,6 +54,23 @@
     [self.meCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+}
+
+#pragma mark - YTKRequestDelegate
+#pragma mark -
+- (void)requestFinished:(__kindof YTKBaseRequest *)request {
+    id data = [(SFBaseApiRequest *)request fetchDataWithReformer:nil];
+    if (![(SFBaseApiRequest *)request success]) {
+        return;
+    }
+    
+    if ([(SFBaseApiRequest *)request isKindOfClass:[YHUploadImageApi class]]) {
+        NSLog(@"%@",data);
+    }
+}
+
+- (void)requestFailed:(__kindof YTKBaseRequest *)request {
+    
 }
 
 #pragma mark - UICollectionViewDelegate
@@ -182,12 +200,25 @@
     [SFHUD showSheetViewWithTitle:@"选择您的头像" otherButtonTitles:@[@"相册",@"拍照"] block:^(NSInteger index) {
         if (!index) {
             [weakSelf getPhotoWithCrop:NO photoDidSelectBlock:^(NSArray *assets) {
-                UIImage *image = assets[0];
+                UIImage *image = [UIImage imageNamed:@"ic_user"];
+                NSData *data = UIImageJPEGRepresentation(image, 0.7f);
+                NSString *encodeImage = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+                NSString *fileName = [NSString stringWithFormat:@"%@avatar",[YHUserManager sharedManager].userName];
                 
-            }];
+                YHUploadImageApi *api = [[YHUploadImageApi alloc] initWithName:fileName data:encodeImage];
+                api.delegate = weakSelf;
+                [api start];
+             }];
         } else {
             [weakSelf takePhotoWithCrop:NO photoDidSelectBlock:^(NSArray *assets) {
                 UIImage *image = assets[0];
+                NSData *data = UIImageJPEGRepresentation(image, 1.0f);
+                NSString *encodeImage = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+                NSString *fileName = [NSString stringWithFormat:@"%@avatar",[YHUserManager sharedManager].userName];
+                
+                YHUploadImageApi *api = [[YHUploadImageApi alloc] initWithName:fileName data:encodeImage];
+                api.delegate = weakSelf;
+                [api start];
             }];
         }
     }];

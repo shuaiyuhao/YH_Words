@@ -1,36 +1,40 @@
 //
-//  YHStudyWordsListApi.m
+//  YHMeWordsApi.m
 //  YH_Words
 //
-//  Created by Yuhao Shuai on 2020/5/6.
+//  Created by Yuhao Shuai on 2020/5/7.
 //  Copyright © 2020 Vwidea. All rights reserved.
 //
 
-#import "YHStudyWordsListApi.h"
+#import "YHMeWordsApi.h"
 
-@interface YHStudyWordsListApi ()
+@interface YHMeWordsApi ()
 
 @property (nonatomic,assign) NSInteger page;
 @property (nonatomic,assign) NSInteger row;
-@property (nonatomic,copy)   NSString *token;
 @property (nonatomic,assign) NSInteger userId;
+@property (nonatomic,assign) NSInteger type;
+@property (nonatomic,copy)   NSString *token;
+
 @end
 
-@implementation YHStudyWordsListApi
-- (instancetype)initWithPage:(NSInteger)page row:(NSInteger)row token:(NSString *)token userId:(NSInteger)userId {
+@implementation YHMeWordsApi
+
+- (instancetype)initWithPage:(NSInteger)page row:(NSInteger)row type:(NSInteger)type userId:(NSInteger)userId token:(NSString *)token {
     self = [super init];
     
     if (self) {
         _page = page;
         _row = row;
-        _token = token;
+        _type = type;
         _userId = userId;
+        _token = token;
     }
     return self;
 }
 
 - (NSString *)requestUrl {
-    return @"/words/words/wordsList";
+    return @"/words/words/allWordsList";
 }
 
 - (YTKRequestMethod)requestMethod {
@@ -49,8 +53,11 @@
     return @{
         @"page":@(self.page),
         @"rows":@(self.row),
-        @"token":self.token,
-        @"userId":@(self.userId)
+        @"type":@(self.type),
+        @"userId":@(self.userId),
+        @"token":self.token
     };
 }
+
+
 @end

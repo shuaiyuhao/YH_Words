@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) NSInteger userId;
 @property (nonatomic,copy) NSString *avatar;
 @property (nonatomic,assign) NSInteger level;
-
+@property (nonatomic , copy) NSString *token;
 
 + (instancetype)sharedManager;
 

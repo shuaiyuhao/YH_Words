@@ -38,7 +38,7 @@
 - (void)layoutPageViews {
     [self.engLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(200, 20));
-        make.top.equalTo(self.contentView).offset(0);
+        make.top.equalTo(self.contentView).offset(5);
         make.left.equalTo(self.contentView).offset(20);
     }];
     

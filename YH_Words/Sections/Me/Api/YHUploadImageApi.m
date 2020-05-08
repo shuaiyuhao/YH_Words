@@ -1,34 +1,33 @@
 //
-//  YHLoginApi.m
+//  YHUploadImageApi.m
 //  YH_Words
 //
-//  Created by Yuhao Shuai on 2020/5/5.
+//  Created by Yuhao Shuai on 2020/5/7.
 //  Copyright © 2020 Vwidea. All rights reserved.
 //
 
-#import "YHLoginApi.h"
+#import "YHUploadImageApi.h"
 
-@interface YHLoginApi ()
+@interface YHUploadImageApi ()
 
-@property (nonatomic,copy) NSString *phone;
-@property (nonatomic,copy) NSString *passwd;
+@property (nonatomic,strong) NSString *fileName;
+
+@property (nonatomic,strong) NSString *imgData;
 
 @end
 
-@implementation YHLoginApi
-- (instancetype)initWithPhone:(NSString *)phone passwd:(NSString *)passwd {
+@implementation YHUploadImageApi
+- (instancetype)initWithName:(NSString *)fileName data:(NSString *)imgData {
     self = [super init];
-    
     if (self) {
-        _phone = phone;
-        _passwd = passwd;
-        NSLog(@"%@,%@",self.phone,self.passwd);
+        _fileName = fileName;
+        _imgData = imgData;
     }
     return self;
 }
 
 - (NSString *)requestUrl {
-    return @"/words/wordsUser/login";
+    return @"/words/wordsUser/upload";
 }
 
 - (YTKRequestMethod)requestMethod {
@@ -45,8 +44,8 @@
 
 - (id)requestArgument {
     return @{
-        @"phone":self.phone,
-        @"password":self.passwd
+        @"fileName":self.fileName,
+        @"imgdata":self.imgData
     };
 }
 @end

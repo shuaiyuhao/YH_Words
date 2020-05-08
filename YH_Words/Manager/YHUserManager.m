@@ -15,6 +15,7 @@ static NSString * const kPhone = @"kPhone";
 static NSString * const kAvatar = @"kAvatar";
 static NSString * const kUsername = @"kUsername";
 static NSString * const kLevel = @"kLevel";
+static NSString * const kToken = @"kToken";
 
 @interface YHUserManager ()
 
@@ -56,6 +57,7 @@ static NSString * const kLevel = @"kLevel";
     self.userName = model.userName;
     self.level = model.level;
     self.userId = model.userId;
+    self.token = model.token?:self.token?:@"";
 }
 
 - (void)clearUserInfo {
@@ -113,7 +115,13 @@ static NSString * const kLevel = @"kLevel";
     return [obj integerValue];
 }
 
+- (void)setToken:(NSString *)token {
+    [self.myCache setObject:token forKey:kToken];
+}
 
+- (NSString *)token {
+    return (NSString *)[self.myCache objectForKey:kToken];
+}
 
 
 @end

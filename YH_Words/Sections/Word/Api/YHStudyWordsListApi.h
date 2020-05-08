@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YHStudyWordsListApi : SFBaseApiRequest
 
-- (instancetype)initWithPage:(NSInteger)page row:(NSInteger)row userId:(NSInteger)userId;
+- (instancetype)initWithPage:(NSInteger)page row:(NSInteger)row token:(NSString *)token userId:(NSInteger)userId;
 
 @end
 

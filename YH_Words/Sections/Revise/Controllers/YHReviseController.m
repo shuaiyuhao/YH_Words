@@ -76,7 +76,7 @@
     
     YHPlanModel *model = arr[indexPath.row];
     
-    NSLog(@"%@",arr);
+//    NSLog(@"%@",arr);
     
     [cell configWithPlan:model.plan planDone:model.isDone];
     

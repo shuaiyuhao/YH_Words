@@ -1,5 +1,5 @@
 //
-//  YHMarkWordsApi.h
+//  YHMeWordsApi.h
 //  YH_Words
 //
 //  Created by Yuhao Shuai on 2020/5/7.
@@ -10,9 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YHMarkWordsApi : SFBaseApiRequest
+@interface YHMeWordsApi : SFBaseApiRequest
 
-- (instancetype)initWithType:(NSInteger)type token:(NSString *)token userId:(NSInteger)userId wordId:(NSInteger)wordId;
+- (instancetype)initWithPage:(NSInteger)page row:(NSInteger)row type:(NSInteger)type userId:(NSInteger)userId token:(NSString *)token;
 
 @end
 

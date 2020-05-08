@@ -43,11 +43,11 @@
     });
     return sharedInstance;
 }
-
+//http://129.211.95.89
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _baseUrl = @"";
+        _baseUrl = @"http://192.168.133.81";
         _cdnUrl = @"";
         _urlFilters = [NSMutableArray array];
         _cacheDirPathFilters = [NSMutableArray array];
