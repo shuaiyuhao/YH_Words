@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)cellIdentifier;
 
-- (void)configWithName:(NSString *)name userId:(NSInteger)userId;
+- (void)configWithName:(NSString *)name userId:(NSInteger)userId avatar:(NSString *)avatar;
 
 @end
 

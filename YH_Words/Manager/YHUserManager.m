@@ -64,6 +64,7 @@ static NSString * const kToken = @"kToken";
     [self.myCache removeObjectForKey:kUserID];
     [self.myCache removeObjectForKey:kAvatar];
     [self.myCache removeObjectForKey:kLevel];
+    [self.myCache removeObjectForKey:kToken];
 }
 
 - (BOOL)hasLogin {

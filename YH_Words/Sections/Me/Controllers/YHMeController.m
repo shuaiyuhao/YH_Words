@@ -19,6 +19,9 @@
 #import "SFHUD.h"
 #import "NSObject+SFImagePicker.h"
 #import "YHUploadImageApi.h"
+#import "YHTodayWordsListApi.h"
+#import <SDWebImage.h>
+#import "YHChangeAvatarApi.h"
 
 @interface YHMeController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,YTKRequestDelegate>
 
@@ -29,6 +32,11 @@
 
 @property (nonatomic,strong) NSArray *buttonArray;
 @property (nonatomic,strong) UIBarButtonItem *settingButton;
+
+@property (nonatomic,strong) YHTodayWordsListApi *todayViewApi;
+
+@property (nonatomic,strong) YHTodayWordsListApi *todayFuzzyApi;
+
 @end
 
 @implementation YHMeController
@@ -44,7 +52,10 @@
     [self.view setBackgroundColor:[UIColor colorWithHexString:@"0x171C24"]];
     self.navigationItem.rightBarButtonItem = self.settingButton;
     
+    [self.todayViewApi start];
+    
     [self.view addSubview:self.meCollectionView];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     [self layoutPageViews];
 }
@@ -66,7 +77,25 @@
     
     if ([(SFBaseApiRequest *)request isKindOfClass:[YHUploadImageApi class]]) {
         NSLog(@"%@",data);
+        NSString *imgStr = data;
+        [YHUserManager sharedManager].avatar = imgStr;
+        
+        YHChangeAvatarApi *api = [[YHChangeAvatarApi alloc] initWithUserId:[YHUserManager sharedManager].userId avatar:imgStr token:[YHUserManager sharedManager].token];
+        api.delegate = self;
+        [api start];
+        
+        [self.avatarView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.133.81%@",[YHUserManager sharedManager].avatar]]];
     }
+    
+    if ([(SFBaseApiRequest *)request isKindOfClass:[YHChangeAvatarApi class]]) {
+        NSLog(@"%@",data);
+    }
+    
+    if ([(SFBaseApiRequest *)request isKindOfClass:[YHTodayWordsListApi class]]) {
+        NSLog(@"%@",data);
+    }
+    
+    
 }
 
 - (void)requestFailed:(__kindof YTKBaseRequest *)request {
@@ -200,10 +229,10 @@
     [SFHUD showSheetViewWithTitle:@"选择您的头像" otherButtonTitles:@[@"相册",@"拍照"] block:^(NSInteger index) {
         if (!index) {
             [weakSelf getPhotoWithCrop:NO photoDidSelectBlock:^(NSArray *assets) {
-                UIImage *image = [UIImage imageNamed:@"ic_user"];
+                UIImage *image = assets[0];
                 NSData *data = UIImageJPEGRepresentation(image, 0.7f);
                 NSString *encodeImage = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-                NSString *fileName = [NSString stringWithFormat:@"%@avatar",[YHUserManager sharedManager].userName];
+                NSString *fileName = [NSString stringWithFormat:@"%@avatar.jpg",[YHUserManager sharedManager].userName];
                 
                 YHUploadImageApi *api = [[YHUploadImageApi alloc] initWithName:fileName data:encodeImage];
                 api.delegate = weakSelf;
@@ -214,7 +243,7 @@
                 UIImage *image = assets[0];
                 NSData *data = UIImageJPEGRepresentation(image, 1.0f);
                 NSString *encodeImage = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-                NSString *fileName = [NSString stringWithFormat:@"%@avatar",[YHUserManager sharedManager].userName];
+                NSString *fileName = [NSString stringWithFormat:@"%@avatar.jpg",[YHUserManager sharedManager].userName];
                 
                 YHUploadImageApi *api = [[YHUploadImageApi alloc] initWithName:fileName data:encodeImage];
                 api.delegate = weakSelf;
@@ -232,6 +261,7 @@
         [_headerView addSubview:self.avatarView];
         
         [_avatarView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(95, 95));
             make.centerX.equalTo(self.headerView);
             make.bottom.equalTo(self.headerView);
         }];
@@ -244,10 +274,12 @@
 - (UIImageView *)avatarView {
     if (!_avatarView) {
         _avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 95, 95)];
-        _avatarView.image = [UIImage imageNamed:@"ic_user"];
         _avatarView.contentMode = UIViewContentModeScaleAspectFill;
+        _avatarView.clipsToBounds = YES;
         _avatarView.layer.cornerRadius = 40;
         _avatarView.userInteractionEnabled = YES;
+        
+        [self.avatarView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.133.81%@",[YHUserManager sharedManager].avatar]]];
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(avatarTapped)];
         
@@ -278,6 +310,14 @@
             make.size.mas_equalTo(CGSizeMake(310, 48));
             make.center.equalTo(self.footerView);
         }];
+        WeakSelf;
+        [logoutButton sf_addHandler:^(id weakSender) {
+            [[YHUserManager sharedManager] clearUserInfo];
+            YHLoginController *vc = [YHLoginController new];
+            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+            
+            [ApplicationDelegate setRootViewController:nav animated:true];
+        } forControlEvents:UIControlEventTouchUpInside];
     }
     return _footerView;
 }
@@ -320,5 +360,13 @@
     YHSettingController *vc = [YHSettingController new];
     
     [self.navigationController pushViewController:vc animated:true];
+}
+
+- (YHTodayWordsListApi *)todayViewApi {
+    if (!_todayViewApi) {
+        _todayViewApi = [[YHTodayWordsListApi alloc] initWithPage:1 row:5 type:3 userId:[YHUserManager sharedManager].userId token:[YHUserManager sharedManager].token];
+        _todayViewApi.delegate = self;
+    }
+    return _todayViewApi;
 }
 @end

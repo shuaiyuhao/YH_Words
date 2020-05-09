@@ -11,6 +11,10 @@
 #import <JKCountDownButton.h>
 #import "UIColor+SFUIConfig.h"
 #import "YHRegisterApi.h"
+#import "YHLoginApi.h"
+#import "YHUserModel.h"
+#import "YHUserManager.h"
+#import "YHTabBarController.h"
 
 @interface YHRegisterController ()<YTKRequestDelegate>
 
@@ -154,6 +158,21 @@
     
     if ([(SFBaseApiRequest *)request isKindOfClass:[YHRegisterApi class]]) {
         NSLog(@"%@",data);
+        YHLoginApi *api = [[YHLoginApi alloc] initWithPhone:self.phone passwd:self.confirmPassword];
+        api.delegate = self;
+        api.hudType = SFHUDTypeProgressAlert;
+        [api start];
+    }
+    
+    if ([(SFBaseApiRequest *)request isKindOfClass:[YHLoginApi class]]) {
+        [SFHUD hideAlert];
+        [SFHUD showSuccessToast:@"注册成功！"];
+        
+        YHUserModel *model = [YHUserModel yy_modelWithJSON:data];
+        [[YHUserManager sharedManager] updateUserInfo:model];
+        
+        YHTabBarController *vc = [YHTabBarController new];
+        [ApplicationDelegate setRootViewController:vc animated:true];
     }
 }
 

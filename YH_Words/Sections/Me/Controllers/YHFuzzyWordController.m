@@ -13,6 +13,8 @@
 #import <MJRefresh.h>
 #import <YYModel.h>
 #import "YHMarkWordsApi.h"
+#import "YHCollectWordApi.h"
+#import "SFHUD.h"
 
 static NSInteger pagenumber = 0;
 
@@ -58,6 +60,7 @@ static NSInteger pagenumber = 0;
 #pragma mark - YTKRequestDelegate
 #pragma mark -
 - (void)requestFinished:(__kindof YTKBaseRequest *)request {
+    id obj = request.responseObject;
     id data = [(SFBaseApiRequest *)request fetchDataWithReformer:nil];
     if (![(SFBaseApiRequest *)request success]) {
         
@@ -80,6 +83,10 @@ static NSInteger pagenumber = 0;
        
         [self.fuzzyWordTableView reloadData];
         
+    }
+    
+    if ([(SFBaseApiRequest *)request isKindOfClass:[YHCollectWordApi class]]) {
+        [SFHUD showInfoToast:obj[@"message"]];
     }
 }
 
@@ -143,11 +150,10 @@ static NSInteger pagenumber = 0;
     
     UITableViewRowAction *likeAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"收藏" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
            WordDataModel *model = self.datas[indexPath.row];
-           NSLog(@"取消收藏单词%@",model.word);
-           YHMarkWordsApi *api = [[YHMarkWordsApi alloc] initWithType:4 token:[YHUserManager sharedManager].token userId:[YHUserManager sharedManager].userId wordId:model.wordId];
+           NSLog(@"收藏单词 %@",model.word);
+             YHCollectWordApi *api = [[YHCollectWordApi alloc] initWithToken:[YHUserManager sharedManager].token userId:[YHUserManager sharedManager].userId wordId:model.wordId];
            api.delegate = self;
            [api start];
-           [self.datas removeObjectAtIndex:indexPath.row];
            [self.fuzzyWordTableView reloadData];
        }];
     

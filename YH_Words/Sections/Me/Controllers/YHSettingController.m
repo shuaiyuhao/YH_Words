@@ -78,7 +78,7 @@
         YHMeSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:[YHMeSettingCell cellIdentifier] forIndexPath:indexPath];
         NSLog(@"userID:%ld", (long)[YHUserManager sharedManager].userId);
         
-        [cell configWithName:[YHUserManager sharedManager].userName userId:[YHUserManager sharedManager].userId];
+        [cell configWithName:[YHUserManager sharedManager].userName userId:[YHUserManager sharedManager].userId avatar:[YHUserManager sharedManager].avatar];
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         

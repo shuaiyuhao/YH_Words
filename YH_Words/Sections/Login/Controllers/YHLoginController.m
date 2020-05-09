@@ -52,7 +52,7 @@
     [self.avatarImageView mas_makeConstraints:^(MASConstraintMaker *make) {
          make.size.mas_equalTo(CGSizeMake(100, 100));
          make.centerX.equalTo(self.view);
-         make.top.equalTo(self.view).offset(100);
+         make.top.equalTo(self.view).offset(30);
      }];
      
      [self.accountView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -90,7 +90,7 @@
 }
 
 #pragma mark - YTKRequestDelegate
-#pragma mark -
+#pragma mark - 
 - (void)requestFinished:(__kindof YTKBaseRequest *)request {
     id data0 = request.responseObject;
     NSLog(@"%@",data0);

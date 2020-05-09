@@ -3,7 +3,7 @@
 //  YH_Words
 //
 //  Created by Yuhao Shuai on 2020/5/5.
-//  Copyright © 2020 Vwidea. All rights reserved.
+//  Copyright © 2020 Vwidea. All rights reserved.9
 //
 
 #import "YHUserModel.h"

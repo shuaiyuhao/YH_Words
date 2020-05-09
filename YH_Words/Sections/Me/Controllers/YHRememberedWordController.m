@@ -13,6 +13,7 @@
 #import <MJRefresh.h>
 #import <YYModel.h>
 #import "YHMarkWordsApi.h"
+#import "YHCollectWordApi.h"
 
 static NSInteger pagenumber = 0;
 
@@ -147,10 +148,9 @@ static NSInteger pagenumber = 0;
     UITableViewRowAction *dislikeAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"收藏" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
            WordDataModel *model = self.datas[indexPath.row];
            NSLog(@"标记%@ 为收藏单词",model.word);
-           YHMarkWordsApi *api = [[YHMarkWordsApi alloc] initWithType:4 token:[YHUserManager sharedManager].token userId:[YHUserManager sharedManager].userId wordId:model.wordId];
+        YHCollectWordApi *api = [[YHCollectWordApi alloc] initWithToken:[YHUserManager sharedManager].token userId:[YHUserManager sharedManager].userId wordId:model.wordId];
            api.delegate = self;
            [api start];
-           [self.datas removeObjectAtIndex:indexPath.row];
            [self.rememberedWordTableView reloadData];
        }];
     

@@ -13,6 +13,8 @@
 #import <MJRefresh.h>
 #import <YYModel.h>
 #import "YHMarkWordsApi.h"
+#import "YHCancelCollectApi.h"
+#import "YHMeCollectWordsListApi.h"
 
 static NSInteger pagenumber = 0;
 
@@ -22,7 +24,7 @@ static NSInteger pagenumber = 0;
 
 @property (nonatomic,strong) NSMutableArray<WordDataModel *> *datas;
 
-@property (nonatomic,strong) YHMeWordsApi *favoriteWordsListApi;
+@property (nonatomic,strong) YHMeCollectWordsListApi *collectWordsListApi;
 @end
 
 @implementation YHFavoriteWordController
@@ -36,7 +38,7 @@ static NSInteger pagenumber = 0;
         
      [self.view setBackgroundColor:[UIColor colorWithHexString:@"0x171C24"]];
     
-    [self.favoriteWordsListApi start];
+    [self.collectWordsListApi start];
     [self.view addSubview:self.favoriteWordTableView];
     
     self.favoriteWordTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(getNewData)];
@@ -57,7 +59,7 @@ static NSInteger pagenumber = 0;
 - (void)getNewData {
     pagenumber = 0;
     self.datas = nil;
-    YHMeWordsApi *api = [[YHMeWordsApi alloc] initWithPage:1 row:10 type:4 userId:[YHUserManager sharedManager].userId token:[YHUserManager sharedManager].token];
+    YHMeCollectWordsListApi *api = [[YHMeCollectWordsListApi alloc] initWithPage:1 row:5 userId:[YHUserManager sharedManager].userId token:[YHUserManager sharedManager].token];
     api.delegate = self;
     pagenumber = 1;
     [api start];
@@ -65,7 +67,7 @@ static NSInteger pagenumber = 0;
 
 - (void)getMoreData {
     pagenumber += 1;
-    YHMeWordsApi *api  = [[YHMeWordsApi alloc] initWithPage:pagenumber row:10 type:4 userId:[YHUserManager sharedManager].userId token:[YHUserManager sharedManager].token];
+    YHMeCollectWordsListApi *api  = [[YHMeCollectWordsListApi alloc] initWithPage:pagenumber row:5 userId:[YHUserManager sharedManager].userId token:[YHUserManager sharedManager].token];
     api.delegate = self;
     [api start];
 }
@@ -80,7 +82,7 @@ static NSInteger pagenumber = 0;
         return;
     }
     
-    if ([(SFBaseApiRequest *)request isKindOfClass:[YHMeWordsApi class]]) {
+    if ([(SFBaseApiRequest *)request isKindOfClass:[YHMeCollectWordsListApi class]]) {
         NSArray *array = [NSArray yy_modelArrayWithClass:[WordDataModel class] json:data];
         
         if (pagenumber == 1) {
@@ -139,14 +141,13 @@ static NSInteger pagenumber = 0;
         YHMarkWordsApi *api = [[YHMarkWordsApi alloc] initWithType:2 token:[YHUserManager sharedManager].token userId:[YHUserManager sharedManager].userId wordId:model.wordId];
         api.delegate = self;
         [api start];
-        [self.datas removeObjectAtIndex:indexPath.row];
         [self.favoriteWordTableView reloadData];
     }];
     
     UITableViewRowAction *likeAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"取消收藏" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
            WordDataModel *model = self.datas[indexPath.row];
            NSLog(@"取消收藏单词%@",model.word);
-           YHMarkWordsApi *api = [[YHMarkWordsApi alloc] initWithType:3 token:[YHUserManager sharedManager].token userId:[YHUserManager sharedManager].userId wordId:model.wordId];
+        YHCancelCollectApi *api = [[YHCancelCollectApi alloc] initWithUserId:[YHUserManager sharedManager].userId token:[YHUserManager sharedManager].token wordId:model.wordId];
            api.delegate = self;
            [api start];
            [self.datas removeObjectAtIndex:indexPath.row];
@@ -201,12 +202,11 @@ static NSInteger pagenumber = 0;
     return _datas;
 }
 
-- (YHMeWordsApi *)favoriteWordsListApi {
-    if (!_favoriteWordsListApi) {
-        pagenumber += 1;
-        _favoriteWordsListApi = [[YHMeWordsApi alloc] initWithPage:pagenumber row:11 type:4 userId:[YHUserManager sharedManager].userId token:[YHUserManager sharedManager].token];
-        _favoriteWordsListApi.delegate = self;
+- (YHMeCollectWordsListApi *)collectWordsListApi {
+    if (!_collectWordsListApi) {
+        _collectWordsListApi = [[YHMeCollectWordsListApi alloc] initWithPage:1 row:5 userId:[YHUserManager sharedManager].userId token:[YHUserManager sharedManager].token];
+        _collectWordsListApi.delegate = self;
     }
-    return _favoriteWordsListApi;
+    return _collectWordsListApi;
 }
 @end

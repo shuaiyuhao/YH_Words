@@ -23,7 +23,7 @@
 
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{
-        @"wordId":@"id",
+        @"wordId":@[@"wordsId",@"id"],
         @"word":@"word",
         @"phonetic":@"phoneticSymbol",
         @"chinese":@"explanation",

@@ -21,7 +21,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [self.window makeKeyAndVisible];
-    self.window.rootViewController = [YHLoginController new];
+    
+    YHLoginController *vc = [YHLoginController new];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+    self.window.rootViewController = nav;
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHexString:@"0x171C24"]];
     [[UINavigationBar appearance] setTranslucent:NO];

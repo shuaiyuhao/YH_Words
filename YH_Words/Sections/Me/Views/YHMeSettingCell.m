@@ -10,6 +10,7 @@
 #import <Masonry.h>
 #import "UILabel+SFBuilder.h"
 #import "UIColor+SFAdd.h"
+#import <SDWebImage.h>
 
 @interface YHMeSettingCell ()
 
@@ -68,9 +69,10 @@
 //    self.userNameLabel.text =
 }
 
-- (void)configWithName:(NSString *)name userId:(NSInteger)userId {
+- (void)configWithName:(NSString *)name userId:(NSInteger)userId avatar:(nonnull NSString *)avatar{
     self.userIDLabel.text = [NSString stringWithFormat:@"用户ID:%ld",userId];
     self.userNameLabel.text = name;
+    [self.userImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.133.81%@",avatar]]];
 }
 
 
