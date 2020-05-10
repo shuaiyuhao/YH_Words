@@ -37,7 +37,7 @@
         make.size.mas_equalTo(CGSizeMake(200, 30));
         
         make.left.equalTo(self.iconImageView.mas_right).offset(10);
-        make.bottom.equalTo(self.contentView).offset(-5);
+        make.bottom.equalTo(self.contentView).offset(-10);
     }];
     
     [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -48,7 +48,7 @@
 }
 
 + (CGFloat)cellHeight {
-    return 44.f;
+    return 50.f;
 }
 
 + (NSString *)cellIdentifier {

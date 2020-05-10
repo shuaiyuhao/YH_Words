@@ -11,8 +11,9 @@
 #import "YHWordTableViewCell.h"
 #import "YHPlanCell.h"
 #import "YHPlanModel.h"
+#import "YHAddPlanController.h"
 
-@interface YHReviseController ()<UITableViewDelegate, UITableViewDataSource>
+@interface YHReviseController ()<UITableViewDelegate, UITableViewDataSource, planDelegate>
 
 @property (nonatomic,strong) UITableView *reviseTableView;
 
@@ -21,6 +22,8 @@
 @property (nonatomic,strong) NSArray<WordDataModel *> *datas;
 
 @property (nonatomic,strong) NSMutableArray<YHPlanModel *> *plans;
+
+@property (nonatomic,strong) NSString *planString;
 
 @end
 
@@ -59,6 +62,18 @@
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     return [UIView new];
 }
+
+#pragma mark - planStrDelegate
+#pragma mark -
+- (void)transferPlan:(YHPlanModel *)plan controller:(UIViewController *)vc {
+    YHPlanModel *model = plan;
+    
+    [self.plans addObject:model];
+    [self.reviseTableView reloadData];
+    
+    [vc.navigationController popViewControllerAnimated:true];
+}
+
 #pragma mark - UITableViewDataSource
 #pragma mark -
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -66,7 +81,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return self.plans.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -115,82 +130,26 @@
     if (!_addButton) {
         _addButton = [UIBarButtonItem new];
         _addButton.title = @"添加";
+        
+        _addButton.target = self;
+        _addButton.action = @selector(addButtonTapped);
     }
     return _addButton;
 }
 
-- (NSArray<WordDataModel *> *)datas {
-    if (!_datas) {
-        _datas = @[
-            [[WordDataModel alloc] initWithDic:@{
-                @"word":@"abandon",
-                @"phonetic":@"/ə'bændən/",
-                @"chinese":@"v./抛弃，舍弃，放弃",
-                @"example":@"We had to abandon the car and walk the rest of the way."
-            }],
-
-            [[WordDataModel alloc] initWithDic:@{
-                @"word":@"able",
-                @"phonetic":@"/'eɪbəl/",
-                @"chinese":@"a./能够；有能力的 be able to do",
-                @"example":@"Will she be able to cope with the work?"
-            }],
-
-            [[WordDataModel alloc] initWithDic:@{
-                @"word":@"abnormal",
-                @"phonetic":@"/æb'nɔːməl US -'nɔːr-/",
-                @"chinese":@"a./反常的，变态的",
-                @"example":@"abnormal behaviour"
-            }],
-
-            [[WordDataModel alloc] initWithDic:@{
-                @"word":@"abolish",
-                @"phonetic":@"/ə'bɔlɪʃ US ə'bɑː-/",
-                @"chinese":@"v./废除，废止",
-                @"example":@"Slavery was abolished in the US in the 19th century."
-            }],
-
-            [[WordDataModel alloc] initWithDic:@{
-                @"word":@"about",
-                @"phonetic":@"/ə'baut/",
-                @"chinese":@"ad./大约；到处；四处# prep./关于；在各处；四处 ",
-                @"example":@"We're about (= almost) ready to leave"
-            }],
-
-            [[WordDataModel alloc] initWithDic:@{
-                @"word":@"absent",
-                @"phonetic":@"/'æbsənt/",
-                @"chinese":@"a./缺席，不在",
-                @"example":@"`Nothing,' Rosie said in an absent way."
-            }]
-
-
-        ];
-    }
-    return _datas;
+- (void)addButtonTapped {
+    YHAddPlanController *vc = [YHAddPlanController new];
+    
+    vc.planDelegate = self;
+    
+    WeakSelf;
+    [weakSelf.navigationController pushViewController:vc animated:true];
 }
 
 - (NSMutableArray<YHPlanModel *> *)plans {
     
     if (!_plans) {
         _plans = [NSMutableArray new];
-        
-        YHPlanModel *model0 = [[YHPlanModel alloc] initWithString:@"复习第一章"];
-        
-        YHPlanModel *model1 = [[YHPlanModel alloc] initWithString:@"复习第二章"];
-        
-        YHPlanModel *model2 = [[YHPlanModel alloc] initWithString:@"复习第三章"];
-        
-        YHPlanModel *model3 = [[YHPlanModel alloc] initWithString:@"复习第四章"];
-        
-        YHPlanModel *model4 = [[YHPlanModel alloc] initWithString:@"复习第五章"];
-        
-        [_plans addObject:model0];
-        [_plans addObject:model1];
-        [_plans addObject:model2];
-        [_plans addObject:model3];
-        [_plans addObject:model4];
-
     }
     return _plans;
 }

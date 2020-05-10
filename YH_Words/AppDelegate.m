@@ -10,6 +10,7 @@
 #import "UIColor+SFAdd.h"
 #import "YHTabBarController.h"
 #import "YHLoginController.h"
+#import <iflyMSC/iflyMSC.h>
 
 @interface AppDelegate ()
 
@@ -28,6 +29,9 @@
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHexString:@"0x171C24"]];
     [[UINavigationBar appearance] setTranslucent:NO];
+    
+    NSString *initString = [[NSString alloc] initWithFormat:@"appid=%@", @"5eb7a7df"];
+    [IFlySpeechUtility createUtility:initString];
     
     return YES;
 }

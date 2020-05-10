@@ -102,7 +102,7 @@
         api.delegate = self;
         [api start];
         
-        [self.avatarView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.133.81%@",[YHUserManager sharedManager].avatar]]];
+        [self.avatarView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://129.211.95.89%@",[YHUserManager sharedManager].avatar]]];
     }
     
     if ([(SFBaseApiRequest *)request isKindOfClass:[YHChangeAvatarApi class]]) {
@@ -317,7 +317,7 @@
         _avatarView.layer.cornerRadius = 40;
         _avatarView.userInteractionEnabled = YES;
         
-        [self.avatarView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.133.81%@",[YHUserManager sharedManager].avatar]]];
+        [self.avatarView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://129.211.95.89%@",[YHUserManager sharedManager].avatar]]];
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(avatarTapped)];
         

@@ -72,7 +72,7 @@
 - (void)configWithName:(NSString *)name userId:(NSInteger)userId avatar:(nonnull NSString *)avatar{
     self.userIDLabel.text = [NSString stringWithFormat:@"用户ID:%ld",userId];
     self.userNameLabel.text = name;
-    [self.userImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.133.81%@",avatar]]];
+    [self.userImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://129.211.95.89%@",avatar]]];
 }
 
 

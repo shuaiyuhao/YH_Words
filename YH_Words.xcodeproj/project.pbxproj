@@ -49,6 +49,22 @@
 		36636AC52466CE7A001DBCAF /* YHCalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36636AC42466CE7A001DBCAF /* YHCalendarController.m */; };
 		36636AC82466CEA4001DBCAF /* YHUserInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36636AC72466CEA4001DBCAF /* YHUserInfoController.m */; };
 		36636ACB2466F045001DBCAF /* LunarFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 36636ACA2466F045001DBCAF /* LunarFormatter.m */; };
+		36636AEF24681613001DBCAF /* YHAddPlanCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36636AEE24681613001DBCAF /* YHAddPlanCell.m */; };
+		36636AF124684164001DBCAF /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 36636AF024684164001DBCAF /* libz.tbd */; };
+		36636AF32468416C001DBCAF /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 36636AF22468416C001DBCAF /* libc++.tbd */; };
+		36636AF524684174001DBCAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36636AF424684174001DBCAF /* UIKit.framework */; };
+		36636AF72468418E001DBCAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36636AF62468418E001DBCAF /* CoreGraphics.framework */; };
+		36636AF9246841A3001DBCAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36636AF8246841A3001DBCAF /* Foundation.framework */; };
+		36636AFB246841B0001DBCAF /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36636AFA246841B0001DBCAF /* Contacts.framework */; };
+		36636AFD246841BA001DBCAF /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36636AFC246841BA001DBCAF /* AddressBook.framework */; };
+		36636AFF246841C9001DBCAF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36636AFE246841C9001DBCAF /* CoreLocation.framework */; };
+		36636B01246841D4001DBCAF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36636B00246841D4001DBCAF /* SystemConfiguration.framework */; };
+		36636B03246841DB001DBCAF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36636B02246841DB001DBCAF /* QuartzCore.framework */; };
+		36636B05246841E6001DBCAF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36636B04246841E6001DBCAF /* AudioToolbox.framework */; };
+		36636B07246841EE001DBCAF /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36636B06246841EE001DBCAF /* CoreTelephony.framework */; };
+		36636B09246841FB001DBCAF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36636B08246841FB001DBCAF /* AVFoundation.framework */; };
+		36636B1C24684632001DBCAF /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36636B1B24684632001DBCAF /* iflyMSC.framework */; };
+		36636B6124684E27001DBCAF /* aisound in Resources */ = {isa = PBXBuildFile; fileRef = 36636B6024684E27001DBCAF /* aisound */; };
 		3664346E246437D70078CE3B /* YHMeWordsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 3664346D246437D70078CE3B /* YHMeWordsApi.m */; };
 		36643471246458600078CE3B /* YHUploadImageApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 36643470246458600078CE3B /* YHUploadImageApi.m */; };
 		3675B7AE242E461700B77919 /* YHTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3675B7AD242E461700B77919 /* YHTabBar.m */; };
@@ -167,6 +183,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		36636AE72467F8E4001DBCAF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		062080A9D05031769F3AD18E /* Pods-YH_Words.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YH_Words.release.xcconfig"; path = "Target Support Files/Pods-YH_Words/Pods-YH_Words.release.xcconfig"; sourceTree = "<group>"; };
 		295A55EC31F27A849D3F43F9 /* libPods-YH_WordsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YH_WordsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -252,6 +281,23 @@
 		36636AC72466CEA4001DBCAF /* YHUserInfoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHUserInfoController.m; sourceTree = "<group>"; };
 		36636AC92466F044001DBCAF /* LunarFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunarFormatter.h; sourceTree = "<group>"; };
 		36636ACA2466F045001DBCAF /* LunarFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunarFormatter.m; sourceTree = "<group>"; };
+		36636AED24681613001DBCAF /* YHAddPlanCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHAddPlanCell.h; sourceTree = "<group>"; };
+		36636AEE24681613001DBCAF /* YHAddPlanCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHAddPlanCell.m; sourceTree = "<group>"; };
+		36636AF024684164001DBCAF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		36636AF22468416C001DBCAF /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		36636AF424684174001DBCAF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		36636AF62468418E001DBCAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		36636AF8246841A3001DBCAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		36636AFA246841B0001DBCAF /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
+		36636AFC246841BA001DBCAF /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		36636AFE246841C9001DBCAF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		36636B00246841D4001DBCAF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		36636B02246841DB001DBCAF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		36636B04246841E6001DBCAF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		36636B06246841EE001DBCAF /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		36636B08246841FB001DBCAF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		36636B1B24684632001DBCAF /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
+		36636B6024684E27001DBCAF /* aisound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = aisound; sourceTree = "<group>"; };
 		3664346C246437D70078CE3B /* YHMeWordsApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHMeWordsApi.h; sourceTree = "<group>"; };
 		3664346D246437D70078CE3B /* YHMeWordsApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHMeWordsApi.m; sourceTree = "<group>"; };
 		3664346F246458600078CE3B /* YHUploadImageApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHUploadImageApi.h; sourceTree = "<group>"; };
@@ -462,6 +508,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36636B09246841FB001DBCAF /* AVFoundation.framework in Frameworks */,
+				36636B07246841EE001DBCAF /* CoreTelephony.framework in Frameworks */,
+				36636B05246841E6001DBCAF /* AudioToolbox.framework in Frameworks */,
+				36636B1C24684632001DBCAF /* iflyMSC.framework in Frameworks */,
+				36636B03246841DB001DBCAF /* QuartzCore.framework in Frameworks */,
+				36636B01246841D4001DBCAF /* SystemConfiguration.framework in Frameworks */,
+				36636AFF246841C9001DBCAF /* CoreLocation.framework in Frameworks */,
+				36636AFD246841BA001DBCAF /* AddressBook.framework in Frameworks */,
+				36636AFB246841B0001DBCAF /* Contacts.framework in Frameworks */,
+				36636AF9246841A3001DBCAF /* Foundation.framework in Frameworks */,
+				36636AF72468418E001DBCAF /* CoreGraphics.framework in Frameworks */,
+				36636AF524684174001DBCAF /* UIKit.framework in Frameworks */,
+				36636AF32468416C001DBCAF /* libc++.tbd in Frameworks */,
+				36636AF124684164001DBCAF /* libz.tbd in Frameworks */,
 				F627D10C826256C73F374A95 /* libPods-YH_Words.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -539,6 +599,8 @@
 				3656AB042455D84D0035ED8C /* YHWordTableViewCell.m */,
 				36BB996A245F91F8004B0217 /* YHPlanCell.h */,
 				36BB996B245F91F8004B0217 /* YHPlanCell.m */,
+				36636AED24681613001DBCAF /* YHAddPlanCell.h */,
+				36636AEE24681613001DBCAF /* YHAddPlanCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -568,6 +630,7 @@
 		365F46FF23CB1F4B0073FB73 /* YH_Words */ = {
 			isa = PBXGroup;
 			children = (
+				36636B16246843F6001DBCAF /* resource */,
 				3640AECE2461B1A900C28F8E /* Manager */,
 				36604712245064160028099A /* QiCardView */,
 				368631762419700600A65AA0 /* AppConfig */,
@@ -616,6 +679,14 @@
 				36604715245064160028099A /* QiCardViewCell.m */,
 			);
 			path = QiCardView;
+			sourceTree = "<group>";
+		};
+		36636B16246843F6001DBCAF /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				36636B6024684E27001DBCAF /* aisound */,
+			);
+			path = resource;
 			sourceTree = "<group>";
 		};
 		36643469246434080078CE3B /* Api */ = {
@@ -1126,6 +1197,20 @@
 		3B10F3C437216E37402868EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				36636B1B24684632001DBCAF /* iflyMSC.framework */,
+				36636B08246841FB001DBCAF /* AVFoundation.framework */,
+				36636B06246841EE001DBCAF /* CoreTelephony.framework */,
+				36636B04246841E6001DBCAF /* AudioToolbox.framework */,
+				36636B02246841DB001DBCAF /* QuartzCore.framework */,
+				36636B00246841D4001DBCAF /* SystemConfiguration.framework */,
+				36636AFE246841C9001DBCAF /* CoreLocation.framework */,
+				36636AFC246841BA001DBCAF /* AddressBook.framework */,
+				36636AFA246841B0001DBCAF /* Contacts.framework */,
+				36636AF8246841A3001DBCAF /* Foundation.framework */,
+				36636AF62468418E001DBCAF /* CoreGraphics.framework */,
+				36636AF424684174001DBCAF /* UIKit.framework */,
+				36636AF22468416C001DBCAF /* libc++.tbd */,
+				36636AF024684164001DBCAF /* libz.tbd */,
 				CA3E337E758199A8C9EBFAF5 /* libPods-YH_Words.a */,
 				F8E95F91FA90EDC0F2B8BBFB /* libPods-YH_Words-YH_WordsUITests.a */,
 				295A55EC31F27A849D3F43F9 /* libPods-YH_WordsTests.a */,
@@ -1158,6 +1243,7 @@
 				365F46FA23CB1F4B0073FB73 /* Frameworks */,
 				365F46FB23CB1F4B0073FB73 /* Resources */,
 				19C3582CC622354A005DB88B /* [CP] Copy Pods Resources */,
+				36636AE72467F8E4001DBCAF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1256,6 +1342,7 @@
 			files = (
 				365F471023CB1F4C0073FB73 /* LaunchScreen.storyboard in Resources */,
 				365F470D23CB1F4C0073FB73 /* Assets.xcassets in Resources */,
+				36636B6124684E27001DBCAF /* aisound in Resources */,
 				365F470B23CB1F4B0073FB73 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1501,6 +1588,7 @@
 				36636AC82466CEA4001DBCAF /* YHUserInfoController.m in Sources */,
 				3640AECD2461950B00C28F8E /* YHRegisterApi.m in Sources */,
 				368630DD2419354000A65AA0 /* UILabel+SFBuilder.m in Sources */,
+				36636AEF24681613001DBCAF /* YHAddPlanCell.m in Sources */,
 				3640AED12461B1C200C28F8E /* YHUserManager.m in Sources */,
 				36FC4386245E532F006569F0 /* SFTitleFieldCell.m in Sources */,
 				36E29683245606C7007A0978 /* YHFavoriteWordController.m in Sources */,
@@ -1688,6 +1776,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MY86J5M278;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = YH_Words/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1706,6 +1799,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MY86J5M278;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = YH_Words/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

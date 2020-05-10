@@ -13,12 +13,13 @@
 #import "YHStudyWordsListApi.h"
 #import <YYModel.h>
 #import "YHMarkWordsApi.h"
+#import <iflyMSC/iflyMSC.h>
 
 static NSString * const wordCardCellId = @"YHWordCardCellId";
 
 static NSInteger pageNumber = 0;
 
-@interface YHWordController ()<QiCardViewDelegate, QiCardViewDataSource, YTKRequestDelegate>
+@interface YHWordController ()<QiCardViewDelegate, QiCardViewDataSource, YTKRequestDelegate, YHWordCardCellDelegate, IFlySpeechSynthesizerDelegate>
 
 @property (nonatomic,strong) QiCardView *cardView;
 
@@ -28,6 +29,8 @@ static NSInteger pageNumber = 0;
 
 @property (nonatomic,strong) UIButton *rememberButton;
 @property (nonatomic,strong) UIButton *forgetButton;
+
+@property (nonatomic, strong) IFlySpeechSynthesizer * iFlySpeechSynthesizer;
 
 @end
 
@@ -46,6 +49,16 @@ static NSInteger pageNumber = 0;
     [self.view addSubview:self.forgetButton];
     
     [self layoutPageViews];
+    
+    //
+     [[IFlySpeechUtility getUtility] setParameter:@"tts" forKey:[IFlyResourceUtil ENGINE_START]];
+     _iFlySpeechSynthesizer = [IFlySpeechSynthesizer sharedInstance];
+     _iFlySpeechSynthesizer.delegate = self;
+     [_iFlySpeechSynthesizer setParameter:[IFlySpeechConstant TYPE_LOCAL] forKey:[IFlySpeechConstant ENGINE_TYPE]];
+     [_iFlySpeechSynthesizer setParameter:@"xiaoyan" forKey:[IFlySpeechConstant VOICE_NAME]];
+     NSString *resPath = [[NSBundle mainBundle] resourcePath];
+     NSString *vcnResPath = [[NSString alloc] initWithFormat:@"%@/aisound/common.jet;%@/aisound/xiaoyan.jet",resPath,resPath];
+     [_iFlySpeechSynthesizer setParameter:vcnResPath forKey:@"tts_res_path"];
     
 }
 
@@ -68,6 +81,13 @@ static NSInteger pageNumber = 0;
           make.right.equalTo(self.view).offset(-37);
           make.top.equalTo(self.cardView.mas_bottom).offset(24);
       }];
+}
+
+#pragma mark - YHWordCardCellDelegate
+- (void)cardViewCell:(YHWordCardCell *)cell soundText:(NSString *)text {
+    if (text) {
+        [_iFlySpeechSynthesizer startSpeaking:text];
+    }
 }
 
 #pragma mark - YTKRequestDelegate
@@ -105,6 +125,7 @@ static NSInteger pageNumber = 0;
 
     cell.layer.cornerRadius = 10;
     cell.layer.masksToBounds = YES;
+    cell.delegate = self;
 
     return cell;
 

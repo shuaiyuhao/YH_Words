@@ -330,7 +330,7 @@
         } else {
             
             // Alert
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"权限错误" message:@"获取节日事件需要权限呀大宝贝!" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"权限错误" message:@"获取节日事件需要权限!" preferredStyle:UIAlertControllerStyleAlert];
             [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
             [self presentViewController:alertController animated:YES completion:nil];
         }

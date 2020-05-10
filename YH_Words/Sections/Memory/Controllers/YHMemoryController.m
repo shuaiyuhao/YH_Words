@@ -92,10 +92,40 @@
     
     if ([(SFBaseApiRequest *)request isKindOfClass:[YHRememberLineApi class]]) {
         self.rememberArray = data;
+        NSMutableArray *values = [NSMutableArray array];
+               [self.rememberArray enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                   NSNumber *count = obj[@"count"]?:@0;
+                   [values addObject:count];
+               }];
+               PNLineChartData *data = [PNLineChartData new];
+               data.color = PNTwitterColor;
+               data.itemCount = _memorizeLineChart.xLabels.count;
+               data.inflexionPointStyle = PNLineChartPointStyleSquare;
+               
+               data.getData = ^PNLineChartDataItem *(NSUInteger item) {
+                   CGFloat yValue = [values[item] floatValue];
+                   return [PNLineChartDataItem dataItemWithY:yValue];
+               };
+               [self.memorizeLineChart updateChartData:@[data]];
     }
     
     if ([(SFBaseApiRequest *)request isKindOfClass:[YHFuzzyLineApi class]]) {
         self.fuzzyArray = data;
+        NSMutableArray *values = [NSMutableArray array];
+        [self.fuzzyArray enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSNumber *count = obj[@"count"]?:@0;
+            [values addObject:count];
+        }];
+        PNLineChartData *data = [PNLineChartData new];
+        data.color = PNRed;
+        data.itemCount = _memorizeLineChart.xLabels.count;
+        data.inflexionPointStyle = PNLineChartPointStyleSquare;
+        
+        data.getData = ^PNLineChartDataItem *(NSUInteger item) {
+            CGFloat yValue = [values[item] floatValue];
+            return [PNLineChartDataItem dataItemWithY:yValue];
+        };
+        [self.fuzzyLineChart updateChartData:@[data]];
     }
 }
 

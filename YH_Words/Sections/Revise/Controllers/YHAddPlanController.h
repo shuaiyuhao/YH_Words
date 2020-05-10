@@ -7,10 +7,19 @@
 //
 
 #import "YHBaseController.h"
+#import "YHPlanModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol planDelegate <NSObject>
+
+- (void)transferPlan:(YHPlanModel *)plan controller:(UIViewController *)vc;
+
+@end
+
 @interface YHAddPlanController : YHBaseController
+
+@property (nonatomic,weak) id<planDelegate> planDelegate;
 
 @end
 

@@ -11,6 +11,7 @@
 #import <Masonry.h>
 #import "UIColor+SFAdd.h"
 #import "WordDataModel.h"
+#import "UIButton+SFBuilder.h"
 
 @interface YHWordCardCell ()
 
@@ -20,6 +21,8 @@
 @property (nonatomic,strong) UILabel *paraphraseLabel;
 @property (nonatomic,strong) UILabel *exampleTitileLabel;
 @property (nonatomic,strong) UILabel *exampleLabel;
+//发声按钮
+@property (nonatomic,strong) UIButton *soundButton;
 
 @end
 
@@ -40,6 +43,7 @@
         [self.contentView addSubview:self.paraphraseLabel];
         [self.contentView addSubview:self.exampleTitileLabel];
         [self.contentView addSubview:self.exampleLabel];
+        [self.contentView addSubview:self.soundButton];
         
         [self layoutPageViews];
     }
@@ -83,6 +87,12 @@
           make.top.equalTo(self.exampleTitileLabel.mas_bottom).offset(12);
       }];
     
+    [self.soundButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(30, 30));
+        make.top.equalTo(self.contentView).offset(15);
+        make.right.equalTo(self.contentView).offset(-15);
+    }];
+    
 }
 
 - (void)configWithData:(id)data {
@@ -93,6 +103,12 @@
         self.phoneticLabel.text = model.phonetic;
         self.paraphraseLabel.text = model.chinese;
         self.exampleLabel.text = model.example;
+    }
+}
+
+- (void)soundButtonClick {
+    if ([self.delegate respondsToSelector:@selector(cardViewCell:soundText:)]) {
+        [self.delegate cardViewCell:self soundText:self.wordLabel.text];
     }
 }
 
@@ -175,5 +191,17 @@
         .build();
     }
     return _exampleLabel;
+}
+
+- (UIButton *)soundButton {
+    if (!_soundButton) {
+        _soundButton = UIButton.builder()
+        .image([UIImage imageNamed:@"sound"])
+        .build();
+
+        [_soundButton addTarget:self action:@selector(soundButtonClick) forControlEvents:UIControlEventTouchUpInside];
+        
+    }
+    return _soundButton;
 }
 @end
