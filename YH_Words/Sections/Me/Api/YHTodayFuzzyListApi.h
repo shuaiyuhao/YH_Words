@@ -10,9 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YHTodayWordsListApi : SFBaseApiRequest
-
-@property (nonatomic,assign) NSInteger type;
+@interface YHTodayFuzzyListApi : SFBaseApiRequest
 
 - (instancetype)initWithPage:(NSInteger)page row:(NSInteger)row type:(NSInteger)type userId:(NSInteger)userId token:(NSString *)token;
 

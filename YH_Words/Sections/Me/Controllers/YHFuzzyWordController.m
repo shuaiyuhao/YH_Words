@@ -68,7 +68,7 @@ static NSInteger pagenumber = 0;
     }
     
     if ([(SFBaseApiRequest *)request isKindOfClass:[YHMeWordsApi class]]) {
-        NSArray *array = [NSArray yy_modelArrayWithClass:[WordDataModel class] json:data];
+        NSArray *array = [NSArray yy_modelArrayWithClass:[WordDataModel class] json:data[@"allWordsList"]];
         
         if (pagenumber == 1) {
             [self.fuzzyWordTableView.mj_header endRefreshing];

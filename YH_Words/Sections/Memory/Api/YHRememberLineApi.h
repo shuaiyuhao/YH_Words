@@ -10,7 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YHMemoryLineApi : SFBaseApiRequest
+@interface YHRememberLineApi : SFBaseApiRequest
+
+- (instancetype)initWithUserId:(NSInteger)userId token:(NSString *)token type:(NSInteger)type;
 
 @end
 

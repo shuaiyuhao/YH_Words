@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)configWithData:(id)data;
 
-- (void)configTitle:(NSString *)title;
+- (void)configWithTitle:(NSString *)title text:(NSString *)text;
 
 @end
 

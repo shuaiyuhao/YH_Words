@@ -66,6 +66,10 @@
         self.numberLabel.text = dic[@"number"];
     }
 }
+
+- (void)configWithNum:(NSString *)num {
+    self.numberLabel.text = num;
+}
 #pragma mark - getter and setter
 #pragma mark -
 - (UILabel *)titleLabel {

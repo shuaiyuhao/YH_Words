@@ -19,6 +19,7 @@ target 'YH_Words' do
   pod 'JKCountDownButton'
   pod 'YYCache'
   pod 'AFNetworkActivityLogger'
+  pod 'FSCalendar'
 
   target 'YH_WordsTests' do
     inherit! :search_paths

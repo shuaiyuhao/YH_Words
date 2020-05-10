@@ -9,6 +9,8 @@
 #import "YHSettingController.h"
 #import "YHMeSettingCell.h"
 #import "SFTitleValueCell.h"
+#import "YHUserInfoController.h"
+#import "YHCalendarController.h"
 
 @interface YHSettingController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -57,16 +59,30 @@
     return [UIView new];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        YHUserInfoController *vc = [YHUserInfoController new];
+        [self.navigationController pushViewController:vc animated:true];
+    } else if (indexPath.section == 1) {
+        
+    } else if (indexPath.section == 2) {
+        YHCalendarController *vc = [YHCalendarController new];
+        [self.navigationController pushViewController:vc animated:true];
+    }
+}
+
 #pragma mark - UITableViewDataSource
 #pragma mark -
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
         return 1;
     } else if (section == 1) {
+        return 1;
+    } else if (section == 2) {
         return 1;
     }
     
@@ -91,6 +107,12 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     } else if (indexPath.section == 2) {
+        SFTitleValueCell *cell = [tableView dequeueReusableCellWithIdentifier:[SFTitleValueCell cellIdentifier] forIndexPath:indexPath];
+        
+        [cell setImage:nil title:@"签到日历" value:@""];
+        
+        return cell;
+    } else if (indexPath.section == 3) {
         if (indexPath.row == 0) {
             SFTitleValueCell *cell = [tableView dequeueReusableCellWithIdentifier:[SFTitleValueCell cellIdentifier] forIndexPath:indexPath];
             

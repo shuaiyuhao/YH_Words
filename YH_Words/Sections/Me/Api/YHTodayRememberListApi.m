@@ -1,24 +1,24 @@
 //
-//  YHTodayWordsListApi.m
+//  YHTodayRememberListApi.m
 //  YH_Words
 //
-//  Created by Yuhao Shuai on 2020/5/8.
+//  Created by Yuhao Shuai on 2020/5/9.
 //  Copyright © 2020 Vwidea. All rights reserved.
 //
 
-#import "YHTodayWordsListApi.h"
+#import "YHTodayRememberListApi.h"
 
-@interface YHTodayWordsListApi ()
+@interface YHTodayRememberListApi ()
 
 @property (nonatomic,assign) NSInteger page;
 @property (nonatomic,assign) NSInteger row;
 @property (nonatomic,assign) NSInteger userId;
-
+@property (nonatomic,assign) NSInteger type;
 @property (nonatomic,copy)   NSString *token;
 
 @end
 
-@implementation YHTodayWordsListApi
+@implementation YHTodayRememberListApi
 - (instancetype)initWithPage:(NSInteger)page row:(NSInteger)row type:(NSInteger)type userId:(NSInteger)userId token:(NSString *)token {
     self = [super init];
     
@@ -33,7 +33,7 @@
 }
 
 - (NSString *)requestUrl {
-    return @"/words/words/todayWordsList";
+    return @"/words/words/todayRememberList";
 }
 
 - (YTKRequestMethod)requestMethod {

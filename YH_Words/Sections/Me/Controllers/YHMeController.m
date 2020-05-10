@@ -19,9 +19,12 @@
 #import "SFHUD.h"
 #import "NSObject+SFImagePicker.h"
 #import "YHUploadImageApi.h"
-#import "YHTodayWordsListApi.h"
+#import "YHTodayFuzzyListApi.h"
 #import <SDWebImage.h>
 #import "YHChangeAvatarApi.h"
+#import "YHTodayRememberListApi.h"
+#import <MJRefresh.h>
+#import "YHMeWordsApi.h"
 
 @interface YHMeController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,YTKRequestDelegate>
 
@@ -33,10 +36,13 @@
 @property (nonatomic,strong) NSArray *buttonArray;
 @property (nonatomic,strong) UIBarButtonItem *settingButton;
 
-@property (nonatomic,strong) YHTodayWordsListApi *todayViewApi;
+@property (nonatomic,strong) YHTodayFuzzyListApi *todayFuzzyApi;
+@property (nonatomic,strong) YHTodayRememberListApi *todayRememberApi;
+@property (nonatomic,strong) YHMeWordsApi *userAllWordsApi;
 
-@property (nonatomic,strong) YHTodayWordsListApi *todayFuzzyApi;
-
+@property (nonatomic,strong) NSString *todayRememberNum;
+@property (nonatomic,strong) NSString *todayFuzzyNum;
+@property (nonatomic,strong) NSString *allViewNum;
 @end
 
 @implementation YHMeController
@@ -52,14 +58,25 @@
     [self.view setBackgroundColor:[UIColor colorWithHexString:@"0x171C24"]];
     self.navigationItem.rightBarButtonItem = self.settingButton;
     
-    [self.todayViewApi start];
+    [self.todayRememberApi start];
+    [self.todayFuzzyApi start];
+    [self.userAllWordsApi start];
     
     [self.view addSubview:self.meCollectionView];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    self.meCollectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(getNewData)];
+    [self.meCollectionView.mj_header beginRefreshing];
     
     [self layoutPageViews];
 }
 
+- (void)getNewData {
+    
+    [self.todayRememberApi start];
+    [self.todayFuzzyApi start];
+    [self.userAllWordsApi start];
+    [self.meCollectionView.mj_header endRefreshing ];
+}
 
 - (void)layoutPageViews {
     [self.meCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -70,6 +87,7 @@
 #pragma mark - YTKRequestDelegate
 #pragma mark -
 - (void)requestFinished:(__kindof YTKBaseRequest *)request {
+    id obj = request.responseObject;
     id data = [(SFBaseApiRequest *)request fetchDataWithReformer:nil];
     if (![(SFBaseApiRequest *)request success]) {
         return;
@@ -91,10 +109,28 @@
         NSLog(@"%@",data);
     }
     
-    if ([(SFBaseApiRequest *)request isKindOfClass:[YHTodayWordsListApi class]]) {
+    if ([(SFBaseApiRequest *)request isKindOfClass:[YHTodayFuzzyListApi class]]) {
         NSLog(@"%@",data);
+        
+        NSNumber *num = data[@"count"];
+        self.todayFuzzyNum = [num stringValue];
+        
+        [self.meCollectionView reloadData];
     }
     
+    if ([(SFBaseApiRequest *)request isKindOfClass:[YHTodayRememberListApi class]]) {
+        
+        NSNumber *num = data[@"count"];
+        self.todayRememberNum = [num stringValue];
+        
+        [self.meCollectionView reloadData];
+    }
+    
+    if ([(SFBaseApiRequest *)request isKindOfClass:[YHMeWordsApi class]]) {
+        NSLog(@"%@",obj);
+        NSNumber *num = data[@"count"];
+        self.allViewNum = [num stringValue];
+    }
     
 }
 
@@ -140,15 +176,17 @@
     } else if (indexPath.row == 1) {
         YHTodayDataCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[YHTodayDataCollectionViewCell cellIdentifier] forIndexPath:indexPath];
         
-        [cell configTitle:@"今日浏览"];
+        [cell configWithTitle:@"今日记忆" text:self.todayRememberNum];
         return cell;
     } else if (indexPath.row == 2) {
         YHTodayDataCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[YHTodayDataCollectionViewCell cellIdentifier] forIndexPath:indexPath];
         
-        [cell configTitle:@"今日模糊"];
+        [cell configWithTitle:@"今日模糊" text:self.todayFuzzyNum];
         return cell;
     } else {
         YHTodayBrowseCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[YHTodayBrowseCell cellIdentifier] forIndexPath:indexPath];
+        
+        [cell configWithNum:self.allViewNum];
         
         return cell;
     }
@@ -241,7 +279,7 @@
         } else {
             [weakSelf takePhotoWithCrop:NO photoDidSelectBlock:^(NSArray *assets) {
                 UIImage *image = assets[0];
-                NSData *data = UIImageJPEGRepresentation(image, 1.0f);
+                NSData *data = UIImageJPEGRepresentation(image, 0.6f);
                 NSString *encodeImage = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
                 NSString *fileName = [NSString stringWithFormat:@"%@avatar.jpg",[YHUserManager sharedManager].userName];
                 
@@ -362,11 +400,28 @@
     [self.navigationController pushViewController:vc animated:true];
 }
 
-- (YHTodayWordsListApi *)todayViewApi {
-    if (!_todayViewApi) {
-        _todayViewApi = [[YHTodayWordsListApi alloc] initWithPage:1 row:5 type:3 userId:[YHUserManager sharedManager].userId token:[YHUserManager sharedManager].token];
-        _todayViewApi.delegate = self;
+- (YHTodayRememberListApi *)todayRememberApi {
+    if (!_todayRememberApi) {
+        _todayRememberApi = [[YHTodayRememberListApi alloc]initWithPage:1 row:5 type:3 userId:[YHUserManager sharedManager].userId token:[YHUserManager sharedManager].token];
+        _todayRememberApi.delegate = self;
     }
-    return _todayViewApi;
+    return _todayRememberApi;
+}
+
+- (YHTodayFuzzyListApi *)todayFuzzyApi {
+    if (!_todayFuzzyApi) {
+        _todayFuzzyApi = [[YHTodayFuzzyListApi alloc] initWithPage:1 row:5 type:2 userId:[YHUserManager sharedManager].userId token:[YHUserManager sharedManager].token];
+        
+        _todayFuzzyApi.delegate = self;
+    }
+    return _todayFuzzyApi;
+}
+
+- (YHMeWordsApi *)userAllWordsApi {
+    if (!_userAllWordsApi) {
+        _userAllWordsApi = [[YHMeWordsApi alloc] initWithPage:1 row:5 type:nil userId:[YHUserManager sharedManager].userId token:[YHUserManager sharedManager].token];
+        _userAllWordsApi.delegate = self ;
+    }
+    return _userAllWordsApi;
 }
 @end

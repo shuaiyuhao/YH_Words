@@ -72,5 +72,9 @@
 
 #define kScaleFrom_iPhone6_Desgin(_X_) (_X_ * (kScreenWidth / 375))
 
+#define localServer                             "http://192.168.133.81"
+
+#define onlineServer                            "http://129.211.95.89"
+
 
 

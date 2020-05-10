@@ -69,9 +69,11 @@
     }
 }
 
-- (void)configTitle:(NSString *)title {
+- (void)configWithTitle:(NSString *)title text:(NSString *)text {
     if (title && [title isKindOfClass:[NSString class]]) {
         self.titleLabel.text = title;
+        
+        self.numberLabel.text = text;
     }
 }
 

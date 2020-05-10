@@ -8,8 +8,10 @@
 
 #import "YHMemoryController.h"
 #import <PNChart.h>
+#import "YHRememberLineApi.h"
+#import "YHFuzzyLineApi.h"
 
-@interface YHMemoryController ()
+@interface YHMemoryController ()<YTKRequestDelegate>
 
 @property (nonatomic,strong) UILabel *memoryTitleLabel;
 
@@ -18,6 +20,12 @@
 @property (nonatomic,strong) PNLineChart *memorizeLineChart;
 
 @property (nonatomic,strong) PNLineChart *fuzzyLineChart;
+
+@property (nonatomic,strong) YHRememberLineApi *rememberApi;
+@property (nonatomic,strong) YHFuzzyLineApi *fuzzyApi;
+
+@property (nonatomic,strong) NSArray *rememberArray;
+@property (nonatomic,strong) NSArray *fuzzyArray;
 
 @end
 
@@ -38,6 +46,12 @@
     
     [self layoutPageViews];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.rememberApi start];
+    
+    [self.fuzzyApi start];
 }
 
 - (void)layoutPageViews {
@@ -65,6 +79,30 @@
         make.top.equalTo(self.fuzzyTitleLabel.mas_bottom).offset(40);
     }];
 }
+
+#pragma mark - YTKRequestDelegate
+#pragma mark -
+- (void)requestFinished:(__kindof YTKBaseRequest *)request {
+    id data = [(SFBaseApiRequest *)request fetchDataWithReformer:nil];
+    
+    if (![(SFBaseApiRequest *)request success]) {
+        
+        return;
+    }
+    
+    if ([(SFBaseApiRequest *)request isKindOfClass:[YHRememberLineApi class]]) {
+        self.rememberArray = data;
+    }
+    
+    if ([(SFBaseApiRequest *)request isKindOfClass:[YHFuzzyLineApi class]]) {
+        self.fuzzyArray = data;
+    }
+}
+
+-(void)requestFailed:(__kindof YTKBaseRequest *)request {
+    
+}
+
 
 #pragma mark - getter and setter
 #pragma mark -
@@ -157,5 +195,19 @@
     return _fuzzyTitleLabel;
 }
 
+- (YHRememberLineApi *)rememberApi {
+    if (!_rememberApi) {
+        _rememberApi = [[YHRememberLineApi alloc] initWithUserId:[YHUserManager sharedManager].userId token:[YHUserManager sharedManager].token type:3];
+        _rememberApi.delegate = self;
+    }
+    return _rememberApi;
+}
 
+- (YHFuzzyLineApi *)fuzzyApi {
+    if (!_fuzzyApi) {
+        _fuzzyApi = [[YHFuzzyLineApi alloc] initWithUserId:[YHUserManager sharedManager].userId token:[YHUserManager sharedManager].token type:2];
+        _fuzzyApi.delegate = self;
+    }
+    return _fuzzyApi;
+}
 @end
