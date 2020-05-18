@@ -11,6 +11,9 @@
 #import "SFTitleValueCell.h"
 #import "YHUserInfoController.h"
 #import "YHCalendarController.h"
+#import "SFHUD.h"
+#import "YHProblemReportController.h"
+#import "YHAccountSecurityController.h"
 
 @interface YHSettingController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -37,7 +40,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        return [YHMeSettingCell cellHeight];
+        return [SFTitleValueCell cellHeight];
     } else {
         return [SFTitleValueCell cellHeight];
     }
@@ -64,10 +67,19 @@
         YHUserInfoController *vc = [YHUserInfoController new];
         [self.navigationController pushViewController:vc animated:true];
     } else if (indexPath.section == 1) {
-        
+        YHAccountSecurityController *vc = [YHAccountSecurityController new];
+        [self.navigationController pushViewController:vc animated:true];
     } else if (indexPath.section == 2) {
         YHCalendarController *vc = [YHCalendarController new];
         [self.navigationController pushViewController:vc animated:true];
+    } else if (indexPath.section == 3) {
+        if (indexPath.row == 0) {
+            YHProblemReportController *vc = [YHProblemReportController new];
+            [self.navigationController pushViewController:vc animated:true];
+        }
+        if (indexPath.row == 2) {
+            [SFHUD showInfoToast:@"清除成功"];
+        }
     }
 }
 
@@ -86,15 +98,20 @@
         return 1;
     }
     
-    return 2;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        YHMeSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:[YHMeSettingCell cellIdentifier] forIndexPath:indexPath];
-        NSLog(@"userID:%ld", (long)[YHUserManager sharedManager].userId);
+//        YHMeSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:[YHMeSettingCell cellIdentifier] forIndexPath:indexPath];
+//        NSLog(@"userID:%ld", (long)[YHUserManager sharedManager].userId);
+//
+//        [cell configWithName:[YHUserManager sharedManager].userName userId:[YHUserManager sharedManager].userId avatar:[YHUserManager sharedManager].avatar];
+//
+//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        SFTitleValueCell *cell = [tableView dequeueReusableCellWithIdentifier:[SFTitleValueCell cellIdentifier] forIndexPath:indexPath];
         
-        [cell configWithName:[YHUserManager sharedManager].userName userId:[YHUserManager sharedManager].userId avatar:[YHUserManager sharedManager].avatar];
+        [cell setImage:nil title:@"我的信息" value:@""];
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
@@ -110,7 +127,7 @@
         SFTitleValueCell *cell = [tableView dequeueReusableCellWithIdentifier:[SFTitleValueCell cellIdentifier] forIndexPath:indexPath];
         
         [cell setImage:nil title:@"签到日历" value:@""];
-        
+         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     } else if (indexPath.section == 3) {
         if (indexPath.row == 0) {
@@ -122,7 +139,13 @@
         } else if (indexPath.row == 1) {
             SFTitleValueCell *cell = [tableView dequeueReusableCellWithIdentifier:[SFTitleValueCell cellIdentifier] forIndexPath:indexPath];
             
-            [cell setImage:nil title:@"关于我们" value:@""];
+            [cell setImage:nil title:@"关于YH Words" value:@""];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            return cell;
+        } else if (indexPath.row == 2) {
+            SFTitleValueCell *cell = [tableView dequeueReusableCellWithIdentifier:[SFTitleValueCell cellIdentifier] forIndexPath:indexPath];
+            
+            [cell setImage:nil title:@"清除缓存" value:@""];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             return cell;
         }

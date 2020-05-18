@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		106F10BA64C390796328F4FC /* libPods-YH_WordsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 295A55EC31F27A849D3F43F9 /* libPods-YH_WordsTests.a */; };
+		36132599246FE8C900272C64 /* YHProblemReportController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36132598246FE8C900272C64 /* YHProblemReportController.m */; };
+		3613259C246FEFD500272C64 /* YHAccountSecurityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3613259B246FEFD500272C64 /* YHAccountSecurityController.m */; };
 		3640AEC42460E5B200C28F8E /* YHPlanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3640AEC32460E5B200C28F8E /* YHPlanModel.m */; };
 		3640AECA246194F800C28F8E /* YHLoginApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 3640AEC9246194F800C28F8E /* YHLoginApi.m */; };
 		3640AECD2461950B00C28F8E /* YHRegisterApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 3640AECC2461950B00C28F8E /* YHRegisterApi.m */; };
@@ -67,6 +69,7 @@
 		36636B6124684E27001DBCAF /* aisound in Resources */ = {isa = PBXBuildFile; fileRef = 36636B6024684E27001DBCAF /* aisound */; };
 		3664346E246437D70078CE3B /* YHMeWordsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 3664346D246437D70078CE3B /* YHMeWordsApi.m */; };
 		36643471246458600078CE3B /* YHUploadImageApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 36643470246458600078CE3B /* YHUploadImageApi.m */; };
+		36679808246D073F008B8BCF /* YHForgetPassWdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36679807246D073F008B8BCF /* YHForgetPassWdController.m */; };
 		3675B7AE242E461700B77919 /* YHTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3675B7AD242E461700B77919 /* YHTabBar.m */; };
 		36862E64241917A500A65AA0 /* YHBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36862E63241917A500A65AA0 /* YHBaseController.m */; };
 		368630DB2419354000A65AA0 /* SFTextFieldBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 368630CB2419354000A65AA0 /* SFTextFieldBuilder.m */; };
@@ -199,6 +202,10 @@
 /* Begin PBXFileReference section */
 		062080A9D05031769F3AD18E /* Pods-YH_Words.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YH_Words.release.xcconfig"; path = "Target Support Files/Pods-YH_Words/Pods-YH_Words.release.xcconfig"; sourceTree = "<group>"; };
 		295A55EC31F27A849D3F43F9 /* libPods-YH_WordsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YH_WordsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		36132597246FE8C900272C64 /* YHProblemReportController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHProblemReportController.h; sourceTree = "<group>"; };
+		36132598246FE8C900272C64 /* YHProblemReportController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHProblemReportController.m; sourceTree = "<group>"; };
+		3613259A246FEFD500272C64 /* YHAccountSecurityController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHAccountSecurityController.h; sourceTree = "<group>"; };
+		3613259B246FEFD500272C64 /* YHAccountSecurityController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHAccountSecurityController.m; sourceTree = "<group>"; };
 		3640AEC22460E5B200C28F8E /* YHPlanModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHPlanModel.h; sourceTree = "<group>"; };
 		3640AEC32460E5B200C28F8E /* YHPlanModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHPlanModel.m; sourceTree = "<group>"; };
 		3640AEC8246194F800C28F8E /* YHLoginApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = YHLoginApi.h; path = YH_Words/Sections/Revise/YHLoginApi.h; sourceTree = SOURCE_ROOT; };
@@ -302,6 +309,8 @@
 		3664346D246437D70078CE3B /* YHMeWordsApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHMeWordsApi.m; sourceTree = "<group>"; };
 		3664346F246458600078CE3B /* YHUploadImageApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHUploadImageApi.h; sourceTree = "<group>"; };
 		36643470246458600078CE3B /* YHUploadImageApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHUploadImageApi.m; sourceTree = "<group>"; };
+		36679806246D073F008B8BCF /* YHForgetPassWdController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHForgetPassWdController.h; sourceTree = "<group>"; };
+		36679807246D073F008B8BCF /* YHForgetPassWdController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHForgetPassWdController.m; sourceTree = "<group>"; };
 		3675B7AC242E461700B77919 /* YHTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHTabBar.h; sourceTree = "<group>"; };
 		3675B7AD242E461700B77919 /* YHTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHTabBar.m; sourceTree = "<group>"; };
 		36862E62241917A500A65AA0 /* YHBaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBaseController.h; sourceTree = "<group>"; };
@@ -764,6 +773,10 @@
 				36636AC42466CE7A001DBCAF /* YHCalendarController.m */,
 				36636AC62466CEA4001DBCAF /* YHUserInfoController.h */,
 				36636AC72466CEA4001DBCAF /* YHUserInfoController.m */,
+				36132597246FE8C900272C64 /* YHProblemReportController.h */,
+				36132598246FE8C900272C64 /* YHProblemReportController.m */,
+				3613259A246FEFD500272C64 /* YHAccountSecurityController.h */,
+				3613259B246FEFD500272C64 /* YHAccountSecurityController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -956,6 +969,8 @@
 				3686316A24196B1F00A65AA0 /* YHLoginController.m */,
 				36FC43A4245F6E83006569F0 /* YHRegisterController.h */,
 				36FC43A5245F6E83006569F0 /* YHRegisterController.m */,
+				36679806246D073F008B8BCF /* YHForgetPassWdController.h */,
+				36679807246D073F008B8BCF /* YHForgetPassWdController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1475,6 +1490,7 @@
 				36FC439D245E6126006569F0 /* SFBaseTableViewCell.m in Sources */,
 				36636AC52466CE7A001DBCAF /* YHCalendarController.m in Sources */,
 				36FC438D245E532F006569F0 /* SFTitleValueCell.m in Sources */,
+				36679808246D073F008B8BCF /* YHForgetPassWdController.m in Sources */,
 				3686315E241935E700A65AA0 /* NSObject+SFSWizzling.m in Sources */,
 				36FC43A3245E62A1006569F0 /* UIColor+SFUIConfig.m in Sources */,
 				36A58F7F24502DE00011A8B3 /* WordDataModel.m in Sources */,
@@ -1494,6 +1510,7 @@
 				365F470823CB1F4B0073FB73 /* ViewController.m in Sources */,
 				36863160241935E700A65AA0 /* NSDictionary+SFLog.m in Sources */,
 				36636ABF24668B3B001DBCAF /* YHTodayRememberListApi.m in Sources */,
+				36132599246FE8C900272C64 /* YHProblemReportController.m in Sources */,
 				3640AECA246194F800C28F8E /* YHLoginApi.m in Sources */,
 				36FC4387245E532F006569F0 /* SFTitleValueCopyCell.m in Sources */,
 				36604717245064160028099A /* QiCardView.m in Sources */,
@@ -1597,6 +1614,7 @@
 				36FC436B245E460D006569F0 /* YHSettingController.m in Sources */,
 				3686315C241935E700A65AA0 /* NSSet+SFLog.m in Sources */,
 				36A58F7B244F3AE30011A8B3 /* YHTodayBrowseCell.m in Sources */,
+				3613259C246FEFD500272C64 /* YHAccountSecurityController.m in Sources */,
 				36DE7374243372CC0072D31E /* YHMemoryController.m in Sources */,
 				36863143241935E700A65AA0 /* UIViewController+BackButtonHandler.m in Sources */,
 				36636AB024658A66001DBCAF /* YHCollectWordApi.m in Sources */,

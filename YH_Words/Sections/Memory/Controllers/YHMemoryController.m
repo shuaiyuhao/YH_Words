@@ -163,7 +163,7 @@
         
         _memorizeLineChart.chartData = @[data];
         [_memorizeLineChart strokeChart];
-        _memorizeLineChart.showSmoothLines = YES;
+        _memorizeLineChart.showSmoothLines = NO;
     }
     return _memorizeLineChart;
 }
@@ -195,7 +195,7 @@
         };
         _fuzzyLineChart.chartData = @[data];
         [_fuzzyLineChart strokeChart];
-        _fuzzyLineChart.showSmoothLines = YES;
+        _fuzzyLineChart.showSmoothLines = NO;
         
     }
     return _fuzzyLineChart;

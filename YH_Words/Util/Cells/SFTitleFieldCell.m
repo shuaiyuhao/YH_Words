@@ -25,7 +25,7 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.accessoryType = UITableViewCellAccessoryNone;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.contentView.backgroundColor = [UIColor whiteColor];
+        self.contentView.backgroundColor = [UIColor colorWithHexString:@"0x171c24"];
         [self.contentView addSubview:self.titleLabel];
         [self.contentView addSubview:self.valueTextField];
         self.canWrite = YES;

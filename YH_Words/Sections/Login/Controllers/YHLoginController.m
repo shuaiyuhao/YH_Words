@@ -12,6 +12,7 @@
 #import "YHUserModel.h"
 #import "YHRegisterController.h"
 #import "YHTabBarController.h"
+#import "YHForgetPassWdController.h"
 
 @interface YHLoginController ()<YTKRequestDelegate>
 
@@ -178,12 +179,11 @@
         .font([UIFont systemFontOfSize:14])
         .build();
         
-//        WeakSelf;
-//        [_forgetButton sf_addHandler:^(id weakSender) {
-////            UIViewController *vc = [[CTMediator sharedInstance] login_forgetpassword:@{}];
-////            SFEnterpriseQualificationController *vc = [SFEnterpriseQualificationController new];
-//            [weakSelf.navigationController pushViewController:vc animated:YES];
-//        } forControlEvents:UIControlEventTouchUpInside];
+        WeakSelf;
+        [_forgetButton sf_addHandler:^(id weakSender) {
+            YHForgetPassWdController *vc = [YHForgetPassWdController new];
+            [weakSelf.navigationController pushViewController:vc animated:YES];
+        } forControlEvents:UIControlEventTouchUpInside];
     }
     return _forgetButton;
 }
