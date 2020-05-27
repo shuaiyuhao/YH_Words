@@ -10,9 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YHPlanModel : NSObject
+@interface YHPlanModel : NSObject<NSCoding>
 
-@property (nonatomic,assign) NSString *plan;
+@property (nonatomic,copy) NSString *plan;
 
 @property (nonatomic,assign) BOOL isDone;
 

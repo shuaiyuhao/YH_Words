@@ -14,6 +14,7 @@
 #import <YYModel.h>
 #import "YHMarkWordsApi.h"
 #import "YHCollectWordApi.h"
+#import "SFHUD.h"
 
 static NSInteger pagenumber = 0;
 
@@ -102,6 +103,10 @@ static NSInteger pagenumber = 0;
     if ([(SFBaseApiRequest *)request isKindOfClass:[YHMarkWordsApi class]]) {
         NSLog(@"%@",obj[@"message"]);
     }
+    
+    if ([(SFBaseApiRequest *)request isKindOfClass:[YHCollectWordApi class]]) {
+           [SFHUD showInfoToast:obj[@"message"]];
+       }
 }
 
 -(void)requestFailed:(__kindof YTKBaseRequest *)request {

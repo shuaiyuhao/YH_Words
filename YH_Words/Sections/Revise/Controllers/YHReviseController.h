@@ -6,6 +6,7 @@
 //  Copyright © 2020 Vwidea. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import "YHBaseController.h"
 
 NS_ASSUME_NONNULL_BEGIN

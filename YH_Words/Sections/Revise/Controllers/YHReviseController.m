@@ -39,6 +39,10 @@
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     
     [self.view addSubview:self.reviseTableView];
+    
+    [self loadDataFromPlist];
+    
+    [self.reviseTableView reloadData];
 }
 
 #pragma mark - UITableViewDelegate
@@ -72,6 +76,8 @@
     [self.reviseTableView reloadData];
     
     [vc.navigationController popViewControllerAnimated:true];
+    
+    [self writeDataToPlist];
 }
 
 #pragma mark - UITableViewDataSource
@@ -152,5 +158,36 @@
         _plans = [NSMutableArray new];
     }
     return _plans;
+}
+
+- (void)writeDataToPlist {
+//    NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *path = [pathArray objectAtIndex:0];
+//
+//    NSString *filePath = [path stringByAppendingPathComponent:@"UserPlan.plist"];
+//
+    NSMutableArray *array = [NSMutableArray new];
+    [self.plans enumerateObjectsUsingBlock:^(YHPlanModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        YHPlanModel *model = obj;
+        
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:model requiringSecureCoding:NO error:nil];
+        [array addObject:data];
+    }];
+    
+    
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    [user setObject:array forKey:@"userPlanArray"];
+}
+
+- (void)loadDataFromPlist {
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    
+    NSArray *array = [user objectForKey:@"userPlanArray"];
+    
+    for (int i = 0; i < array.count; i++) {
+        YHPlanModel *model = [NSKeyedUnarchiver unarchiveObjectWithData:array[i]];
+        
+        [self.plans addObject:model];
+    }
 }
 @end

@@ -19,4 +19,15 @@
     return self;
 }
 
+- (void)encodeWithCoder:(nonnull NSCoder *)coder {
+    [coder encodeObject:self.plan forKey:@"plan"];
+}
+
+- (nullable instancetype)initWithCoder:(nonnull NSCoder *)coder {
+    if (self = [super init]) {
+        self.plan = [coder decodeObjectForKey:@"plan"];
+    }
+    return self;
+}
+
 @end
